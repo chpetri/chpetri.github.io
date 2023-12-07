@@ -3,10 +3,8 @@ import starlight from '@astrojs/starlight';
 
 // https://astro.build/config
 export default defineConfig({
-	site: {
-		"https://chpetri.com",
-		base: "/chpetri.github.io/",
-	},
+	site: "https://chpetri.github.io",
+	base: "/chpetri.github.io/",
 	integrations: [
 		starlight({
 			title: 'My Study Notes',
