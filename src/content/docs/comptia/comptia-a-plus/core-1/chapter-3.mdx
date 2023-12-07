@@ -1,0 +1,967 @@
+---
+title: "3. Hardware"
+description: "Summary of Topic 3"
+---
+
+### 3.0 Hardware
+
+---
+
+### 3.1 Fiber Connectors
+
+\---
+
+### 3.1 Network Cables
+
+**The Significance of Cabling in Networks**
+
+- Cables are a foundational element in network communication, often only installed once.
+- Most wireless systems still rely on cabling at some point.
+
+**Twisted Pair Copper Cabling**
+
+- Works on balanced pair operation, canceling interference by using twisted pairs of wires.
+- Twists in the cables help to minimize electromagnetic interference.
+
+**Coaxial Cables**
+
+- Commonly found in television and internet connections, coaxial cables have a central wire surrounded by insulation and shielding.
+
+### 3.1 Network Cables (continued)
+
+**Unshielded and Shielded Cabling**
+
+- UTP (Unshielded Twisted Pair) is widespread, lacking additional interference protection.
+- STP (Shielded Twisted Pair) incorporates extra shielding to guard against interference and requires proper grounding.
+
+**Direct Burial STP**
+
+- Ideal for environments where overhead cabling isn’t suitable.
+- Designed to be resilient to environmental factors, often gel-filled for water repellence.
+
+**Plenum-rated Cable**
+
+- Designed for use in spaces with air circulation for heating and cooling.
+- Made with fire-resistant materials, these cables are less flexible but prioritize safety in building design.
+
+### 3.1 Optical Fiber
+
+**Fundamentals of Optical Fiber**
+
+- Transmits data using light, not susceptible to radio frequency interference, and maintains signal integrity over long distances.
+
+**Fiber Types**
+
+- **Multimode Fiber:** For short-range communications, typically up to 2 kilometers.
+- **Single-mode Fiber:** Suited for long-distance communication, capable of reaching up to 100 kilometers.
+
+### 3.1 568A and 568B Colors
+
+**Structured Cabling Standards**
+
+- TIA/EIA standards dictate the color coding and pin assignments for cables, ensuring consistency in network cabling.
+
+**T568A and T568B Termination**
+
+- T568A and T568B refer to the specific color coding for the individual wire connections in cables, which must be consistent on both ends.
+
+### 3.1 Peripheral Cables
+
+**USB (Universal Serial Bus - 1996)**
+
+- A common interface for connecting various peripherals with different standards for speed and cable length.
+
+**USB-C (2014)**
+
+- A universal connector meant to replace various other USB connectors, streamlining physical connections.
+
+**USB Versions and Naming**
+
+- USB technology has evolved with different versions offering increased data transfer speeds.
+- **USB 3.1:** Also known as USB 3.1 Gen 1, providing SuperSpeed at 5 Gbit/sec.
+- **USB 3.2:** Enhances bandwidth with the use of USB-C cables and offers multiple "lanes" of data transfer.
+
+**Thunderbolt**
+
+- A versatile connector integrating data transfer and power, with various versions supporting increasing speeds and allowing for daisy-chaining devices.
+
+**Serial Console Cables**
+
+- Utilize the D-sub connector, primarily for RS-232 communication, a longstanding standard for serial connections in computing.
+
+### 3.1 - Video Cables
+
+**VGA (Video Graphics Array)**
+
+- Utilizes a DE-15 connector, often referred to as DB-15
+- Recognizable by its blue color, following the PC System Design Guide
+- Transmits an analog signal; quality may degrade over distances beyond 5-10 meters
+
+**HDMI (High-Definition Multimedia Interface)**
+
+- Capable of carrying both video and audio streams digitally
+- Signal integrity may decline after approximately 20 meters
+- Features a 19-pin Type A connector, which is a proprietary design
+
+**DisplayPort**
+
+- Transmits digital data in packets, akin to Ethernet and PCI Express
+- Facilitates audio and video transmission
+- Compatible with HDMI and DVI via passive adapters
+
+**DVI (Digital Visual Interface)**
+
+- Available in single and dual-link configurations:
+  - Single link: Up to 3.7 Gbps, supporting HDTV at 60 fps
+  - Dual link: Up to 7.4 Gbps, supporting HDTV at 85 fps
+- Variants include:
+  - DVI-A for analog signals
+  - DVI-D for digital signals
+  - DVI-I integrating both digital and analog signals within one connector
+
+**Mini DisplayPort**
+
+- A smaller version of the standard DisplayPort
+
+### 3.1 - SATA Device Cables
+
+**SATA (Serial ATA)**
+
+- Each device requires a distinct power and data cable, enforcing a one-to-one connection policy
+- Has evolved through several revisions, with varying data transfer rates:
+  - SATA Revision 1.0: 1.5 Gbit/s, cable length up to 1 meter
+  - SATA Revision 2.0: 3.0 Gbit/s, cable length up to 1 meter
+  - SATA Revision 3.0: 6.0 Gbit/s, cable length up to 1 meter
+  - SATA Revision 3.2: 16 Gbit/s, cable length up to 1 meter
+- eSATA is the external iteration of SATA, allowing for up to 2-meter cable lengths
+
+**eSATA Cable**
+
+- Tailored for external device connectivity while adhering to SATA standards
+- Although similar in appearance to SATA, it has distinctive connectors
+
+### 3.1 - SCSI Device Cables
+
+**The SCSI Standard**
+
+- SCSI, or Small Computer Systems Interface, has outgrown its "small" designation
+- Initially designed to connect a multitude of peripherals to a single controller
+- Capable of supporting up to 16 devices on a SCSI chain with variants like Fast SCSI, Ultra SCSI, among others
+- Features both parallel and serial options
+
+**SCSI Advantages**
+
+- Supports a diverse array of devices, not limited to hard drives
+- Allows for multiple devices on a single bus, enhancing intelligent interface functionality
+- The SCSI standard has proven durability in enterprise and is a staple for virtual systems
+
+**SCSI ID and Logical Unit (LUN)**
+
+- Each device on a SCSI bus is assigned a unique ID
+- LUNs are defined within each SCSI ID to differentiate drives within storage arrays or virtual machines
+- The bus termination at the end of a SCSI chain can be internal or external
+- SAS, or Serial Attached SCSI, simplifies connectivity by eliminating the need for jumpers and terminators
+
+### 3.1 - PATA Drive Cables
+
+**The PATA Standard**
+
+- Known as Parallel AT Attachment, with roots in the PC/AT
+- Evolved from the Integrated Drive Electronics or IDE standard, later enhanced to EIDE
+- Promised increased transfer speeds, up to 133 MB/s, and support for more devices
+- Also referred to as Parallel ATA (PATA)
+
+d3.1 - Adapters and Converters
+
+- These are essential for connecting incompatible interfaces or converting signal formats
+- DVI to HDMI connections are seamless as DVI-D and HDMI are electrically compatible
+- DVI to VGA requires an adapter, whereas converting VGA to DVI digital would necessitate a converter
+- USB to Ethernet and USB-C to USB-A adapters facilitate connections between newer and older standards
+- A USB hub expands a single USB port to accommodate multiple devices
+
+### 3.1 - Copper Connectors
+
+**RJ11 and RJ45 Connectors**
+
+- RJ11 is commonly used for telephone or DSL connections
+- RJ45 is the standard modular connector for Ethernet
+
+**F-connector**
+
+- Primarily used for connections related to cable television and internet services
+
+**Molex Connector**
+
+- A standard 4-pin power connector supplying +12 V and +5 V to various components within a computer case
+
+**DB-9**
+
+- A D-subminiature connector standard for RS-232 serial communications, used across various devices and now commonly seen as a console port on network hardware
+
+### 3.1 - Copper Connectors (continued)
+
+**USB-C Connector**
+
+- A reversible 24-pin connector used for multiple standards including USB and Thunderbolt
+
+**Molex Connector (continued)**
+
+- Provides power to a range of computer components
+
+**Lightning Connector**
+
+- An 8-pin connector for Apple devices, capable of higher power output and reversible insertion
+
+**DB-9 Connector**
+
+- A traditional connector for RS-232 serial communication, now typically used for device management ports
+
+### 3.2 - An Overview of Memory
+
+**Understanding Computer Memory**
+
+- **The Role of Memory:**
+  - **Primary Use:** Random Access Memory (RAM) serves as the main workspace for your computer, temporarily storing data that your system is actively using.
+  - **Not Storage:** RAM is distinct from storage devices like hard drives and SSDs, where data is kept permanently.
+  - **Vital for Operation:** For a computer to utilize data or run programs, it must load them into RAM.
+
+**RAM (Random Access Memory) and Its Slots**
+
+- **Evolution:** Memory types have evolved, driven by technological advancements and standardization.
+- **Importance:** RAM is crucial for the computer's performance, particularly its speed.
+- **Motherboard Specific:** Each motherboard supports specific memory types, so consult your manual for details.
+
+**DIMM (Dual Inline Memory Module)**
+
+- **Design:** DIMMs have separate electrical contacts on each side, supporting a 64-bit data path.
+
+**SO-DIMM (Small Outline Dual Inline Memory Module)**
+
+- **Compact Design:** These modules are about half the width of DIMMs and are commonly found in laptops and other compact devices.
+
+**Dynamic Random Access Memory (DRAM)**
+
+- **Nature:** DRAM requires constant refreshing to retain data; otherwise, the data vanishes.
+- **Access:** It allows for direct access to any storage location, unlike sequential-access storage like magnetic tape.
+
+**SDRAM (Synchronous DRAM)**
+
+- **Synchronicity:** SDRAM aligns with the system clock, allowing it to queue operations, which is a step up from older DRAM types.
+
+**Advancements in SDRAM**
+
+- **DDR3 SDRAM:** Offers double the data rate of DDR2 and supports larger capacities but lacks backward compatibility.
+- **DDR4 SDRAM:** Provides speed improvements over DDR3 with higher frequencies and capacities, but also without backward compatibility.
+- **DDR5 SDRAM:** Further increases transfer rates and maintains a maximum of 64 GB per DIMM but changes the key placement, preventing backward compatibility.
+
+### 3.2 - An Overview of Memory (continued)
+
+**DIMM and SO-DIMM RAM Slots**
+
+- DIMMs are the standard memory modules, while SO-DIMMs are designed for smaller devices.
+
+  **Memory Performance and Timing**
+
+- SDR (Single Data Rate) and DDR (Double Data Rate) SDRAM differ in performance, with DDR capable of transferring data twice per clock cycle, compared to SDR's once per cycle.
+
+  **Key Types for M.2 Slots**
+
+- **Compatibility:** Not all M.2 slots support the NVMe protocol; some may use the older AHCI.
+- **Documentation:** Always refer to your motherboard's manual to understand the supported M.2 key types.
+
+  **Flash Drives and Their Properties**
+
+- **Memory Type:** Utilize EEPROM, which is non-volatile and retains data without power.
+- **Life Span:** Have a finite number of write cycles but can still be read from.
+- **Usage:** Not suitable for long-term storage due to potential loss or damage; always keep backups.
+
+**$1**
+
+- **Operation:** Use a laser to read microscopic bumps that represent data.
+- **Speed:** Generally slower than other media and often used for archival purposes.
+- **Variety:** Come in multiple formats, like CD-ROM, DVD-ROM, and Blu-ray, and can be either internal or external.
+
+### 3.2 - Memory Technologies
+
+**Virtual Memory**
+
+- **Alternate Names:** Known as virtual RAM or swap file among others.
+- **Function:** Swaps inactive application data to storage to free up RAM for other processes.
+- **Management:** Handled by the operating system, though some settings can be adjusted by the user.
+
+**Multi-Channel Memory**
+
+- **Configurations:** Can be set up in dual-channel, triple-channel, or quad-channel configurations for improved performance.
+- **Matching Modules:** For optimal performance, use matching memory modules.
+- **Color-Coded Slots:** Memory slots on motherboards are often color-coded to assist with proper installation.
+
+**Self-Checking Memory**
+
+- **Usage:** Essential for systems where reliability is crucial, like servers.
+- **Parity Memory:** Includes an extra bit to help detect errors but cannot correct them.
+- **ECC (Error Correcting Code) Memory:** Can detect and correct errors on the fly, not supported by all systems, and visually resembles non-ECC memory.
+
+### 3.3 Storage devices
+
+---
+
+**Hard Disk Drives (HDD)**
+
+- HDDs use non-volatile magnetic storage, with rapidly rotating platters.
+- They allow random access, meaning data can be retrieved from any part of the drive at any time.
+- They have moving parts, like spinning platters and a moving actuator arm, which can limit access speed and may break down over time.
+
+**Solid State Drives (SSD)**
+
+- SSDs are also non-volatile but contain no moving parts, resulting in very fast performance and less vulnerability to mechanical failure.
+
+**mSATA (Mini-SATA)**
+
+- mSATA was an evolution of SATA drives designed for smaller devices such as laptops.
+- It's more compact than traditional 2.5” SATA drives, which allowed for a variety of form factors.
+- mSATA saw limited use before being quickly superseded by the M.2 standard.
+
+**AHCI vs. NVMe**
+
+- SATA interfaces traditionally used AHCI, which was fine for HDDs but not fast enough for SSDs.
+- NVMe was developed for the superior speeds of SSDs, offering lower latency and support for higher throughputs, especially when paired with an M.2 interface.
+
+**M.2 Interface**
+
+- The M.2 interface allows for a smaller form factor without the need for SATA data or power cables.
+- It utilizes a PCI Express bus for connections, boasting potential throughputs of 4 GB/second or faster with NVMe PCIe x4.
+- It's important to match the connector type with the appropriate slot key/spacer; B key, M key, or B and M key, with some drives supporting multiple types.
+
+**Data Redundancy with RAID**
+
+- HDDs are prone to failure due to their mechanical nature, and RAID configurations are a way to prepare for such eventualities by using an array of drives.
+- It's crucial to understand that RAID is not a substitute for backing up data.
+
+**RAID Levels**
+
+- RAID stands for Redundant Array of Independent Disks, which can be set up in various configurations, each with its benefits and drawbacks:
+- **RAID 0 – Striping:** Splits file blocks across multiple drives for high performance, but offers no redundancy.
+- **RAID 1 – Mirroring:** Duplicates file blocks across multiple drives, doubling the required disk space but offering high redundancy.
+- **RAID 5 – Striping with Parity:** Provides a balance of performance and redundancy by distributing parity information across multiple drives.
+- **Nested RAID (RAID 1+0 or RAID 10):** Combines mirroring and striping for a balance of performance and redundancy.
+
+### 3.4 - Motherboard Form Factors
+
+**Motherboard Form Factors Overview**
+
+- The physical size of motherboards corresponds with the case size.
+- They have a basic layout allowing for some customization.
+- Standard power connectors are used across different form factors.
+- With various motherboard types available, airflow consideration has become critical.
+- For the CompTIA exam, you'll need to determine the best motherboard choice for given scenarios, focusing less on memorization of dimensions and more on practical application.
+
+**ATX Form Factor**
+
+- ATX stands for Advanced Technology Extended.
+- Initially standardized by Intel in 1995, it has undergone numerous updates.
+- Power connectors have evolved from a 20-pin to a 24-pin main connector with an additional 4/8 pin connector to support modern CPUs and PCI Express.
+
+**ITX Form Factor**
+
+- ITX boards, developed by VIA Technologies in 2001, cater to low-power, small form factor needs.
+- Mini-ITX is notable for its compatibility with ATX enclosures due to screw alignment.
+- They are ideal for single-purpose computers like media streaming devices.
+
+### 3.4 - Motherboard Expansion Slots
+
+**Computer Bus System**
+
+- A computer bus acts as a communication path within the PC, allowing for growth and system expansion.
+
+**Conventional PCI**
+
+- Peripheral Component Interconnect, or PCI, introduced in 1994, provided a range of expansion options through a parallel communication bus.
+
+**PCI Express (PCIe)**
+
+- PCI Express replaces the older PCI standard.
+- It uses serial communication through unidirectional lanes, where slower devices do not hinder the overall bus speed.
+- PCIe lanes come in configurations of x1, x2, x4, x8, x16, and x32, where "x" is pronounced "by".
+
+### 3.4 - Motherboard Connectors
+
+**24-Pin Motherboard Power**
+
+- This is the main power connector supplying various voltages to the motherboard.
+- Initially, a 20-pin connector was standard, with the 24-pin introduced for additional power requirements by PCI Express.
+
+**4-Pin ATX Power**
+
+- This provides additional 12V power, primarily for the CPU on ATX12V motherboards.
+- It may also be referred to as ATX12V, P4, or CPU power connector.
+
+**Headers**
+
+- Headers on motherboards provide connections for power, peripherals, lights, and buttons.
+
+### 3.4 - Motherboard Compatibility
+
+**Intel vs AMD**
+
+- Intel and AMD are the two primary CPU manufacturers, each with its pros and cons regarding cost and performance.
+- Motherboards are designed for specific CPU sockets corresponding to either Intel or AMD processors.
+
+**Server Motherboards**
+
+- Server motherboards may support multiple CPUs, extensive memory modules, and numerous expansion slots.
+- They are typically designed for rack-mounted systems and may be larger in size.
+
+**Desktop Motherboards**
+
+- Desktop motherboards vary from full-size to compact integrated systems.
+- Generally, they support a single CPU, have two to four memory slots, and may have limited expansion slots.
+
+**Mobile Motherboards**
+
+- Mobile motherboards are designed for laptops, prioritizing small size and low power consumption.
+- They offer limited upgrade options and are often built with portability in mind.
+
+**System Boards**
+
+- System boards are proprietary and built to fit specific systems, making replacements challenging.
+
+### 3.4 The BIOS
+
+**BIOS - Basic Input/Output System**
+
+The BIOS is the program a computer's microprocessor uses to start the computer system after it is powered on. It also manages data flow between the computer's operating system and attached devices such as the hard disk, video adapter, keyboard, mouse, and printer.
+
+- **Firmware Types:** Includes System BIOS and ROM BIOS.
+- **Memory Type:** Utilizes ROM or flash memory.
+- **Initialization:** Prepares the CPU and memory to create the system's workspace.
+- **POST:** Stands for Power-On Self-Test.
+- **Boot Loader:** Searches for this to load the operating system.
+
+**Legacy BIOS**
+
+Legacy BIOS is the traditional BIOS that has been in use for over 25 years. It provides a means for older operating systems to communicate with hardware.
+
+- **Hardware Support:** It has limitations, such as no support for modern network, video, and storage devices.
+
+**UEFI BIOS**
+
+UEFI, or Unified Extensible Firmware Interface, is intended to replace the legacy BIOS.
+
+- **Origin:** Based on Intel’s EFI.
+- **Implementation:** A standardized system used by manufacturers.
+- **Design Purpose:** Created for the needs of modern computers and supports both graphical and text-based environments.
+
+### 3.4 - BIOS Settings
+
+**Accessing BIOS Settings**
+
+- **System Setup:** Accessed via keys like Del, F1, F2, Ctrl-S, or Ctrl-Alt-S.
+- **Virtualization Software:** Includes software like Hyper-V for Windows and VMware Workstation Player.
+- **Online Simulators:** Can be found by searching "UEFI BIOS simulator".
+
+**Fast Startup**
+
+- **Windows Feature:** Used in Windows 8/10/11 to reduce shutdown time, making it difficult to access BIOS settings.
+- **Restart Options:** Using shift during restart or using system configuration tools like msconfig can help access BIOS during a fast startup.
+
+**BIOS Configuration Tips**
+
+- **Backups:** Always back up your BIOS settings, either by taking notes or pictures.
+- **Settings Caution:** Only change settings when sure and remember to keep a record.
+
+**Boot Options**
+
+The BIOS configures what happens when you power on, such as disabling hardware, altering boot order, etc.
+
+**USB Permissions**
+
+USB devices are a security concern due to their potential large capacities and ease of use.
+
+**Cooling Systems**
+
+The system uses various cooling fans to dissipate heat generated by the CPU and other components.
+
+**Secure Boot**
+
+Secure Boot is part of the UEFI specification that helps ensure only signed software can run on the system.
+
+**UEFI BIOS Secure Boot**
+
+The UEFI BIOS includes manufacturer’s public keys to check digital signatures and prevent unauthorized firmware updates.
+
+**Boot Password Management**
+
+- **BIOS/User Password:** Required to start the system.
+- **Supervisor Password:** Restricts BIOS configuration changes.
+
+**Clearing a Boot Password**
+
+If a password is forgotten, resetting the BIOS via a jumper on the motherboard can clear it.
+
+**The "CMOS" Battery**
+
+The CMOS battery is less critical with modern flash memory but is still used to maintain date and time settings.
+
+**Trusted Platform Module (TPM)**
+
+A TPM is a secure crypto-processor that aids with encryption, providing hardware-based security.
+
+**Hardware Security Module (HSM)**
+
+An HSM is a high-end security device used for secure key storage and management in large environments.
+
+### 3.4 - CPU Features
+
+**Operating System Technologies**
+
+The processor architecture (32-bit vs. 64-bit) affects the amount of memory that can be utilized by a system and the type of software it can run.
+
+**Processor Cores**
+
+- **Core Types:** Varying core numbers like dual-core, quad-core, etc., with individual and shared cache memory.
+
+**Multithreading**
+
+- **Hyper-Threading:** Allows a single CPU to behave like multiple logical CPUs, improving performance.
+
+**Virtualization Support**
+
+Modern processors include features that enhance the performance and management of virtualized systems.
+
+### 3.4 - Expansion Cards
+
+**Overview**
+
+Expansion cards enhance computer functionality beyond the motherboard's capabilities.
+
+**Sound Cards**
+
+These provide high-end audio output and inputs for various audio-processing tasks.
+
+**Video Cards**
+
+Video cards include both integrated GPUs within CPUs and discrete graphics for higher performance.
+
+**Capture Cards**
+
+Capture cards allow for high-bandwidth video input for tasks like live streaming.
+
+**Network Interface Cards (NIC)**
+
+NICs provide Ethernet connections, especially when motherboard options are inadequate or fail.
+
+**Documentation & Driver Installation**
+
+Proper installation and configuration of expansion cards require checking documentation, obtaining the latest drivers, and following installation protocols.
+
+### 3.4 - Cooling Systems in Computers
+
+**Case Fans**
+
+- **Purpose of case fans**: They move cool air across the internal components of a computer, ensuring that the system doesn't overheat.
+- **Motherboard layout**: It's crucial because it affects airflow and consequently the cooling efficiency.
+- **Component arrangement**: Strategically placing devices, cables, and power supply units can optimize airflow.
+- **Variety**: Fans come in various sizes (like 80mm or 120mm) and noise levels—some can be quite loud.
+
+**On-board Fans**
+
+- **Main use**: These fans are designed to cool specific adapter cards and are commonly found on high-end hardware, especially graphics cards.
+- **Size**: On-board fans can be large and sometimes occupy additional expansion slots.
+
+**Fan Specifications**
+
+- **Standard sizes**: Fans are typically available in standard dimensions such as 80mm, 120mm, and so on.
+- **Speed control**: Many fans offer variable speeds, which can be adjusted based on the cooling requirement.
+- **Noise considerations**: Not all fans operate at the same noise level, and the sound can be a critical factor for some users.
+
+**Heat Sinks**
+
+- **Function**: Heat sinks absorb and dissipate heat from computer components to prevent overheating.
+- **Materials**: They're usually made of copper or aluminum alloys known for good thermal conduction.
+- **Design**: The fins or grid structure in heat sinks help to increase the surface area for better heat transfer to the air.
+
+**Fanless / Passive Cooling**
+
+- **Advantages**: This cooling method eliminates noise since there are no mechanical fans involved.
+- **Usage**: Ideal for specific applications like media servers or video servers where silent operation is preferred.
+- **Limitation**: The components must be low-power to ensure heat is manageable without fans.
+
+**Thermal Paste**
+
+- **Purpose**: It improves the thermal interface between a heat sink and a component, like a CPU, enhancing the heat transfer.
+- **Application**: Only a small, pea-sized amount is needed for it to be effective.
+
+**Thermal Pads**
+
+- **Ease of use**: Thermal pads are simpler to apply than thermal paste and don't risk spilling onto other components.
+- **Efficiency**: While they may not conduct heat as effectively as thermal paste, they're still quite good.
+- **Maintenance**: Pads aren't reusable; they need to be replaced if removed.
+
+**Liquid Cooling**
+
+- **Cooling method**: A coolant is circulated through the system to transfer heat away from components.
+- **Applications**: It's favored in high-performance setups like gaming PCs or systems designed for overclocking.
+
+### 3.5 Computer Power
+
+---
+
+### 3.5 - Computer Power
+
+**WARNING**
+
+- **Safety first**: Always disconnect power before working on a computer. Capacitors inside can store energy, so know how to safely discharge them.
+- **Avoid direct contact**: Never connect yourself to any part of an electrical system, including the ground wire. Electricity can be dangerous, and it demands respect.
+
+**Computer Power Supply**
+
+- **DC over AC**: Computers operate on direct current (DC), but most power sources supply alternating current (AC). A power supply converts AC (like 120V or 240V) to lower DC voltages such as 3.3V, 5V, and 12V.
+- **Critical component**: A malfunctioning power supply is usually noticeable and is vital for the operation of the computer.
+
+**Amps and Volts**
+
+- **Ampere (A)**: Measures the rate of electron flow—think of it as the width of a hose for water.
+- **Voltage (V)**: The "pressure" that drives the electrons through a circuit—akin to how far a faucet is opened.
+
+**Power**
+
+- **Watt (W)**: The unit for actual power usage, calculated by multiplying voltage by amperage (e.g., 120V \* 0.5A = 60W).
+
+**Current**
+
+- **Alternating Current (AC)**: Changes direction periodically and is used for efficient distribution over distances. In the US/Canada, it's typically 110-120VAC at 60Hz, while in Europe, it's 220-240VAC at 50Hz.
+- **Direct Current (DC)**: Flows in a single direction, providing a constant voltage.
+
+**Dual-voltage Input Options**
+
+- **Adjustable voltage**: Depending on the region (like 120V at 60Hz in the US/Canada or 230V at 50Hz in Europe), some power supplies can switch manually or automatically to accommodate different input voltages.
+
+**Power Supply Output**
+
+- **Varied voltages for components**: The power supply provides different voltages, which are relative to the electrical ground, to various components within the computer.
+
+**24-pin Motherboard Power**
+
+- **Main power connector**: This delivers power to the motherboard, providing various voltages. While the 20-pin connector was the original ATX standard, the 24-pin supports PCI Express requirements.
+
+**Redundant Power Supplies**
+
+- **Dual-systems for servers**: Some servers use two or more power supplies, each capable of handling the full load but usually operating at 50% for efficiency. They can be replaced without shutting down the system.
+
+### 3.5 - Computer Power (continued)
+
+**Power Supply Connectors**
+
+- **Fixed vs. Modular**: Fixed connectors are permanently attached to the power supply, while modular connectors allow you to add cables as needed, which can improve airflow and reduce clutter.
+
+**Sizing a Power Supply**
+
+- **Wattage rating**: Power supplies are rated by their maximum wattage output. While bigger isn't always better, it's important to calculate the required watts for all components. A capacity of 50% over the calculated need is recommended for efficiency and future upgrades.
+
+### 3.6 Multifunction Devices
+
+---
+
+Multifunction devices (MFDs) are versatile and can perform several functions, which include printing, scanning, sending faxes, and sometimes even connecting to the network or a phone line. They may also feature the ability to print directly from the web. However, due to their complexity, various issues may arise, and it will be your responsibility to address these.
+
+**PCL and PostScript**
+
+When it comes to printer languages, there are mainly two:
+
+- **PCL (Printer Command Language):** Developed by HP and widely adopted in the industry.
+- **PostScript:** Created by Adobe, this is more common in high-end printers.
+
+It's crucial to use the correct driver that matches the printer's language to avoid issues.
+
+**Device Sharing**
+
+- **Wired Device Sharing**
+
+For wired connections, USB Type B is typically found on printers, while USB Type A connects to the computer. Ethernet with an RJ45 connector is another common option for a wired network connection, often allowing multiple connection types.
+
+- **Wireless Device Sharing**
+- **Bluetooth:** Offers a limited range for wireless connectivity.
+- **802.11 Infrastructure Mode:** Connects multiple devices via an access point.
+- **802.11 Ad Hoc Mode:** Allows a direct link between wireless devices without an access point.
+
+**Sharing the Printer**
+
+There are a couple of ways to share printers:
+
+- **Printer Share:** A printer connected to a computer and shared via that computer, which must remain on for access.
+- **Print Server:** Allows direct printing to the printer, where jobs are queued and managed on the printer itself, often with a web-based interface and client utilities.
+
+**Unboxing and Setup**
+
+When setting up a new MFD, ensure there's sufficient space, the location is not obstructing walkways, and that the necessary connections (power, network) are close by.
+
+**Printer Drivers**
+
+Always use the specific drivers for the printer model and the correct operating system version (e.g., Windows 10 vs. Windows 11, 32-bit vs. 64-bit). Incorrect drivers can lead to functionality issues.
+
+**USB Connectors**
+
+- **Type A:** The standard connector on the computer side.
+- **Type B:** The common connector on the printer side.
+
+**RJ45 / Ethernet**
+
+Used for network connections, providing robust connectivity options.
+
+**Security and Management**
+
+- **Audit Logs:** Useful for cost management, security monitoring, and tracking through Event Viewer or system events.
+- **Secured Prints:** Requires printer support for secure printing, typically involving a passcode that is entered at the printer.
+
+**Scanners in Multifunction Devices**
+
+- **Flatbed Scanner:** Available as part of an all-in-one MFD or as a standalone device, often including an Automatic Document Feeder (ADF) for scanning multiple pages.
+
+**Network Scan Services**
+
+- **Scan to Email:** Scans sent directly to your inbox, but be mindful of large file sizes.
+- **Scan to Folder:** Utilizes SMB to send to a Microsoft share.
+- **Scan to Cloud:** Allows sending to cloud storage accounts like Google Drive or Dropbox.
+
+**Configuration Settings**
+
+- **Duplex Printing:** Saves paper by printing on both sides without manual flipping. Not all printers support this.
+- **Orientation:** Adjusts for portrait or landscape printing without rotating the paper manually.
+- **Tray Settings:** Select the correct tray for the paper type (plain, letterhead, etc.) from the print dialog.
+- **Quality Settings:** Control resolution, color settings, and color saving options.
+
+**Printer Security**
+
+- **User Authentication:** Determines who can print or manage the printer with rights and permissions.
+- **Badging:** A system where print jobs are released upon badge authentication, ensuring security and ease of use.
+
+### 3.7 - Printers
+
+### Laser Printer
+
+**Laser Printer Overview**
+
+- Laser printers are sophisticated devices that fuse a laser, electrical charges, and toner to create crisp images and text on paper.
+- They are appreciated for their high-quality outputs and rapid printing abilities.
+- However, due to their complexity, they have several moving parts, need printer memory, and can get quite messy inside.
+
+**Imaging Drum**
+
+- The imaging drum is key in the printing process as it receives an image via a laser and collects toner to transfer to paper.
+- This drum might be part of the toner cartridge or it could be a separate unit.
+
+**Fuser Assembly**
+
+- The fuser uses heat and pressure to melt the toner powder, permanently bonding it to the paper.
+
+**Transfer Belt and Roller**
+
+- In color laser printers, there are four toner cartridges for different colors that transfer images to a belt and then to a roller.
+
+**Pickup Rollers and Separation Pad**
+
+- The pickup rollers and separation pad are responsible for feeding paper into the printer, ideally one sheet at a time. They need regular cleaning or replacement.
+
+**Duplexing Assembly**
+
+- For double-sided printing, printers use a duplexing assembly that enables the printing on one side and then the other, by flipping the page inside the printer.
+
+**Laser Printer Maintenance Steps**
+
+1. **Processing:** Compiles the page in memory.
+2. **Charging:** Electrostatically prepares the drum.
+3. **Exposing:** The laser writes the image on the drum.
+4. **Developing:** Toner is applied to the charged areas of the drum.
+5. **Transferring:** Toner is moved from the drum to the paper.
+6. **Fusing:** Heat and pressure are applied.
+7. **Cleaning:** Any leftover toner is removed.
+
+**Replacing the Toner Cartridge**
+
+- Change the toner cartridge upon receiving low toner messages. Note that 'low' is not synonymous with 'empty.'
+- Toner cartridges may include the Organic Photoconductor (OPC) drum, which is sensitive to light.
+- Turn off the printer for safety before changing the cartridge and remember to remove any packing material from the new drum.
+
+**Laser Printer Maintenance Kit**
+
+- Components within laser printers eventually wear out.
+- Maintenance kits typically include new feed rollers and a fuser unit.
+- Maintenance is usually prompted by the printer's page counter.
+- Remember to power down before maintenance and be cautious as fuser units retain heat. Reset the page counter after maintenance.
+
+**Laser Printer Calibration and Cleaning**
+
+- Calibration adjusts the density of toner from different cartridges to ensure uniform printing quality.
+- It can be an automatic or manual process depending on the printer model.
+- Cleaning the printer is essential due to the accumulation of toner and paper dust. Use materials recommended by the manufacturer and avoid using harsh chemicals. The exterior can be wiped with a damp cloth, while the interior should be carefully cleaned to avoid dispersing toner particles.
+
+### 3.7 - Inkjet Printers
+
+**Inkjet Printer Characteristics**
+
+- Inkjet printers are a popular choice for their affordability and high-resolution output.
+- They operate quietly but can have high ongoing costs due to proprietary ink, which can also fade over time and is prone to clogging.
+
+**Ink Cartridge**
+
+- These printers work by placing tiny droplets of ink onto paper from cartridges.
+- The standard color scheme for cartridges is CMYK: Cyan, Magenta, Yellow, and Key (black).
+
+**Print Head**
+
+- Print heads may be built into the ink cartridge itself, meaning a new head comes with every cartridge change.
+- Some models have separate ink cartridges and print heads.
+
+**Feed Rollers and Duplexing**
+
+- Feed rollers are crucial for moving paper through the printer and must be maintained to avoid wear.
+- Duplexing, the ability to print on both sides of paper, is available in some inkjet models.
+
+**Carriage and Belt**
+
+- The ink cartridges are housed in a carriage, which may contain a print head, that moves across the paper.
+- A belt drives the carriage motion, which is yet another component that moves within the printer.
+
+### Inkjet Printer Calibration
+
+- Proper calibration ensures that print nozzles are aligned with the paper, resulting in crisp lines and correctly aligned colors.
+- Most printers have a built-in calibration function that might need user adjustments from time to time.
+
+### 3.7 - Inkjet Printer Maintenance
+
+**Cleaning Print Heads**
+
+- The small nozzles on print heads can clog, a common issue with inkjet printers.
+- Many printers run automatic cleaning cycles, but manual cleaning is also an option if print quality diminishes.
+- Print heads and cartridges may be removed for manual cleaning if necessary.
+
+**Replacing Inkjet Cartridges**
+
+- Cartridges may contain individual colors or combine them.
+- Replacing a cartridge is a quick process, but the printer may need a few minutes to calibrate the new cartridge.
+- Empty cartridges are recyclable, made entirely of plastic.
+
+**Inkjet Printer Calibration and Cleaning**
+
+- Calibration aligns the print nozzles to ensure sharp lines and no color overlap.
+- Printers usually come with calibration settings that can be adjusted by the user.
+
+**Clearing Paper Jams**
+
+- Given the complex paper path in inkjet printers, jams can occur.
+- To clear a jam, remove any paper from the tray and the paper path with careful, firm pressure to avoid tearing.
+- Ensure all scraps of paper are removed to prevent future jams.
+
+### 3.7 - Thermal Printers
+
+**Thermal Printer Characteristics**
+
+- These printers use special paper that turns black when heated, eliminating the need for ink.
+- They are very quiet, ideal for environments where noise is an issue.
+- The paper used is sensitive to heat, light, and even adhesive substances like clear tape.
+
+**Feed Assembly**
+
+- The mechanism for pulling paper through a thermal printer is straightforward, involving a relatively simple paper path.
+
+**Heating Element**
+
+- A full-length heating element is used to heat the paper.
+- Unlike other printers, there is no moving print head involved in thermal printing.
+
+**Thermal Paper**
+
+- The paper is chemically treated to change color with heat.
+- Commonly seen in cash registers and credit card terminals, thermal paper resembles normal paper but feels slightly different to the touch.
+
+### Maintenance for Thermal Printers
+
+**Thermal Paper Replacement**
+
+- Thermal paper is inexpensive but specific to thermal printers and comes in various sizes.
+- The replacement process is user-friendly, typically involving a simple paper feed into a compact device.
+
+**Cleaning the Heating Element**
+
+- Isopropyl alcohol or specialized cleaning pens are used for cleaning.
+- Gently swab the heating element, which is usually small, and consider using a cleaning card for the head and pathways.
+
+**Removing Debris**
+
+- Debris is minimal, usually just paper bits and dust since there's no toner.
+- Blowing out the printer is recommended, done outdoors to avoid indoor dust dispersal.
+- Wipe the printer with a damp cloth, avoiding vacuums unless they're specifically designed to be safe for electronic equipment.
+
+### 3.7 - Impact Printers
+
+### Understanding Impact Printers
+
+**Dot-Matrix (Impact) Printers**
+
+- A dot-matrix printer uses a print head with pins that press against a ribbon to mark the paper.
+- These printers are effective for producing carbon copies and are cost-effective but noisy and not suited for high-quality graphics.
+- Their use is now relatively specialized.
+
+**Dot-Matrix Printer Head**
+
+- The print head moves across the page, with pins striking the ribbon to create text and images.
+
+**Printer Ribbon**
+
+- The ribbon is a loop of fabric specific to the printer model.
+- Replacement is simple and usually standardized across similar models.
+
+**Tractor Feed**
+
+- Paper is fed through the printer via holes on the sides, not friction.
+- Continuous paper feed is used, often with perforations for easy separation.
+
+### Maintenance for Impact Printers
+
+**Printer Ribbon Replacement**
+
+- The ribbon forms a loop and needs replacing when the print becomes faint.
+- It's designed for easy replacement, often taking less than a minute.
+
+**Print Head Replacement**
+
+- The print head can withstand significant wear but may need replacing due to its direct contact with ribbon and paper.
+- It's another modular component, typically easy to replace with a release mechanism.
+
+**Replacing Paper**
+
+- Paper replacement is more involved than with other printers, requiring precise alignment with the tractor feed.
+- The positioning of forms is crucial for the print to align correctly with predefined spaces.
+- Paper must be free of obstructions to feed correctly through the printer.
+
+### 3.7 - 3D Printers
+
+**3D printers Overview**
+
+3D printers create three-dimensional objects by building up layers of material, following an electronic model. This method, known as additive manufacturing, eliminates the need for traditional machining. They are highly efficient for rapid prototyping, allowing for quick and cost-effective creation of designs that can be shared globally, and even used for projects in space.
+
+**Filament 3D Printing**
+
+- **Fused Deposition Modeling (FDM):** This common method involves melting a plastic filament to construct an object layer by layer.
+- **Practical Attributes:**
+  - Suitable for general use with a larger printing area.
+  - Filament is straightforward to handle.
+  - Less messy, posing fewer issues with waste disposal compared to resin printers.
+
+**Resin 3D Printing**
+
+- **Stereolithography (SLA) 3D Printing:** Known for producing smooth, highly detailed prints through the use of a light source to harden liquid resin, layer by layer.
+- **Handling Resin:**
+  - Exercise caution and wear protective gear.
+  - Dispose of unused resin at a hazardous materials facility.
+
+**The Print Bed**
+
+- **Significance:**
+  - Acts as the starting point for 3D prints.
+  - Must be level and clean to ensure proper adhesion.
+- **Variants:**
+  - Filament printers have a print surface directly on the bed.
+  - Resin printers use the bed as a platform where UV light solidifies the resin.
+
+By maintaining a clear distinction between the types of 3D printing and their specific maintenance needs, users can ensure optimal operation and longevity of their printers.

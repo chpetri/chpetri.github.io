@@ -1,0 +1,260 @@
+---
+title: "4 - Virtualization and Cloud Computing"
+description: "Summary of Topic 4"
+---
+
+### 4.0 Virtualization and Cloud Computing
+
+### 4.1 Cloud Characteristics
+
+**Cloud computing**
+
+- More then just a server hosted elsewhere
+- Extend the management of applications and services
+- Deploy an Infrastructure in Minutes
+- Create and tear down as you need
+- International Scope
+- Deploy in different parts of the world.
+- Using only the required Ressources
+- Cost is based on the amount of use
+
+**Common cloud models**
+
+- Private cloud
+  - Your own visual Data Center
+- Public Cloud
+  - Available over the internet to everyone
+- Hybrid cloud
+  - A mix of **Public** and **private**
+- Community cloud
+  - Several organisations share the same ressources
+- Infrastructure as a service (IaaS)
+  - Sometimes called Hardware as a Service
+- Outsource Equipment
+  - Provider gives hardware, the rest is on you
+  - For example Web Server Providers.
+- Software as a service (SaaS)
+  - No local Install
+  - Central Management of data and apps
+  - So Provider also gives Software, like google mail for example.
+  - You dont do maintanance or anything. You log in and all is set.
+- Platform as a service (PaaS)
+- No Servers, no software, no maintance team, no HVAC
+- Provider does the platform, you doing the dev stuff
+- You _DONT_ have direct control over the hardware, people, or infrastructure
+- Basically your putting together the modules and the PaaS makes the rest.
+- You choose the **available** Ressources to build your app on it, like Salesforce for example.
+
+| Layer/Management   | On Premises | Infrastructure as a Service (IaaS) | Platform as a Service (PaaS) | Software as a Service (SaaS) |
+| ------------------ | ----------- | ---------------------------------- | ---------------------------- | ---------------------------- |
+| **Application**    | Customer    | Customer                           | Provider                     | Provider                     |
+| **Data**           | Customer    | Customer                           | Provider                     | Provider                     |
+| **Runtime**        | Customer    | Customer                           | Provider                     | Provider                     |
+| **Middleware**     | Customer    | Customer                           | Provider                     | Provider                     |
+| **OS**             | Customer    | Customer                           | Provider                     | Provider                     |
+| **Virtualization** | Customer    | Provider                           | Provider                     | Provider                     |
+| **Servers**        | Customer    | Provider                           | Provider                     | Provider                     |
+| **Storage**        | Customer    | Provider                           | Provider                     | Provider                     |
+| **Networking**     | Customer    | Provider                           | Provider                     | Provider                     |
+
+**Cloud characteristics**
+
+- _Shared resources_
+- _Internal Cloud_
+- No Ressource shared
+- Build your own cloud
+- Pay for everything upfront
+- No ongoing cost
+- _External Cloud_
+- Share Ressources with a public cloud
+- Infrastructure is provided by third-party
+- May billed on usage or billed upfront
+
+**Metered and non-metered**
+
+- **Metered utilization**
+- Pay what you use
+- Cost to upload
+- Cost to download
+- Cost to stored
+- **Unmeteret utilization**
+- you pay for a Block of storage
+- No cost to upload
+- No cost to download
+
+**Cloud computing Characteristics**
+
+- **Rapid elasticity**
+- Scale up and scale down as needed
+- Seamless to everyone
+- The cloud enables instant resources
+- **High Availability**
+- Systems are always available
+- Redundancy provides Availability (If one Network, Server etc. dies, there is backup)
+- **File synchronization**
+- Informations, can be duplicated across the clouds.
+
+**Desktop virtualization (VDI or DaaS)**
+
+- Virtual desktop infrastructure (VDI) on premises
+- Basic Application use
+- Applications actually run on a remote Server
+- You get a Virtual Desktop Infrastructure
+- Local device is only mouse, Keyboard and screen
+- Minimal Operating Systems on the client-side
+- only minimal memory or cpu needed
+- Network connectivity
+- can consume lots of bandwith, due everything happens across the wired
+- VDI in the cloud
+
+### 4.2 Client-side Virtualization
+
+---
+
+**Purpose of Virtualisation**
+
+- One computer, as many Os as you want
+- mac, ubuntu, win11 all at the same time
+- Seperate Os, indipendent CPU, memory, Network etc
+- But all at one Computer
+- Host-based virtualization
+- your normal Desktop plus many others
+- Been around since 1967
+- IBM is inverter
+
+**Legacy software and Operating systems**
+
+- Need to run different application versions on the same system
+
+– Run each application instance in a separate VM
+
+- Application only runs on a previous OS version
+- Create a VM with the older operating systems
+
+**Cross-platform virtualization**
+
+- Windows / macOS / Linux doesn’t do everything
+
+– Each OS has strengths and weaknesses
+
+- Run different operating systems at the same time
+
+– Move between each OS seamlessly
+
+– No rebooting
+
+- Save time and resources
+
+– One physical computer
+
+**The Hypervisor**
+
+- Virtual Machine Manager
+- Manages the virtual plattform and guest operating Systems (virtualbox bspw)
+- May require a CPU that supports, Virtualization
+- Can Improve Performance
+- Hardware management
+- Vbox managing the use of cpu etc. for example
+
+**Ressource requirements**
+
+- CPU processor support
+- Intel calls it VT
+- Amd calls it AMD-V
+- Memory (RAM)
+- More then the requirements for the us
+- Storage
+- Can take up lots of Gigabyte
+- Network
+- Can Consume bandwith for Operating
+- Config needs to be right (NAS, bridge etc)
+
+**Sandboxing applications and operating systems**
+
+- Isolated testing environment
+
+– No connection to the real world or production system
+
+– A technological safe space
+
+- Virtualize development process
+
+– Try some code, break some code, nobody gets hurt
+
+- Additional development features
+
+– Roll back to a previous snapshot
+
+– Run additional systems
+
+- Isolated testing environment
+
+– No connection to the real world or production system
+
+– A technological safe space
+
+- Virtualize development process
+
+– Try some code, break some code, nobody gets hurt
+
+- Additional development features
+
+– Roll back to a previous snapshot
+
+– Run additional systems
+
+**Pros of Building the Applications in a VM**
+
+- Develop
+- Secure Environmental conditions
+- Kind of a "Safe space"
+- Test
+- A separate VE for testing
+- Still in dev stage
+- Drive tests to se if all works without ruin the App
+- **Hypervisor Security Concerns**
+
+- Hypervisor is a single point of failure and a sweet spot for attackers
+- but there are no significant vulnerabilities till now
+- Vm escaping!
+- Never happened but possible
+- Many hosted services are virtual environments
+- So the potential vor Malware attacking all this vms OVER the Hypervisor is possible
+
+\`
+
+**Guest Operating System requirements**
+
+- Every guest is self-contained - Like a real computer
+- Use traditional security controls
+
+– Host-based firewall, Anti-virus, anti-spyware
+
+- Watch out for rogue virtual machines (VMs)
+
+– The bad guys try to install their own system
+
+– You’re in big trouble
+
+- Self-contained VMs provided by 3rd parties can be dangerous
+
+– You have no idea what’s running on there
+
+**Network requirements**
+
+- Most client-side virtual machine managers have their own virtual (internal) networks
+- Shared network address
+
+– The virtual machine shares the same IP address as the physical host
+
+– Uses a private IP address internally
+
+– Uses NAT to convert to the physical host IP
+
+- Bridged network address
+
+– The VM is a device on the physical network
+
+- Private address
+
+– The VM does not communicate outside of Virtual Network

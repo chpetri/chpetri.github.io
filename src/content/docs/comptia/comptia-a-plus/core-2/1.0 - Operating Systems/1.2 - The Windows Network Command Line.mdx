@@ -1,0 +1,128 @@
+---
+title: "1.2 - The Windows Network Command Line"
+description: "This is a description"
+---
+
+### 1.2 - The Windows Network Command Line
+
+#### ipconfig
+
+```powershell
+ipconfig /all
+```
+
+- Essential for troubleshooting, starting with your IP address, like pinging your local router/gateway.
+- It determines TCP/IP and network adapter information, along with additional IP details.
+- View further configuration details, such as DNS servers, DHCP server, etc.
+
+#### ping
+
+```powershell
+ping google.com
+```
+
+- Tests network reachability and determines round-trip time.
+- Utilizes the Internet Control Message Protocol (ICMP).
+- A primary troubleshooting tool to check if you can ping the host.
+
+#### netstat
+
+    ```powershell
+    netstat -a
+    ```
+
+- Provides network statistics applicable to many different operating systems.
+- `netstat -a`: Shows all active connections.
+- `netstat -b`: Displays binaries (specific to Windows).
+- `netstat -n`: Avoids resolving names, showing numerical addresses instead.
+
+#### nslookup
+
+    ```powershell
+    nslookup google.com
+    ```
+
+- Retrieves information from DNS servers, such as canonical names, IP addresses, cache timers, etc.
+- Can look up both names and IP addresses, offering various options for detailed queries.
+
+#### net
+
+```powershell
+net view
+```
+
+- A set of Windows network commands.
+- Views network resources, like `net view <servername>` or `net view /workgroup:<workgroupname>`.
+- Maps a network share to a drive letter with `net use h: <servername><sharename>`.
+- Views user account information and resets passwords using `net user <username>` and `net user <username> * /domain`.
+
+#### tracert
+
+```powershell
+tracert google.com
+```
+
+- Determines the route a packet takes to a destination, mapping the entire path.
+- Utilizes ICMP Time to Live Exceeded messages, with TTL values indicating the hop count.
+- Not all devices respond with ICMP Time Exceeded messages due to firewall filtering or low priority for ICMP traffic.
+
+#### shutdown
+
+```powershell
+shutdown /s /t 60
+```
+
+- Shuts down a computer, with options to restart.
+- `shutdown /s /t nn`: Waits nn seconds before shutting down.
+- `shutdown /r /t nn`: Shuts down and restarts after nn seconds.
+- `shutdown /a`: Aborts the shutdown countdown.
+
+#### sfc (System File Checker)
+
+```powershell
+sfc /scannow
+```
+
+- Scans the integrity of all protected system files.
+- Use `sfc /scannow` to initiate the scan.
+
+#### Check Disk
+
+```powershell
+chkdsk
+```
+
+- `chkdsk /f`: Fixes logical file system errors on the disk.
+- `chkdsk /r`: Locates bad sectors and recovers readable information, implying /f.
+- If the volume is locked, chkdsk runs during startup.
+
+#### DiskPart
+
+    ```powershell
+    diskpart
+    ```
+
+- Manages disk configurations.
+- Launches with the command `diskpart`.
+
+#### winver
+
+    ```powershell
+    winver
+    ```
+
+- Displays the About Windows dialog, useful for a quick version check and troubleshooting.
+- Some operating systems, like Linux, Unix, and macOS, allow specifying the protocol for traceroute.
+- iOS devices use UDP datagrams over port 33434 for traceroute, with adjustable port numbers via extended options.
+- Different traceroute versions exist, with minor differences in transmitted payload.
+
+#### pathping
+
+        ```powershell
+        pathping google.com
+        ```
+
+- Combines the functions of ping and traceroute.
+- Included with Windows NT and later versions.
+- The first phase runs a traceroute to build a network path map.
+- The second phase measures round-trip time and packet loss at each hop.

@@ -1,0 +1,88 @@
+---
+title: "1.2 - Windows Command Line Tools"
+description: "This is a description"
+---
+
+### 1.2 - Windows Command Line Tools
+
+#### Privileges
+
+- Not every user can execute all commands; some are reserved for administrators.
+- Standard privileges allow running applications as a normal user, suitable for many commands.
+- Administrative or elevated privileges require membership in the Administrators group. To run a command with these privileges, right-click the Command Prompt and choose 'Run as Administrator' or use 'cmd' with Ctrl+Shift+Enter.
+
+#### Command Line Troubleshooting
+
+- Use the “help” command if unsure about a command's function. For example:
+  - `> help dir`
+  - `> help chkdsk`
+- For specific command help, use `[command] /?`
+- To exit the command prompt, type `exit`.
+
+#### File Management
+
+```powershell
+> dir
+> cd [directory]
+> cd ..
+> md [directory]
+> rd [directory]
+```
+
+- `dir`: Lists files and directories.
+- `cd` / `chdir`: Changes the working directory. Use a backslash `\` to specify a volume or folder name.
+- `..`: Represents the folder above the current folder.
+- `md` / `mkdir`: Creates a new directory.
+- `rd` / `rmdir`: Removes a directory.
+
+#### Drive Letters
+
+- Each partition is assigned a letter, with the primary storage drive usually being C.
+- Reference a drive with its letter followed by a colon (e.g., `C:`).
+- Combine this with the folder path, separating folder names with backslashes (e.g., `C:\Users\professor`).
+
+#### Hostname
+
+- Use `hostname` to view the device's name. This is especially useful when working with multiple terminal screen tabs.
+- The Windows device name can be changed in the System settings.
+
+#### Format
+
+- The `format` command formats a disk for use with Windows (e.g., `format c:`).
+
+```powershell
+# better dont do this
+> format c:
+```
+
+#### Copy (/v, /y)
+
+```powershell
+> copy [source] [destination]
+> copy /v [source] [destination]
+> copy /y [source] [destination]
+```
+
+#### xcopy (/s, /e, /v, /y)
+
+```powershell
+> xcopy [source] [destination]
+> xcopy /s [source] [destination]
+> xcopy /e [source] [destination]
+> xcopy /v [source] [destination]
+> xcopy /y [source] [destination]
+```
+
+-     Copies files and directory trees, e.g., xcopy /s Documents m:\backups.
+
+#### Robocopy (/s, /e, /v, /y)
+
+```powershell
+> robocopy [source] [destination]
+> robocopy /s [source] [destination]
+> robocopy /e [source] [destination]
+> robocopy /v [source] [destination]
+> robocopy /y [source] [destination]
+```
+
+- Robust file copy, e.g., robocopy /s Documents m:\backups.

@@ -1,0 +1,652 @@
+---
+title: "2. Networking"
+description: "Summary of Topic 2"
+---
+
+### 2.0 Networking
+
+---
+
+### 2.1 Common Network Ports
+
+---
+
+**TCP and UDP**
+
+TCP (Transmission Control Protocol) and UDP (User Datagram Protocol) are methods of transporting data over the internet, both encapsulated within the IP (Internet Protocol):
+
+- **OSI Layer 4:** Known as the transport layer.
+- **Multiplexing:** Allows the use of multiple applications simultaneously using TCP and UDP.
+- **A Series of Moving Vans**
+  - The data transport across a network can be likened to a fleet of moving vans.
+  - The network topology represents the road system (Ethernet, DSL, cable).
+  - IP is the truck designed for these roads, carrying boxes of data (TCP and UDP).
+  - The boxes contain the actual application data that needs to be transported.
+
+**Client-Server Model**
+
+**In the client-server model**, data is packaged and sent through a series of headers and trailers that encapsulate different types of protocols:
+
+- **Ethernet Frame:** Consists of an Ethernet header, payload (which could be an IP packet), and trailer.
+- **IP Packet**: Encapsulated within the Ethernet frame, carrying TCP or UDP packets.
+- **TCP/UDP Packet**: Contains the payload with actual data, like HTTP data for web traffic.
+
+**TCP - Transmission Control Protocol Communication**
+
+**TCP** is known for:
+
+- **Connection-Oriented**: It establishes a formal connection before data transfer and closes it afterward.
+- **Reliability**: It can recover from errors and manage out-of-order messages or retransmissions.
+- **Flow Control**: The receiver can control the flow of data to prevent overload.
+
+**UDP - User Datagram Protocol Communication**
+
+On the other Hand **UDP** is:
+
+- **Connectionless**: It does not establish a formal connection before data transfers.
+- **Unreliable Delivery**: There is no error recovery or data reordering.
+- **no Flow Control:** The sender has full control over the amount of data transmitted, regardless of the receiver's state.
+
+### 2.1 Introduction to IP (continued)
+
+**Why Use UDP?**
+
+Using UDP (User Datagram Protocol) might be favorable in scenarios where:
+
+- **Real-time communication** is essential, and there's no time for retransmissions (like live audio or video streaming).
+- **Connectionless protocols** such as DHCP for network configuration or TFTP for simple file transfers are involved.
+
+**Communication Using TCP**
+
+**TCP** (Transmission Control Protocol) is chosen for:
+
+- **Connection-oriented protocols** that require a "return receipt," like HTTPS for secure web browsing or SSH for secure command-line interface access.
+- **Error and Order Handling:** Applications don't need to worry about data sequence or loss — TCP takes care of that.
+
+**Speedy Delivery**
+
+- **IP Addresses:** Just as homes have addresses, so do computers in the form of IP addresses.
+- **Port Numbers:** Each data packet (box) has a "room" where it's supposed to go, indicated by a port number on the packet.
+
+**Lots of Ports**
+
+- **IPv4 Sockets:** Combinations of IP addresses, protocols, and port numbers for both server and client.
+- **Non-ephemeral Ports:** Permanent ports ranging from 0 to 1023, typically on servers.
+- **Ephemeral Ports:** Temporary ports ranging from _1024 to 65535_, assigned in real-time by the client.
+
+**Port Numbers**
+
+- **Range:** Any number between 0 and 65535.
+- **Server Use:** Most services use non-ephemeral (permanent) port numbers, although this is not a strict rule.
+- **Security:** Port numbers are not a security measure but a method of directing traffic.
+- **Well-known Ports:** Essential for services to communicate properly; different for TCP and UDP.
+
+### 2.1 Common Network Ports (continued)
+
+**Port Numbers and Protocols**
+
+- **Well-known Port Numbers:** Required for matching client and server applications and important for configuring firewall rules.
+- **Memorization:** Knowing port numbers, protocols, and their applications is essential.
+- TCP and UDP use the same port numbers, but i can use port 80 for TCP and UDP at the same time.
+
+**FTP - File Transfer Protocol**
+
+- **Ports:** tcp/20 for active mode data, tcp/21 for control.
+- **Functionality:** Allows file transfers between systems, with authentication.
+
+**SSH - Secure Shell**
+
+- **Port:** tcp/22 for an encrypted communication link.
+- **Function:** Provides secure command-line access similar to Telnet.
+
+**Telnet**
+
+- **Port:** tcp/23 for remote device login.
+- **Communication:** Not secure as it is unencrypted, so not recommended for sensitive data.
+
+**SMTP - Simple Mail Transfer Protocol**
+
+- **Port:** tcp/25 for server-to-server email transfer and device to mail server sending.
+- **Reception:** Other protocols like IMAP and POP3 are used for client-side email retrieval.
+
+**DNS - Domain Name System**
+
+- **Port:** udp/53 for translating domain names to IP addresses.
+- **Importance:** Critical for network operation, usually backed by multiple servers.
+
+**DHCP - Dynamic Host Configuration Protocol**
+
+- **Ports:** udp/67 and udp/68 for automated network configuration.
+- **Functionality:** Assigns IP addresses dynamically from a pool with a lease system.
+- **Reservations:** Can assign IP addresses based on MAC addresses for easier management.
+
+**HTTP and HTTPS**
+
+- **Hypertext Transfer Protocol**
+  - Communication in the browser
+  - And by other applications
+- **In the clear or encrypted**
+  - Supported by nearly all web servers and clients
+
+**POP3 / IMAP**
+
+- **Receive emails from an email server**
+  - Authenticate and transfer emails
+- **POP3 - Post office Protocol version 3**
+  - tcp/110
+  - Basic mail transfer functionality
+  - but no synchronization between clients
+- **IMAP4 - Internet Message Access Protocol v4**
+  - tcp/143
+  - Includes email inbox management from multiple clients
+- **SMB - Server Message Block**
+  - Protocol used by **Microsoft Windows**
+    - **File sharing, printer sharing**
+    - Also called CIFS (Common Internet File System)
+- **Using NetBIOS over TCP/IP** (Network Basic Input/Output System)
+  - udp/137 - NetBIOS name services (nbname)
+  - tcp/139 - NetBIOS session service (nbsession)
+    - rarely used today
+- **Direct over tcp/445 (NetBIOS-less)**
+  - Direct SMB communication over TCP without the NetBIOS transport
+
+**SNMP - Simple Network Management Protocol**
+
+- **Gather statistics from network devices**
+  - Queries: udp/161
+  - Traps: udp/162
+- **v1 – The original**
+  - Structured tables
+  - In-the-clear
+- **v2 – A good step ahead**
+  - Data type enhancements
+  - Bulk transfers
+  - Still in-the-clear
+- **v3 – A secure standard**
+  - Message integrity
+  - Authentication
+  - Encryption
+
+**LDAP**
+
+- **LDAP (Lightweight Directory Access Protocol) - tcp/389**
+  - _Store_ and _retrieve_ information in a network directory – Commonly used in Microsoft Active Directory
+
+**RDP - Remote Desktop Protocol**
+
+- **Share a desktop from a remote location over tcp/3389**
+  - Remote Desktop Services on many Windows versions
+  - Can connect to an entire desktop or just an application
+  - Clients for Windows, macOS, Linux, Unix, iPhone, Android, and others
+
+### 2.2 Network Devices
+
+**Network Devices Overview**
+
+Network devices serve a variety of roles in creating and maintaining communication systems. Some devices may have combined functions like a wireless router that acts as a switch and firewall. Knowing when to use each type is crucial for an efficient network.
+
+**Routers**
+
+- Direct traffic between IP subnets based on IP addresses.
+- Often connect different network types (e.g., LAN, WAN) and mediums (e.g., copper, fiber).
+- Integrated routers in switches are known as “layer 3 switches.”
+
+**Switches**
+
+- Perform fast bridging in hardware, using ASICs, and forward traffic based on data link (MAC) addresses.
+- Provide many ports and features, including PoE, and form the core of an enterprise network.
+- Multilayer switches also include routing functions.
+
+**Unmanaged Switches**
+
+- Offer minimal configurations and are generally plug-and-play.
+- They are fixed and simple, not supporting VLANs or management protocols, and are usually less expensive.
+
+**Managed Switches**
+
+- Support VLANs, traffic prioritization, redundancy protocols like STP, and port mirroring.
+- Allow for external management via SNMP.
+
+**Access Points**
+
+- Bridges that extend a wired network to wireless networks.
+- Forward based on MAC addresses.
+- A wireless router combines a router and access point in one device.
+
+**Patch Panels**
+
+- Combine punch-down blocks and RJ-45 connectors.
+- Enable permanent cable runs to desks and flexible connections from the panel to switches.
+
+**Firewalls**
+
+- Filter traffic by port number and sometimes by application.
+- Capable of encrypting traffic and acting as proxies.
+- Situated at the network’s ingress/egress points, many also function as layer 3 devices.
+
+**Power over Ethernet (PoE)**
+
+**PoE Technologies**
+
+- Deliver power along with network connectivity over Ethernet cables, beneficial for devices like phones and cameras.
+- Power may come directly from switches (Endspans) or through in-line power injectors (Midspans).
+
+**PoE Standards**
+
+- **PoE (IEEE 802.3af)**: Original standard with 15.4W power.
+- **PoE+ (IEEE 802.3at)**: Enhanced standard with 25.5W power.
+- **PoE++ (IEEE 802.3bt)**: Advanced standard with up to 71.3W power, supports 10GBASE-T.
+
+**Hubs**
+
+- Act as multi-port repeaters, retransmitting incoming data to all other ports.
+- Operate in half-duplex and can become inefficient as traffic increases.
+- Are outdated and rarely used in modern networks.
+
+### 2.2 Network Devices (continued)
+
+**Broadband Devices**
+
+**Cable Modem**
+
+- Utilizes broadband over cable networks and adheres to DOCSIS standards.
+- Supports high-speed data transfer and multiple services like data, voice, and video.
+
+**DSL Modem**
+
+- Uses telephone lines and is known as ADSL, with faster download than upload speeds.
+- Performance can be affected by distance from the central office, with common speeds being up to 52 Mbit/s downstream.
+
+**ONT**
+
+**Optical Network Terminal (ONT)**
+
+- Bridges the ISP’s fiber network with a user’s copper network.
+- Acts as a demarcation point, indicating the split between ISP responsibility and the user’s network.
+
+**Network Interface Card (NIC)**
+
+- Essential for network connectivity in devices.
+- Built-in or added as an expansion card, with various options like single or multi-port, copper, or fiber.
+
+### 2.2 Software Defined Networking
+
+**Introduction to SDN**
+
+**Software Defined Networking (SDN)** separates networking functions into different layers for enhanced management and adaptability, particularly in cloud environments.
+
+**SDN Layers**
+
+- **Infrastructure/Data Plane**: Handles the processing and forwarding of frames and packets.
+- **Control Layer/Control Plane**: Manages the data plane's actions, like updating routing tables.
+- **Application Layer/Management Plane**: Deals with the configuration and management of devices using SSH, browsers, or APIs.
+
+**SDN Data Flows**
+
+SDN's layered approach facilitates extended physical architecture, allowing for greater control and flexibility of network resources and services.
+
+### 2.3 - Wireless Network Standards
+
+**Wireless Standards**
+
+Wireless networking is generally referred to by the 802.11 standard, which is governed by the IEEE LAN/MAN Standards Committee, also known as IEEE 802. Over time, various updates to this standard have been released, so it's recommended to check with the IEEE for the most current versions. The "Wi-Fi" name you commonly see is actually a trademark, and the Wi-Fi Alliance is responsible for testing to ensure different wireless devices can work together smoothly.
+
+**802.11a**
+
+Introduced in October 1999, the 802.11a standard was one of the initial forms of wireless networking, operating in the 5 GHz frequency. It could reach speeds up to 54 Mbit/s but had a shorter range compared to the later 802.11b due to higher frequency signals being more easily absorbed by obstacles. Nowadays, it's rare to encounter 802.11a in use.
+
+**802.11b**
+
+Also from October 1999, 802.11b operates on the 2.4 GHz band, offering speeds up to 11 Mbit/s. It enjoys a better range than 802.11a since its lower frequency experiences less absorption by objects. However, the 2.4 GHz band is quite busy, leading to potential interference from various household devices like baby monitors and microwaves, as well as technologies like Bluetooth. This standard is also less commonly in use today.
+
+**802.11g**
+
+As an upgrade to 802.11b, 802.11g was released in June 2003 and operated at 2.4 GHz, offering enhanced speeds up to 54 Mbit/s—matching 802.11a—and was backwards compatible with 802.11b. However, it faced the same congestion issues as 802.11b due to the crowded 2.4 GHz band.
+
+**802.11n (Wi-Fi 4)**
+
+In October 2009, 802.11n (or Wi-Fi 4) arrived as a significant improvement over previous standards. It could use both 5 GHz and 2.4 GHz bands, supporting up to 600 Mbit/s with the use of 40 MHz channels and four antennas. A key technology introduced with 802.11n is MIMO (Multiple-input multiple-output), allowing the use of multiple antennas for both transmission and reception, improving speed and range.
+
+**802.11ac (Wi-Fi 5)**
+
+Approved in January 2014, 802.11ac (Wi-Fi 5) marked a substantial leap forward from 802.11n. Operating exclusively on the less congested 5 GHz band and using wider channels (up to 160 MHz), it allowed for denser signal modulation, which translates into faster data transfer rates. With support for eight downlink MU-MIMO streams, Wi-Fi 5 could handle nearly 7 gigabits per second—doubling the number of streams compared to Wi-Fi 4.
+
+**802.11ax (Wi-Fi 6)**
+
+The latest standard as of February 2021, 802.11ax (Wi-Fi 6), builds upon 802.11ac, operating on both 5 GHz and 2.4 GHz frequencies. Despite offering a modest increase in per-channel throughput to 1,201 Mbit/s, it adds eight bi-directional MU-MIMO streams and introduces OFDMA (Orthogonal frequency-division multiple access), a technology that enhances performance in crowded environments by operating similarly to cellular networks.
+
+**Long-Range Fixed Wireless**
+
+When attempting long-range wireless connections, such as between two buildings miles apart, using fixed directional antennas and increasing signal strength can be essential. Outdoor environments tend to minimize signal bounce and absorption. However, wireless regulations can be intricate and vary by country, affecting factors like frequency use and signal strength. Engaging an expert for outdoor antenna installations is always recommended for safety and compliance.
+
+**RFID (Radio-frequency identification)**
+
+RFID technology is pervasive, found in various applications from access badges to pet identification. It uses radio energy to activate and read information from tags, which can either be passive (powered by the reader's signal) or active (self-powered).
+
+**NFC (Near Field Communication) - 13.56 MHz**
+
+An advancement from RFID, NFC supports two-way wireless communication over short distances. It's commonly used in payment systems and as a method for initiating connections with other wireless technologies, like Bluetooth.
+
+**Wireless Network Technologies**
+
+The 5 GHz and 2.4 GHz spectra for 802.11 technologies in North America have designated channels, ranging from 36 to 165 for 5 GHz and 1, 6, and 11 for 2.4 GHz, each with their own MHz bandwidth considerations. New channels are sometimes added, and usage of these frequencies is governed by specific regulations in most countries, which manage aspects like spectrum use and power output.
+
+**Bluetooth - 2.4 GHz**
+
+Bluetooth eliminates the need for wires in devices like headsets and keyboards. Operating in the 2.4 GHz ISM band, it shares this frequency with other technologies, including Wi-Fi. Consumer Bluetooth devices typically have a range of about 10 meters, while industrial versions may reach over 100 meters.
+
+### 2.4 - Network Services
+
+**Web Server**
+
+- Serves web pages upon request using HTTP/HTTPS.
+- Can host static or dynamically generated content.
+- Web pages are coded in HTML, CSS, and potentially other web languages.
+
+**Authentication Server**
+
+- Handles login authentication for secure access to resources.
+- Essential in enterprise environments, not typically needed at home.
+- Redundancy is key for reliability and availability.
+
+**Spam and Spam Gateways**
+
+- Refers to unsolicited messages in emails, forums, etc.
+- Includes advertising, proselytizing, or phishing.
+- A spam gateway helps stop spam before it reaches the network.
+
+**All-in-One Security Appliance**
+
+- Multi-functional device including firewall, UTM, spam filter, router, etc.
+- Performs URL filtering, malware inspection, and intrusion detection.
+
+**Load Balancers**
+
+- Distribute workload across multiple servers seamlessly.
+- Provide fault tolerance and high availability for server farms.
+
+**DNS Server**
+
+- Translates domain names into IP addresses and vice versa.
+- A decentralized service to distribute the query load.
+- Typically managed by ISPs or corporate IT departments.
+
+**DHCP Server**
+
+- Automates IP address assignment for devices.
+- A common feature in both home and enterprise networks.
+- Enterprise DHCP services are often set up with redundancy.
+
+**File Server**
+
+- A centralized location for storing various types of files.
+- Utilizes standard protocols such as SMB or AFP for file management.
+- Allows networked devices to create, store, and share files easily.
+
+**Print Server**
+
+- Connects printers to the network, enabling multiple devices to print.
+- Can be a dedicated device or software within a computer.
+- Uses protocols like SMB, IPP, and LPD for printing tasks.
+
+**Mail Server**
+
+- Handles storage of incoming email and dispatch of outgoing mail.
+- Complex setup often managed by IT professionals.
+- Considered critical infrastructure, typically requiring constant support.
+
+**Syslog Server**
+
+- Standard protocol for system logging.
+- Centralizes logs from various sources for analysis, often into a SIEM system.
+- Requires substantial storage due to the volume of logs.
+
+### 2.5 - IPv4 and IPv6 (continued)
+
+**Turning Dynamic into Static IP Addresses**
+
+- DHCP normally allocates IP addresses dynamically from a pool.
+- To keep an IP address static (unchanged), you have two options:
+  - Disable DHCP on the device and set the IP details manually, which needs more management.
+  - Preferably, create a DHCP reservation to bind a specific IP address to a device's MAC address.
+
+**Avoiding Manual Configurations**
+
+- Manually configuring IP addresses is less flexible and harder to manage.
+- DHCP reservations are the preferred method because changes can be centrally managed from the DHCP server.
+
+**Automatic Private IP Addressing (APIPA)**
+
+- APIPA provides automatic IP assignment in the range of 169.254.0.0 to 169.254.255.255 when DHCP fails.
+- It's only for local communications as routers do not forward APIPA addresses.
+
+**DHCP Overview**
+
+- Before DHCP, IP configurations were manual, including setting the IP address, subnet mask, gateway, and DNS.
+- The predecessor to DHCP was BOOTP, which required some manual configuration and had limitations in managing IP address allocations.
+- DHCP, released in 1997, streamlined the process by fully automating IP address configuration for network devices.
+
+**The DHCP Process (DORA)**
+
+- **Discover**: The client broadcasts a message to locate available DHCP servers.
+- **Offer**: DHCP servers respond with available IP address options.
+- **Request**: The client requests a specific IP address from one of the offers.
+- **Acknowledgment**: The DHCP server acknowledges the request and assigns the IP address to the client.
+
+---
+
+### 2.6 - DNS Configuration
+
+**Domain Name System (DNS)**
+
+- **Purpose**: DNS is essentially the phonebook of the internet, converting memorable domain names into the numerical IP addresses needed for locating computer services and devices.
+- **Structure**: It is structured in a hierarchical manner. Think of it as starting from a broad category and narrowing down to specific ones.
+- **Distribution**: The system is distributed across the globe with 13 root server clusters that direct to various top-level domains (TLDs) like `.com`, `.org`, and `.net`, as well as country-specific domains (ccTLDs) like `.uk`, `.us`, etc.
+
+**DNS Records**
+
+- **Resource Records**: These records in the DNS database store information about domain names.
+- **Types**: There are many types of records, over 30, which include A, AAAA, TXT records, etc.
+- **A and AAAA Records**: 'A' records map domain names to IPv4 addresses and 'AAAA' records to IPv6 addresses.
+
+**Text Records (TXT)**
+
+- **Function**: These records provide human-readable information within the DNS which can be used for various purposes including domain verification.
+
+**Sender Policy Framework (SPF)**
+
+- **Role**: SPF is used to list authorized mail servers for a domain, helping to prevent email spoofing.
+
+**Mail Exchanger Record (MX)**
+
+- **Purpose**: MX records direct email to a domain's mail servers using the domain name, not the IP.
+
+**Domain Keys Identified Mail (DKIM)**
+
+- **Function**: DKIM ensures an email is not tampered with in transit, with validation through public keys stored in DNS TXT records.
+
+**DMARC**
+
+- **DMARC**: It stands for Domain-based Message Authentication, Reporting, and Conformance, an email authentication protocol that uses SPF and DKIM records to enhance security.
+
+**Dynamic Host Configuration Protocol (DHCP)**
+
+- **Scope Properties**: DHCP has **scope** properties which include an IP address range, subnet mask, and lease durations, among other options.
+- **Pools**: It organizes IP addresses into pools for distribution.
+- **Address Assignment**: IP addresses can be dynamically, automatically, or through reservation assigned to devices.
+- **Leases**: DHCP leases are temporary IP allocations with specific renewal and rebinding timings.
+
+**DHCP Lease Process**
+
+- Describes the normal operation and timelines for the renewal and rebinding periods during a DHCP lease.
+
+### 2.6 - VLANs and VPNs
+
+**Local Area Networks (LANs)**
+
+- **Definition**: A LAN is a network that connects devices in a limited area, such as a home, school, or office.
+
+**Virtual LANs (VLANs)**
+
+- **Concept**: VLANs allow for the logical separation of networks within the same physical network.
+
+**Configuring VLANs**
+
+- **Process**: Configuring VLANs involves segmenting a network to separate traffic for improved performance and security.
+
+### 2.7 - Internet Connection Types (continued)
+
+**Satellite Networking**
+
+- Utilizes communication with satellites.
+  - Involves non-ground-based communication methods.
+- Generally more expensive than land-based networking.
+  - Common speeds include 50 Mbps download and 3 Mbps upload.
+  - Used for isolated or challenging locations.
+- Characterized by higher latency.
+  - Round-trip signal delay can be about 500 ms total.
+  - Starlink aims for lower latencies, around 40 ms.
+- Operates on high-frequency signals (around 2 GHz).
+  - Requires a clear path to the satellite, may be affected by weather.
+
+**Fiber**
+
+- Enables high-speed data transfer using light.
+  - Light frequencies carry the data.
+- Installation and maintenance can be costly.
+  - Specialized equipment needed.
+  - Can be harder to fix than copper cables.
+  - Ideal for long-distance communication.
+- Predominantly used in the backbone of the internet (WAN core).
+  - Can support extremely high bandwidth.
+  - Technologies include SONET and wavelength division multiplexing.
+- Gradually being extended to end-users in businesses and homes.
+
+**Cellular Networks (continued)**
+
+- Provides connectivity for mobile devices.
+  - Based on a network of "cells" or coverage areas.
+- Divides regions into cells served by antennas.
+  - Each cell has a dedicated set of frequencies.
+- Allows for tethering:
+  - Phones can serve as wireless access points.
+- Enables creation of mobile hotspots:
+  - Separate devices that provide wireless connectivity.
+  - Allows the phone to be used for other functions.
+
+**WISP (Wireless Internet Service Provider)**
+
+- Offers ground-based internet access via wireless technologies.
+  - Intended to connect out-of-the-way areas.
+- Utilizes various technologies for deployment.
+  - Includes meshed Wi-Fi networks, 5G, and proprietary systems.
+- Installation typically requires an external antenna.
+  - Speeds vary widely, ranging from 10 Mbps to over 1 Gbps.
+
+### 2.8 - Network Types
+
+**MAN (Metropolitan Area Network)**
+
+- Encompasses a city-sized area.
+  - Larger than a Local Area Network (LAN) but usually not as extensive as a Wide Area Network (WAN).
+- Often based on specific topologies like Metro Ethernet.
+- Commonly associated with government entities that manage local rights-of-way.
+
+**SAN (Storage Area Network)**
+
+- Appears as a local storage device to the system.
+  - Allows block-level storage access.
+  - High efficiency in reading/writing operations.
+- Typically requires significant bandwidth.
+  - May operate on a dedicated network utilizing high-speed networking technologies.
+
+**WLAN (Wireless LAN)**
+
+- Wireless networking within a localized area.
+  - Based on 802.11 standards.
+- Provides mobility within the confines of a building or a small geographic zone.
+- Coverage can be expanded with more access points.
+  - Useful in downtown settings or large campuses.
+
+**LAN (Local Area Network)**
+
+- Geographically confined to a single building or a group of buildings.
+  - Known for high-speed connections.
+- Primarily uses Ethernet and 802.11 wireless standards.
+  - Speed is a defining characteristic of LANs.
+
+**WAN (Wide Area Network)**
+
+- Covers wide geographic areas, potentially worldwide.
+  - Typically connects LANs across distances.
+- Usually slower than LAN connections.
+- Incorporates various technologies such as point-to-point serial, MPLS, and both ground-based and satellite communications.
+
+**PAN (Personal Area Network)**
+
+- A network for individual use.
+  - Can include Bluetooth, Infrared (IR), Near Field Communication (NFC).
+- Examples include:
+  - Automobile systems integrating audio and phone functionalities.
+  - Mobile phone connections to wireless headsets.
+  - Health monitoring devices capturing workout data and daily health reports.
+
+### 2.8 - Network Tools
+
+**Cable Crimper**
+
+- Tool used to attach connectors to wires.
+  - Works with coaxial, twisted pair, and fiber cables.
+- Essential for connecting modular connectors to Ethernet cables.
+  - Metal prongs are pushed through insulation to secure the plug.
+
+**Crimping Best Practices**
+
+- Invest in quality crimpers, cable snips, and wire strippers.
+- Use appropriate connectors for the type of wire.
+- Practice to ensure proficiency in cable crimping.
+
+**Punch-down Best Practices**
+
+- Maintain organization for efficient cable management.
+- Preserve the twists in the cables as much as possible for signal integrity.
+- Thoroughly document all connections for future reference.
+
+**Cable Testers**
+
+- Basic tools that test for continuity and can identify wiring issues.
+  - Not typically used for advanced frequency testing like crosstalk or signal loss.
+
+**Loopback Plugs**
+
+- Used to test physical ports and network connections.
+  - Not to be confused with crossover cables.
+
+**Taps and Port Mirrors**
+
+- Devices or features that allow the interception and monitoring of network traffic.
+  - Physical taps involve placing a device inline with the cable.
+  - Port mirroring (SPAN) is a software-based interception method.
+
+**WiFi Analyzer**
+
+- A device or application for in-depth analysis of wireless networks.
+  - Identifies network errors and interference.
+  - Assists in optimizing antenna placement and setup.
+
+**Tone Generator**
+
+- A tool that helps trace the path of a wire by emitting an audible tone.
+- Paired with an inductive probe, which can detect the tone without direct contact.
+
+**Using Tone Generator and Probe**
+
+- Simplifies the process of tracing wires.
+  - Tone generator attaches to various connection points.
+- The probe detects the tone, facilitating the identification of wire paths.
+
+**Punch-down Tools**
+
+- Instruments used to insert wires into wiring blocks.
+  - Can work with various types of blocks, such as 66 or 110 blocks.
+- Designed to trim excess wire during insertion, enhancing efficiency.

@@ -1,0 +1,83 @@
+---
+title: "1.1 - An Overview of Windows"
+description: "This is a description"
+---
+
+### 1.1 - Overview of Windows
+
+#### Windows in the Core 2 Exam
+
+- The 220-1102 exam, launched in January 2022, covers two Windows versions: Windows 10 and Windows 11.
+- CompTIA includes all supported Windows versions in the exam scope, with mainstream support lasting 5 years post-release.
+- The exam objectives list Windows versions, encompassing both Windows 10 and 11.
+- These versions are very similar, making it easier to understand both once you are familiar with one.
+
+#### Windows 10
+
+- Windows 10, released on July 29, 2015, bypassed the naming of Windows 9.
+- It's a unified platform for desktops, laptops, tablets, phones, and all-in-one devices.
+- The system has undergone ongoing updates, including more than twelve different released versions, with the latest being November 2021 (Version 21H2).
+
+##### Windows 10 Home
+
+- Targeted at home users and available in retail sales.
+- Integrates with Microsoft account, featuring Microsoft OneDrive backup.
+- Includes Windows Defender for anti-virus and anti-malware protection.
+- Cortana enables voice interaction with the operating system.
+
+##### Windows 10 Pro
+
+- This business version of Windows comes with additional management features.
+- It includes Remote Desktop host for remote computer control.
+- BitLocker provides full disk encryption (FDE).
+- Allows joining a Windows domain and offers Group Policy management.
+
+#### Windows 10 Pro for Workstations
+
+- This edition is designed for high-end desktops, with enhanced performance and storage options.
+- Supports more physical CPUs (up to four) and a high maximum RAM (up to 6 TB).
+- Includes support for ReFS (Resilient File System), similar to Windows Server.
+
+#### Windows 10 Enterprise
+
+- Suitable for large implementations and volume licensing.
+- Features AppLocker for application control, BranchCache for remote site file caching, and granular User Experience (UX) control, useful for kiosk and workstation customization.
+
+#### Domain Services
+
+- Active Directory Domain Services, a large network database.
+- Distributed architecture, not suitable for home use.
+- Documents everything in one place: user accounts, servers, volumes, printers.
+- Has various uses, including authentication and centralized management.
+
+#### Organizing Network Devices
+
+- Windows Workgroups for logical grouping of network devices, where each device operates independently.
+- Windows Domain for business networks, offering centralized authentication and device access, supporting thousands of devices across multiple networks.
+
+#### Desktop Styles
+
+- Work environment: Standard desktop with a common user interface and limited customization, enabling work on any computer.
+- Home environment: Full flexibility with customizable background photos, colors, UI sizing, centralized authentication, and support for numerous devices.
+
+#### Availability of RDP (Remote Desktop Protocol)
+
+- Allows viewing and controlling the desktop of a remote device.
+- The RDP client connects to a Remote Desktop Service, available for almost any operating system.
+- Remote Desktop Service is included in Windows 10 Pro and Enterprise but not in Windows 10 Home.
+
+#### RAM Support Limitations
+
+- RAM support varies between editions, with more advanced editions allowing additional RAM.
+
+#### BitLocker and EFS (Encrypting File System)
+
+- Provides data confidentiality by encrypting important information.
+- EFS protects individual files and folders, built into the NTFS file system.
+- BitLocker offers Full Disk Encryption, encrypting everything on the drive, including the operating system, suitable for both home and business, especially on mobile devices.
+
+#### Group Policy Editor
+
+- Allows central management of users and systems.
+- The Local Group Policy manages the local device (accessible via gpedit.msc).
+- The Group Policy Management Console, integrated with Active Directory, offers powerful system management (accessible via gpmc.msc).

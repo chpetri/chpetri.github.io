@@ -1,0 +1,48 @@
+---
+title: "1.3 - Additional Windows Tools"
+description: "This is a description"
+---
+
+### 1.3 - Additional Windows Tools
+
+#### System Information
+
+- Provides an overview of the system through `msinfo32.exe`.
+- Details hardware resources like memory, DMA, IRQs, and conflicts.
+- Shows components including multimedia, display, input, and network.
+- Outlines the software environment, including drivers, print jobs, and running tasks.
+
+#### Resource Monitor
+
+- Offers a detailed real-time view of performance, categorized by:
+  - Overview, CPU, Memory, Disk, and Network.
+- Accessible through `resmon.exe`.
+
+#### System Configuration
+
+- Manages boot processes, startup, services, etc.
+- A comprehensive tool for system management via `msconfig.exe`.
+
+#### Disk Cleanup
+
+- Identifies unused or unnecessary files, helping to free up space.
+- Select categories to clean and click the button.
+- Accessed through `cleanmgr.exe`.
+
+#### Defragmentation (`defrag`)
+
+- Defragments a disk to improve read and write times by making file fragments contiguous.
+- Not necessary for solid-state drives (SSDs) as Windows doesn't defrag SSDs.
+- Has a graphical version in the drive properties.
+- Requires elevated permissions. Command line usage: `defrag <volume>`, e.g., `defrag C:`.
+
+#### Registry Editor (`regedit.exe`)
+
+- A critical tool for accessing the Windows Registry, a comprehensive database used by almost all system components.
+- Caution is advised; always back up the registry before making changes.
+- The registry is organized into five root keys:
+  - HKEY_CLASSES_ROOT (HKCR)
+  - HKEY_CURRENT_USER (HKCU)
+  - HKEY_LOCAL_MACHINE (HKLM)
+  - HKEY_USERS (HKU)
+  - HKEY_CURRENT_CONFIG (HKCC)
