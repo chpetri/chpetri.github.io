@@ -3,784 +3,6 @@ title: "complete"
 description: "This is a R Notebook"
 ---
 
-### 1.5 - Windows Setngs
-
-Setngs
-
-- An updaed inerace
-  - A migraonromhe Conrol Panel
-- One placeor mos conguraon setngs
-  - A common UI
-- Searchor “Setngs”, Or scroll downo “S”
-
-Time and Language
-
-- Windows can auomacally seheme
-  - Acve Domain is very sensiveo synchronized clocks
-  - Five minues oolerance by deaul
-- Windows can speak many dieren languages
-  - Change or add a language
-
-Updae and Securiy
-
-- Keep your OS upo dae - Securiy paches, bugxes
-- Auomac insallaon - Updaes are always insalled
-- Acve hours - You conrolhe updaeme
-
-Personalizaon
-
-- Changehe way Windows looks andeels
-  - Colors, wallpaper, lock screen
-- Exensive cusomizaon - Make Windows your own
-
-Apps
-
-- Manage insalled applicaons
-  - Uninsall or modiy an exisng app
-- Add Windowseaures
-  - Fonsor oher languages
-  - OpenSSH Server
-  - SNMP suppor
-
-Privacy
-
-- Share app acviy - Cusomized adversing
-- Share your language - Websie conen
-- Speech recognion - Sends audioo an online service
-
-```
-Sysem
-```
-
-- Change display setngs
-  - Nigh ligh, scaling, resoluon
-- Audio setngs
-  - Inpu and oupu
-- Nocaons - Enable/disable - Show on lock screen
-  Devices
-- Manage devices
-  - Blueooh, priners, ec.
-- Mouse setngs
-  - Buon and wheel opons
-- Typing and wring - Keyboard and pen
-  Network and Internet
-- Nework setngs
-  - Inerne connecviy
-- View Inerne saus
-  - Up or down?
-- Change IP setngs - Modiy address inormaon
-  Gaming
-- Xbox Game Bar - Xbox gaming nework
-- Cha, join games - Lookorriends
-  Accounts
-- Manage login accoun inormaon
-  - Microsof accoun or local accoun
-- Email conguraon - Speciy an email app
-- Sign-in opons - PIN, password, securiy key, ec.
-
-### 1.6 - Windows Nework Technologies
-
-Shared resources
-
-- Make aolder or priner available onhe nework
-  - “Share” wih ohers, view in Windows Explorer
-- Assign (map) a drive leero a share
-  - Access ale server
-  - Reconnec auomacally
-- Shares ending wih a dollar sign ($) are “hidden”
-  - No a securiyeaure
-- Adminisrave Tools > Compuer Managemen
-
-Mapping drives
-
-- Access a share
-  - This PC / Map nework drive
-- Local drive leer and share name
-  - May require addional auhencaon
-- Or usehe command line:
-  net use h: “\\Daedalus\Gate Room”
-
-Sharing priners
-
-- Similaro sharing aolder
-  - Bu i’s a priner insead
-- Priner Properes
-  - Accesshrough Windows Explorer,he Setngs app,
-    or any oher Priner Properes
-  - Share an exisng priner
-
-Using a shared priner
-
-- Similaro sharing aolder
-  - Bu i’s a priner insead
-- Add a priner
-  - Windows Explorer
-  - Setngs app
-
-```
-Proxy Setngs
-```
-
-- Changeheracow
-  - An Inerne go-beween
-- Setngs > Nework and Inerne
-  - Or use Conrol Panel > Inerne Opons >
-    Connecons > LAN setngs
-- Dene address and excepons - Proxies don’ workor everyhing
-  Nework locaons
-- Privae
-  - Share and conneco devices
-  - Home or work nework
-- Public
-  - No sharing or connecviy
-  - Public Wi-Fi
-- Cusomize securiy setngs - Prole is deermined auomacally - Changehe setngs a anyme
-  Nework pahs
-- View nework pahs in File Explorer
-  - Server and share name
-- Map nework drive
-  - Add a drive leer
-- Disconnec - Toolbar - Righ-clickhe drive
-  Meered connecons
-- Reduce daa usage
-  - Slow nework links
-  - Limied bandwidh
-  - Usage-based billing
-- Can modiy applicaon communicaon
-  - Windows Updaes
-  - OneDrive sync
-
-### 1.6 - Conguring Windows Firewall
-
-Windows Defender Firewall
-
-- Yourrewall should always be enabled
-  - Somemes you needoroubleshoo
-- Temporarily disableromhe main screen
-  - Turn Windows Firewall on or o
-  - Requires elevaed permissions
-- Dieren setngsor each neworkype
-  - Public / Privae
-
-Windows Firewall conguraon
-
-- Block all incoming connecons
-  - Ignores your excepon lis
-  - Useul when you needhe mos securiy
-- Modiy nocaon
-  - App blocking
-
-```
-Creang arewall excepon
-```
-
-- Allow an app oreaure
-  hrough Windows Firewall
-  - The more secure excepon
-- Por number
-  - Block or allow
-- Predened excepons
-  - Lis o common excepons
-- Cusom rule
-  - Everyrewall opon
-
-How Windows gets an IP address
-
-- DHCP (Dynamic Hos Conguraon Proocol)
-  - Auomac IP addressing
-  - This ishe deaul
-- APIPA (Auomac Privae IP Addressing)
-  - There’s no sac address or DHCP server
-  - Communicae locally (link-local address)
-  - Assigns 169.254.1.0o 169.254.254.
-  - No Inerne connecviy
-- Sac address
-  - Assign all IP address parameers manually
-  - You needo know very specic deails
-
-TCP/IP hos addresses
-
-- IP Address – Unique idener
-  Subne mask – Ideneshe subne
-  Gaeway – The roue ohe subneohe res ohe world - DNS – Domain Name Services - Convers domain nameso IP addresses - DHCP – Dynamic Hos Conguraon Proocol - Auomaeshe IP address conguraon process - Addresses can be dynamic or sac - Loopback address - 127.0.0.1 - I’s alwayshere!
-  A backuporhe DHCP server - Mulple DHCP servers should be conguredor
-  redundancy - There will always be one available - I a DHCP server isn’ available, Windows useshe
-  Alernae Conguraon - The deaul is APIPA addressing - You can also congure a sac IP address - Keep working normally
-
-### 1.6 - Windows IP Address Conguraon
-
-Network setup
-
-- Conrol Panel
-  - Nework and Sharing Cener
-  - Se up a new connecon or nework
-- Sep-by-sep wizard
-  - Conrmaon duringhe process
-- Many dieren connecons
-  - Direc, VPN, dial-up, ec.
-
-VPN connecons
-
-- Buil-in VPN clien
-  - Included wih Windows
-  - Conneco a workplace
-- Inegrae a smar card
-  - Mul-acor auhencaon
-    - Somehing you know
-    - Somehing you have
-    - Somehing you are
-- Connecromhe nework saus icon
-  - Click and provide credenals
-
-```
-Wireless connecons
-```
-
-- Nework name - SSID (Service Se Idencaon)
-- Securiyype - Encrypon mehod
-- Encryponype - TKIP, AES
-- Securiy key - WPA2-Personal - Pre-shared key - WPA2-Enerprise - 802.1X auhencaon
-  Wired connecons
-- Eherne cable - Direc connecon
-- Fases connecon ishe deaul - Eherne, Wireless, WWAN
-- Alernae conguraons - When DHCP isn’ available
-  WWAN connecons
-- Wireless Wide Area Nework
-  - Buil-in mobileechnology
-- Hardware adaper - Anenna connecons
-- USB conneced or 802.11 wireless - Teher or hospo
-- Requireshird-pary sofware - Each provider is dieren
-
-### 1.6 - Windows Nework Connecons
-
-Insalling applicaons
-
-- Exendheunconaliy o your operang sysem
-  - Specialized applicaons
-- Available everywhere
-  - Findhe applicaon you need
-  - Insall on your operang sysem
-- No every compuer can run every applicaon
-  - Some simple checks can help manage your deskop
-
-```
-Operang sysem plaorm
-```
-
-- 32-bi vs. 64-bi
-  - Processor specic
-- 32-bi processors can sore
-  232 = 4,294,967,296 values
-- 64-bi processors can sore
-  264 = 18,446,744,073,709,551,616 values
-  - 4 GB vs. 17 billion GB
-  - The OS has a maximum suppored value
-- Hardware drivers are specicohe OS version
-  - 32-bi (x86), 64-bi (x64)
-
-### 1.7 - Insalling Applicaons
-
-### 1.7 - Insalling Applicaons (connued)
-
-- 32-bi OS canno run 64-bi apps
-  - Bu 64-bi OS can run 32-bi apps
-- Apps in a 64-bi Windows OS
-  - 32-bi apps: \Program Files (x86)
-  - 64-bi apps: \Program Files
-
-Graphics requiremens
-
-- Inegraed graphics
-  - CPU and GPU arehe same chip
-  - Uses sysem memoryor graphics
-  - Common in lapops
-- Dedicaed graphics card
-  - Also called a discree graphics card
-  - Uses is own VRAM (Video RAM)
-  - High-end graphics requiremens
-- Checkhe applicaon
-  - Inegraed or dedicaed
-  - VRAM requiremens
-
-RAM requiremens
-
-- Random Access Memory
-  - Memory modules
-- A crical specicaon
-  - Applicaon may perorm poorly
-  - Or no a all
-- This would be above and beyondhe OS requiremens
-  - Dependen onhe applicaon
-  - Consider all ohe oher running applicaons
-
-CPU requiremens
-
-- Cenral Processing Uni
-  - Processing speed
-  - Usually measured in gigaherz (GHz)
-- A broad measuremen
-  - Higher numbers areaser CPUs
-- Applicaon requiremens vary
-  - Word processing vs. video eding
-
-Exernal hardwareokens
-
-- Manage applicaon usage
-  - Limi accesso auhorized users
-- Applicaon will only operae wihhe
-  hardwareoken conneced
-  - Commonly a USB device
-  - Can be a challengeo manage
-- Ofen used wih high-end sofware
-  - High per-sea licensing coss
-
-```
-Sorage requiremens
-```
-
-- Drive space concerns
-  - Inial insallaon space requiremen
-  - Applicaon use requiremen
-- Some applicaons use a LOT o sorage space
-  afer insallaon - The inial insall requiremens may no behe mos
-  imporan specicaon
-  Disribuon mehods
-- Physical media
-  - Opcal media, USB drive, ec.
-  - Increasingly rare
-- Downloadable - Direcromhe manuacurer - Cenralized app sore - Avoid 3rd-pary downloads
-  ISOles
-- Opcal disk image
-  - A single ISOle / ISO image
-  - Files andolders
-- Secor by secor copy ohe daa on an opcal disc
-  - ISO 9660le sysem
-- Moun inhe OS - Appears as a separae drive
-  Insallaon consideraons
-- There’s a reason we are careul when
-  insalling applicaons
-  - Applicaons havehe same righs and permissions
-    ashe user
-  - An unknown applicaon can cause signican issues
-- Impaco device
-  - Applicaon upgrade sops working
-  - Slowdowns
-  - Deleedles
-- Impaco nework
-  - Accesso inernal services
-  - Righs and permissionsole shares
-- Impaco operaon
-  - Many jobs areme-sensive
-  - An updaed applicaon may require a change
-    ohe workow
-  - Or may no work a all
-- Impacohe business
-  - Crical processes are sensiveo downme
-    and ouages
-  - A changeo an applicaon can creae signican issues
-  - Oher pars ohe business rely on your resuls
-
-### 1.8 - Operang Sysem Overview
-
-Why do you need an OS?
-
-- Conrol ineracon beween componens
-  - Memory, hard drives, keyboard, CPU
-- A common plaormor applicaons
-  - You’re goingo do some work, righ?
-- Humans need a wayo inerac wihhe machine
-  - The “user inerace” - Hardware can’ do everyhing!
-
-Sandard OSeaures
-
-- File managemen
-  - Add, delee, rename
-- Applicaon suppor
-  - Memory managemen, swaple managemen
-- Inpu and Oupu suppor
-  - Priners, keyboards, hard drives, USB drives
-- Operang sysem conguraon and managemenools
-
-Microsof Windows
-
-- Major marke presence
-  - Many dieren versions
-  - Windows 10, Windows 11, Windows Server
-- Advanages
-  - Large indusry suppor
-  - Broad selecon o OS opons
-  - Wide variey o sofware suppor
-- Disadvanages
-  - Large insall base provides a bigargeor
-    securiy exploiaon
-  - Large hardware suppor can creae challenging
-    inegraon exercises
-
-Linux
-
-- Free Unix-compable sofware sysem
-  - Unix-like, bu no Unix
-- Many (many) dieren disribuons
-  - Ubunu, Debian, Red Ha / Fedora
-- Advanages
-  - Cos. Free!
-  - Works on wide variey o hardware
-  - Passionae and acve user communiy
-- Disadvanages
-  - Limied driver suppor, especially wih lapops
-  - Limied suppor opons
-
-Apple macOS
-
-- macOS - Deskop OS running on Apple hardware
-- Advanages
-  - Easyo use
-  - Exremely compable
-  - Relavelyewer securiy concerns
-- Disadvanages
-  - Requires Apple hardware
-  - Less indusry supporhanhe PC plaorm
-  - Higher inial hardware cos
-
-```
-Chrome OS
-```
-
-- Google’s operang sysem
-  - Based onhe Linux kernel
-- Ceners around Chrome web browser
-  - Mos apps are web-based
-- Many dieren manuacurers
-  - Relavely less expensive
-- Relies onhe cloud - Connecohe Inerne
-  Apple iPadOS
-- Operang sysemor Apple’s iPadables
-  - A varian o Apple’s phone iOS
-- Tableeaures - Deskop browser (Saari) - Second monior (Sidecar) - Keyboard suppor - Mulasking
-  Apple iOS
-- Apple iOS
-  - Apple iPhones
-  - Based on Unix
-  - Closed-source - No accesso source code
-  - Exclusiveo Apple producs
-- iOS Apps - Apps are developed wih iOS SDK on macOS - Apps mus be approved by Apple beore release - Apps are availableo users inhe Apple App Sore
-  Google Android
-- Google Android
-  - Open Handse Alliance
-  - Open-source OS, based on Linux
-  - Suppored on many dieren manuacurer’s devices
-- Android Apps - Apps are developed on Windows, macOS, and - Linux wihhe Android SDK - Apps availablerom Google Play - Apps also availableromhird-pary sies
-  (i.e., Amazon Appsore)
-  Vendor-specic limiaons
-- End-o-lie
-  - Dieren companies seheir own EOL policies
-- Updang
-  - iOS, Android, and Windows check and
-    prompor updaes
-  - Chrome OS will updae auomacally
-- Compabiliy beween operang sysems
-  - Some movies and music can be shared
-- Almos no direc applicaon compabiliy
-  - Forunaely, many apps have been builo run on
-    dieren OSes
-  - Some daales can be moved across sysems
-  - Web-based apps have poenal
-
-File sysems
-
-- Beore daa can be wrienohe paron,
-  i mus beormaed
-  - Buildheoundaon
-- Operang sysems expec daao be wrien
-  in a parcularorma
-  - FAT32 and NTFS are popular
-- Many operang sysems can read
-  (and perhaps wrie) mulple le sysemypes
-  - FAT, FAT32, NTFS, exFAT, ec.
-
-FAT
-
-- FAT - File Allocaon Table
-  - One ohers PC-basedle sysems (circa 1980)
-- FAT32 - File Allocaon Table
-  - Larger (2erabye) volume sizes
-  - Maximumle size o 4 gigabyes
-- exFAT - Exended File Allocaon Table
-  - Microsofash drivele sysem
-  - Files can be largerhan 4 gigabyes
-  - Compable across many operang sysems
-  - Windows, Linux, macOS
-
-#### NTFS
-
-- NTFS – NT File Sysem
-  - Exensive improvemens over FAT32
-  - Quoas,le compression, encrypon, symbolic links,
-    largele suppor, securiy, recoverabiliy
-- No very compable across operang sysems - Many OSes will read NTFS (bu no wrie) - Some have limied wrieunconaliyo
-  an NTFSle sysem
-  Oherle sysems
-- ex3 - Third exendedle sysem
-  - Commonly used byhe Linux OS
-- ex4 - Fourh exendedle sysem - An updaeo ex 3 - Commonly seen in Linux and Android OS
-  APFS
-- Apple File Sysem (APFS)
-  - Addedo macOS High Sierra (10.12.4)
-  - Also included wih iOS and iPadOS
-- Opmizedor solid-sae sorage
-  - Encrypon, snapshos, increased daa inegriy
-
-### 1.8 - Filesysems
-
-### 1.9 - Insalling Operang Sysems
-
-Boo mehods
-
-- USB sorage
-  - USB mus be booable
-  - Compuer mus suppor boongrom USB
-- Opcal media
-  - CD-ROM and DVD-ROM
-- PXE (“Pixie”) - Preboo eXecuon Environmen
-  - Perorm a remoe nework insallaon
-  - Compuer mus suppor boong wih PXE
-- Solid sae drives / hard drives
-  - Sore many OS insallaonles
-- Inerne-based
-  - Linux disribuons, macOS Recovery insallaon,
-    Windows updaes
-- Exernal / ho swappable drive
-  - Some exernal drives can moun an
-    ISO image (opcal drive image)
-  - Boorom USB
-- Inernal hard drive
-  - Insall and boorom separae drive
-  - Creae and boorom new paron
-
-```
-Types o insallaons
-```
-
-- In-place upgrade - Mainain exisng applicaons and daa
-- Recovery paron
-  - Hidden paron wih insallaonles
-- Clean insall
-  - Wipehe slae clean and reinsall
-  - Migraonool can help
-- Image deploymen
-  - Deploy a clone on every compuer
-  - Relavely quick
-  - Can be compleely auomaed
-- Repair insallaon
-  - Fix problems wihhe Windows OS
-  - Does no modiy userles
-- Remoe nework insallaon
-  - Local server or shared drive
-  - Insall acrosshe Inerne
-- Load alernaehird pary drivers when necessary - Disk conroller drivers, ec.
-  The disk paron
-- Separaeshe physical drive ino logical pieces
-  - Useulo keep daa separaed
-  - Mulple parons are no always necessary
-- Useulor mainaining separae operang sysems
-  - Windows, Linux, ec.
-- Formaed parons are called volumes
-  - Microsof’s nomenclaure
-
-GPT paron syle
-
-- GPT (GUID Paron Table)
-  - Globally Unique Idener
-  - The laes paronorma sandard
-- Requires a UEFI BIOS
-  - Can have upo 128 parons
-  - Maximum paron size is over 9 billion TB
-  - Windows max paron is currenly 256 TB
-- No needor exended parons or logical drives
-
-MBR paron syle
-
-- MBR (Maser Boo Record)
-  - The old sandby, wih all ohe old limiaons
-  - Maximum paron size o 2 TB
-- Primary
-  - Booable parons
-  - Maximum oour primary parons per hard disk
-  - One ohe primary parons can be marked as Acve
-- Exended
-  - Usedor exendinghe maximum number o parons
-  - One exended paron per hard disk (oponal)
-  - Conains addional logical parons
-  - Logical parons inside an exended paron
-    are no booable
-
-```
-Disk paroning
-```
-
-- Thers sep when preparing disks
-  - May already be paroned
-  - Exisng parons may no always be compable
-    wih your new operang sysem
-- An MBR-syle hard disk can have upoour parons
-- GUID paronables suppor upo 128 parons
-  - Requires UEFI BIOS or BIOS-compabiliy mode
-  - BIOS-compabiliy mode disables UEFI SecureBoo
-- BE CAREFUL! - Serious poenalor daa loss - This is no an everyday occurrence
-  Quickorma vs.ullorma
-- Quickorma
-  - Creaes a newleable
-  - Looks like daa is erased, bu i’s no
-  - No addional checks
-- Quickormahe deaul during insallaon in
-  Windows 10 and 11
-  - Usediskpartor aullorma
-- Fullorma
-  - Wries zerosohe whole disk
-  - Your daa is unrecoverable
-  - Checkshe diskor bad secors (me consuming)
-
-### 1.9 - Insalling Operang Sysems (connued)
-
-### 1.9 - Upgrading Windows
-
-Why upgrade?
-
-- Upgrade vs. Insall
-  - Upgrade - Keeples in place
-  - Insall - Sar over compleelyresh
-- Mainain consisency
-  - Cusomized conguraons
-  - Mulple local user accouns
-- Upgrades save hours ome
-  - Avoid applicaon reinsall
-  - Keep user daa inac
-  - Keep user setngs
-  - Ge up and running quickly
-
-Upgrade mehods
-
-- In-place upgrade
-  - Upgradehe exisng OS
-  - Keeps all applicaons, documens,
-    and setngs
-  - Sarhe seuprom inside
-    he exisng OS
-- Clean insall
-  - Wipe everyhing and reload
-  - Backup yourles
-  - Sarhe seup by boong
-    romhe insallaon media
-
-```
-Preparehe boo drive
-```
-
-- Know your drive
-  - Is daa onhe drive?
-  - Hashe drive beenormaed?
-  - Wha parons are onhe drive?
-- Backup any old daa
-  - You may needha daa again someday
-  - Save user preerences
-- Mos paroning andormatng can be compleed
-  duringhe insallaon
-  - Clearhe drive and sarresh
-
-Beorehe insallaon
-
-- Check minimum OS requiremens
-  - Memory, disk space, ec.
-  - Andhe recommended requiremens
-- Run a hardware compabiliy check
-  - Runs when you perorm an upgrade
-  - Run manuallyromhe Windows seup screen
-  - Windows 10 Upgrade Checker,
-    PC Healh Checkor Windows 11
-- Planor insallaon quesons
-  - Drive/paron conguraon, license keys, ec.
-- Applicaon and driver compabiliy
-  - Check wihhe app developer and
-    hardware manuacurer
-
-```
-Windows produc lie cycle
-```
-
-- Qualiy updaes
-  - Monhly securiy updaes and bugxes
-- Feaure updaes
-  - Annual updae wih neweaures
-  - Usedo occur everyhreeove years
-- Suppor is provided aferhe release
-  - 18 o 36 monhs
-  - Dependen onhe Windows version and edion
-- Also calledhe Modern Liecycle Policy
-  - For connuously suppored producs
-
-### 1.9 - Upgrading Windows (connued)
-
-### 1.10 - macOS Overview
-
-Fileypes
-
-- .dmg
-  - Apple Disk Image
-  - Mounable as a drive in Finder
-- .pkg
-  - Insaller Package
-  - Usedo disribue sofware
-  - Runshrough an insaller scrip
-- .app
-  - Applicaon bundle
-  - Conainshe necessaryleso usehe applicaon
-  - “View Package Conens”romhe Finder
-
-App store
-
-- Cenralized updaes and paches
-  - For boh OS and apps
-- App Sore applicaon
-  - The “Updaes” opon
-- Auomac updaes
-  - Or manual insall
-- Pach managemen
-  - Insall and view previous updaes
-
-Uninsallaon process
-
-- Movehe .appleohe Trash
-- The .app package conains all ohe applicaonles
-- Quick and easy
-- Some applicaons include a separae uninsall program
-- Usually included inhe Applicaonolder
-
-```
-Apple ID and corporae resricons
-```
-
-- Personal Apple producs use a personal Apple ID
-  - Associaed wih personal daa and digial purchases
-- Companies use Managed Apple IDs using
-  Apple Business Manager - Inegrae wih Acve Direcory - Connec wih an exisng - MDM (Mobile Device Manager) - Assign and move apps and digial conen
-  o seleced users
-  Backups
-- Time Machine - Included wih macOS
-- Hourly backups - The pas 24 hours
-- Daily backups - The pas monh
-- Weekly backups - All previous monhs
-- Sars deleng oldes inormaon when disk isull
-  An-virus
-- macOS does no include an-virus
-  - Or an-malware
-- Many 3rd-pary opons
-  - Fromhe usual companies
-- An emerginghrea
-  - Sll doesn’ approach Windows
-  - I’s all abouhe number o deskops
-- Auomae your signaure updaes
-  - New updaes every hour / day
-
 ### 1.10 - macos Sysem Preerences
 
 Sysem Preerences
@@ -815,9 +37,7 @@ Priners & Scanners
   - Congure righs and permissions
 - View saus - Ink andoner levels, scanning saus
 
-```
 Privacy
-```
 
 - Limi applicaon accesso privae daa
   - Locaon services, phoos, calendars
@@ -872,9 +92,7 @@ Spoligh
 - Dene search caegories in Sysem Preerences / Spoligh
   - Enable/disable caegories
 
-```
 iCloud
-```
 
 - Inegraes Appleechnologies
   - macOS, iOS
@@ -926,9 +144,7 @@ Dock
 - Moveo dieren sides ohe screen
   - Auo-hide or always display
 
-```
 Disk Uliy
-```
 
 - Manage disks and images - Resolve issues
 - File sysem ulies
@@ -981,9 +197,7 @@ ls
   > ls -l | more
   > (useqorCtrl-co exi)
 
-```
 pwd
-```
 
 - Prin Working Direcory - Displayshe curren working direcory pah - Useul when changing direcories ofen
   mv
@@ -1024,9 +238,7 @@ chmod
 
 - The owner o scrip.sh can execuehele
 
-```
 yum
-```
 
 - Yellowdog Updaer, Modied (yum) - Insall, delee, updae
 - Manages RPM packages - Red Ha Package Manager - RPM Package Manager - A Linux disribuon will commonly use eiher
@@ -1120,9 +332,7 @@ Backups
 - Sofware cener
 - The Linux “App Sore”
 
-```
 An-Virus / An-malware
-```
 
 - Relavelyew viruses and malwareor Linux
   - Sll imporano keep updaed
@@ -1176,9 +386,7 @@ Video surveillance
   - Radio reecon or passive inrared
   - Useul in areas no ofen in use
 
-```
 Alarm sysems
-```
 
 - Circui-based
   - Circui is opened or closed
@@ -1234,9 +442,7 @@ Barricades / bollards
   - Concree barriers / bollards
   - Moas
 
-```
 Fences
-```
 
 - Build a perimeer
   - Usually very obvious
@@ -1278,9 +484,7 @@ Keys
   - Well-dened sorage locaon
   - Allowsor auding andmesamps
 
-```
 Biometrics
-```
 
 - Biomeric auhencaon
   - Usually sores a mahemacal represenaon o your
@@ -1312,9 +516,7 @@ Magnetometers
 - No useulor non-meal objecves
   - Won’ ideny ceramic or plasc
 
-```
 Mobile Device Managemen (MDM)
-```
 
 - Manage company-owned and
   user-owned mobile devices
@@ -1466,9 +668,7 @@ Group Policy/updaes
     Updae a clien wihhegpupdateuliy:
     > gpupdate /force
 
-```
 Home folder
-```
 
 - Assign a user Homeoldero a neworkolder
   - Manage and backuplesromhe nework
@@ -1499,9 +699,7 @@ Home folder
 - Saveme
   - Avoid conusion and misakes
 
-```
 Group Policy and login scrips
-```
 
 ### 2.2 - Wireless Encrypon
 
@@ -1555,9 +753,7 @@ WPA2 and CCMP
   - Daa condenaliy wih AES encrypon
   - Message Inegriy Check (MIC) wih CBC-MAC
 
-```
 WPA3 and GCMP
-```
 
 - Wi-Fi Proeced Access 3 (WPA3)
   - Inroduced in 2018
@@ -1642,9 +838,7 @@ Kerberos
   - Based on Kerberos 5.0 open sandard
   - Compable wih oher operang sysems and devices
 
-```
 SSO wih Kerberos
-```
 
 - Auhencae oneme
   - Los o backendckeng
@@ -1698,9 +892,7 @@ Malwareypes and mehods
 - Boo secor virus
 - Crypominers
 
-```
 How you ge malware
-```
 
 - These all workogeher
   - Malicious sofwareakes advanage o a vulnerabiliy
@@ -1768,9 +960,7 @@ Virus
   - Preven unsigned sofwarerom running duringhe
     boo process
 
-```
 Spyware
-```
 
 - Malwareha spies on you
   - Adversing, idenyhef, aliaeraud
@@ -1797,9 +987,7 @@ Spyware
   - Clipboard logging, screen logging,
     insan messaging, search engine queries
 
-```
 Crypominers
-```
 
 - Some crypocurrency mining requires “proo o work”
   - Usually consiss o a dicul mah problem
@@ -1901,9 +1089,7 @@ Eecve social engineering
   - Phone callsrom aggressive “cusomers”
   - Emaileduneral nocaons o ariend or associae
 
-```
 Phishing
-```
 
 - Social engineering wih aouch o spoong
   - Ofen delivered by email,ex, ec.
@@ -1964,9 +1150,7 @@ Tailgang and piggybacking
 - Once inside,here’s lileo sop you
   - Mos securiy sops ahe border
 
-```
 Wachingorailgang
-```
 
 - Policyor visiors - You should be ableo ideny
   anyone
@@ -2036,9 +1220,7 @@ A “riendly” DoS
 - The waer line breaks
   - Ge a good shop vacuum
 
-```
 Disribued Denial o Service (DDoS)
-```
 
 - Launch an army o compuerso bring down a service
   - Use allhe bandwidh or resources -rac spike
@@ -2074,9 +1256,7 @@ Zero-day aacks
 - Common Vulnerabilies and Exposures (CVE)
   - hps://cve.mire.org/
 
-```
 Zero-day vulnerabilies
-```
 
 - December 9, 2021 - Log4j remoe code execuon
   - Java-based logging uliy provided as
@@ -2103,9 +1283,7 @@ On-pah nework aack
   - ARP has no securiy
   - ARP poisoning (spoong)
 
-```
 On-pah browser aack
-```
 
 - Wha ihe middleman was onhe same
   compuer ashe vicm?
@@ -2146,9 +1324,7 @@ The passwordle
 - Dieren across operang sysems and applicaons
   - Dieren hash algorihms
 
-```
 Brute force
-```
 
 - Try every possible password combinaon
   unlhe hash is mached
@@ -2175,43 +1351,28 @@ Brute force
 
 ### 2.4 - Password Aacks
 
-```
 192.168.1.1
 11:22:33:44:55:66
-```
 
-```
 192.168.1.9
 c8:bc:c8:a7:38:d5
-```
 
-```
 ARP Response: I am 192.168.1.1
 My MAC address is 11:22:33:44:55:66
-```
 
-```
 ARPCache
 192.168.1.1 = 11:22:33:44:55:66
-```
 
-```
 A legimae responseo
 an ARP reques is received
 romhe deaul gaeway.
-```
 
-```
 The ARP response is
 cached onhe local device.
-```
 
-```
 192.168.1.1
 11:22:33:44:55:66
-```
 
-```
 192.168.1.9
 c8:bc:c8:a7:38:d5
 ARPCache
@@ -2219,30 +1380,21 @@ ARPCache
 192.168.1.1 = aa:bb:cc:dd:ee:
 192.168.1.4
 aa:bb:cc:dd:ee:
-```
 
-```
 ARP Response: I am 192.168.1.1
 My MAC address is aa:bb:cc:dd:ee:
-```
 
-```
 
-```
 
-```
 An aacker sends an ARP
 responseha spooshe IP
 address ohe rouer and
 includeshe aacker’s MAC
 address.
-```
 
-```
 The malicious ARP inormaon
 replaceshe cached record,
 complenghe ARP poisoning.
-```
 
 1
 
@@ -2265,9 +1417,7 @@ Insiderhreas
 - Exensive resources
   - Eang awayromhe inside
 
-```
 Recruing insiders
-```
 
 - We’re getng beer wih proecnghe nework perimeer
   - I’s an ongoing race
@@ -2291,9 +1441,7 @@ Code injecon
 - So many dieren daaypes
   - HTML, SQL, XML, LDAP, ec.
 
-```
 SQL injecon
-```
 
 - SQL - Srucured Query Language
   - The mos common relaonal daabase managemen
@@ -2337,9 +1485,7 @@ Non-persisen (reeced) XSS aack
   seal vicm’s inormaon wihouheir knowledge
   - Very sneaky
 
-```
 Persisen (sored) XSS aack
-```
 
 - Aacker poss a messageo a social nework
   - Includeshe malicious payload
@@ -2405,9 +1551,7 @@ Unpached sysems
 - Pach managemen is a crical pracce
   - Tes, priorize, and deploy
 
-```
 Unproeced sysems
-```
 
 - Securiy issues are ofen roadblocks
   - Applicaons may no work properly wihou
@@ -2491,9 +1635,7 @@ Windows Firewall conguraon
   - Useul when you need securiy
 - Modiy nocaon - App blocking
 
-```
 Creang arewall excepon
-```
 
 - Allow an app oreaurehrough Windows Firewall
   - The more secure excepon
@@ -2540,9 +1682,7 @@ Login opons
   - Windows Domain credenals
   - Sign in oneme
 
-```
 NTFS vs. Share permissions
-```
 
 - NTFS permissions applyrom local and
   nework connecons
@@ -2706,9 +1846,7 @@ Disabling unnecessary accouns
   - User:admin Password:admin
   - Helps wih brue-orce aacks
 
-```
 Lockinghe deskop
-```
 
 - Failed password aemps
   - Should lockhe accoun and/or reboo afer
@@ -2758,9 +1896,7 @@ Locaor applicaons and remoe wipe
 - Wipe everyhing
   - A leas your daa is sae
 
-```
 Paching/OS updaes
-```
 
 - All devices need updaes - Even mobile devices
 - Device paches - Securiy updaes
@@ -2809,9 +1945,7 @@ Firewalls
 - Enerprise environmens can conrol mobile apps
   - Firewalls can allow or disallow access
 
-```
 Policies and procedures
-```
 
 - Manage company-owned and user-owned
   mobile devices
@@ -2868,9 +2002,7 @@ Diskormatng
   - Deaulor Windows Visa and laer
   - Can’ recoverhe daa
 
-```
 Erasing data
-```
 
 - File level overwring
   - Sdelee – Windows Sysinernals
@@ -2954,9 +2086,7 @@ Physical placemen
 - Plan beorehe insallaon
   - May require addional seupme
 
-```
 IP addressing
-```
 
 - DHCP (auomac) IP addressing vs.
   manual IP addressing
@@ -3034,9 +2164,7 @@ Disable gues neworks
 - Don’ enable wihou securiy
   - WPA2 or WPA3
 
-```
 Disabling pors
-```
 
 - Enabled physical pors
   - Conerence rooms
@@ -3079,9 +2207,7 @@ Hash vericaon
 - Veriyhe downloadedle
   - Comparehe downloadedle hash wihhe posed hash value
 
-```
 Extensions and plug-ins
-```
 
 - Trused sources
   - Ocial browser exension library
@@ -3099,31 +2225,19 @@ Extensions and plug-ins
   - Includes 40 malicious domains
   - No idened by securiyechnologies
 
-```
 Internet
-```
 
-```
 Firewall
-```
 
-```
 Internal Network
 Switch
-```
 
-```
 Screened Subnet
 Switch
-```
 
-```
 Screened Subnet
-```
 
-```
 Internal Network
-```
 
 ### 2.10 - Browser Securiy (connued)
 
@@ -3167,9 +2281,7 @@ Enable pop-up blockers
 - Block and allow
   - Conrol pop-up blocking on cerain websies
 
-```
 Clearing privae daa
-```
 
 - Clear browsing daa
   - Hisory
@@ -3284,9 +2396,7 @@ Low memory warnings
   - Sysem > Abou > Advanced sysem setngs >
     Perormance > Setngs > Virual memory
 
-```
 USB conroller resource warnings
-```
 
 - USB devices conain buers called “endpoins”
   - Dieren USB conrollers suppor a dieren
@@ -3394,9 +2504,7 @@ Veriy requiremens
 - Use Sysem Inormaon
   - Viewhe curren conguraon
 
-```
 Add resources
-```
 
 - Check resource ulizaon
   - Task Manager
@@ -3460,9 +2568,7 @@ Rebuild Windows proles
   - We’re goingo deleehe prole andorce
     he rebuilding process
 
-```
 Deleng Windows proles
-```
 
 - Loginohe compuer wih Domain Adminisraor righs
 - Renamehe \Users\nameolder - This will save imporanles
@@ -3519,9 +2625,7 @@ False anvirus alers
   uliy orechnique
   - The aackers are very, very good
 
-```
 Alered sysem or personalles
-```
 
 - Renamed sysemles- Won’ needha anymore
 - Files disappearing- Or encryped
@@ -3612,9 +2716,7 @@ Malware removal
 - There’s really no wayo know i i’s really gone
   - Delee and rebuild
 
-```
 4b. Remediae: Scan and remove
-```
 
 - Sae mode
   - Loadhe bare minimum operang sysem
@@ -3717,9 +2819,7 @@ Baery lie issues
   - iOS: Setngs/Baery
   - Android: Setngs/Baery
 
-```
 Random reboos
-```
 
 - A device reboos during normal operaon
   - May occur randomly
@@ -3867,9 +2967,7 @@ High neworkrac
 
 ### 3.5 - Troubleshoong Mobile Device Securiy (connued)
 
-```
 Fake securiy warnings
-```
 
 - The easies wayo ge on a phone
   - Havehe user insallheir own malware
@@ -3888,9 +2986,7 @@ Fake securiy warnings
   - Only whenhis applicaon is running
 - Updaehe app - Gehe laes version
 
-```
 Leaked personalles
-```
 
 - Unauhorized accoun access
   - Unauhorized roo access
@@ -3942,9 +3038,7 @@ User inormaon
 - Always conrmhe conac inormaon
   - The daabase may no be upo dae
 
-```
 Device and descripon
-```
 
 - Device inormaon
   - Lapop, priner, conerence room projecor, ec.
@@ -4051,9 +3145,7 @@ Splash screens
   - Warnings abou sysem misuse
   - Inormaon abou relying on applicaon daa
 
-```
 Incident reports
-```
 
 - Securiy policy
   - An ongoing challenge
@@ -4098,9 +3190,7 @@ O-boarding
 - Accoun inormaon is usually deacvaed
   - Bu no always deleed
 
-```
 Knowledge base and arcles
-```
 
 - Exernal sources
   - Manuacurer knowledge base
@@ -4158,9 +3248,7 @@ Responsible sa members
   - Someone’s budge is responsibleorhe process
   - Or responsibleorhe pro
 
-```
 Change managemen process
-```
 
 - Aormal processor managing change
   - Avoid downme, conusion, and misakes
@@ -4213,9 +3301,7 @@ Risk analysis
   - Securiy or applicaon vulnerabiliy
   - Unexpeced downmeo oher services
 
-```
 Change board and approvals
-```
 
 - Go or no go
   - Los o discussion
@@ -4250,34 +3336,22 @@ Backups
       - Backup and recovery sofware
       - Day ohe week
 
-```
 Full
 Backup
-```
 
-```
 MondayTuesdayWednesday ThursdayRecovery
-```
 
-```
 Full
 Backup
-```
 
-```
 Full
 Backup
-```
 
-```
 Full
 Backup
-```
 
-```
 Full
 Backup
-```
 
 Full Backup
 
@@ -4290,39 +3364,23 @@ Full Backup
   - Long backupmes
   - Los o sorage space
 
-```
 Full
 Backup
-```
 
-```
 Monday Tuesday Wednesday Thursday Recovery
-```
 
-```
 Incremental Incremental
-```
 
-```
 Incremental
-```
 
-```
 Full
 Backup
-```
 
-```
 Incremental
-```
 
-```
 Incremental
-```
 
-```
 Incremental
-```
 
 Incremental Backup
 
@@ -4364,9 +3422,7 @@ On sie vs. o sie backups
   - More copies ohe daa
   - More opons when resoring
 
-```
 Grandaher-aher-son (GFS)
-```
 
 - Three separae backup roaons
   - Monhly, weekly, daily
@@ -4442,9 +3498,7 @@ Conrolling ESD
 - Do no connec yourselohe ground
   o an elecrical sysem!
 
-```
 Prevenng sac discharge
-```
 
 - An-sac srap
   - Connec your wriso a meal par ohe compuer
@@ -4487,9 +3541,7 @@ Equipmen grounding
 - Never connec yourselohe ground o an elecrical sysem
   - This is no a wayo preven ESD
 
-```
 Personal saey
-```
 
 - Lifingechnique
   - Lif wih your legs, keep your back sraigh
@@ -4613,9 +3665,7 @@ Inciden response: Firs response
 - Collec and proec inormaon relango an even
   - Many dieren daa sources and proecon mechanisms
 
-```
 Inciden response: Copy o drive
-```
 
 - Copyhe conens o a disk
   - Bi-or-bi, bye-or-bye
@@ -4690,9 +3740,7 @@ Regulang credi card daa
   - Regularly Monior and Tes Neworks
   - Mainain an Inormaon Securiy Policy
 
-```
 Personal governmen-issued inormaon
-```
 
 - Usedor governmen services and documenaon
   - Social securiy number, driver license
@@ -4827,9 +3875,7 @@ Avoid being judgmenal
 - You’re goingo make some BIG misakes
   - Rememberhem.
 
-```
 Be onme and avoid disracons
-```
 
 - Don’ allow inerrupons
   - No personal calls, noexng, no Twier
@@ -4857,9 +3903,7 @@ Dicul siuaons
   - Even ihere’s no updae
 - Neverakehe siuaono social media
 
-```
 Mainain condenaliy
-```
 
 - Privacy concerns
   - Sensive inormaon
@@ -4911,9 +3955,7 @@ Microsof Visual Basic Scripng Edion
   - Scripng inside o
     Microsof Oce applicaons
 
-```
 Shell scrip
-```
 
 - Scripnghe Unix/Linux shell
   - Auomae and exendhe command line
@@ -4930,8 +3972,8 @@ Shell scrip
 - Popular in manyechnologies
   - Broad appeal and suppor
 
-```
-#!/bin/sh
+# !/bin/sh
+
 // Add the frst input string
 INPUT_STRING=hello
 // Keep looping i the string isn’t equal to bye
@@ -4941,7 +3983,6 @@ echo “Please type something in (bye to quit)”
 read INPUT_STRING
 echo “You typed: $INPUT_STRING”
 done
-```
 
 ### 4.8 - Scripng Use Cases
 
@@ -5004,9 +4045,7 @@ Auomaed backups
   - Works while you sleep
   - Don’ haveohink abou i
 
-```
 Inormaon gahering
-```
 
 - Ge specic inormaonrom a remoe device
   - Monioring and reporng
@@ -5080,9 +4119,7 @@ VPNs
 - Used wih clien sofware
   - Somemes buil inohe OS
 
-```
 VPN securiy
-```
 
 - VPN daa onhe nework is very secure
   - The bes encryponechnologies
@@ -5115,17 +4152,13 @@ VPN securiy
   - Anomaly monioring
   - Hardware/sofware invenory
 
-```
 Corporate
 Network
-```
 
 Internet
 
-```
 VPN Concentrator
 Remote User
-```
 
 Clien-o-sie VPN
 
@@ -5157,9 +4190,7 @@ Microsof Remoe Assisance (MSRA)
 - Replaced by Quick Assis in Windows 10
   - The laes version o MSRA
 
-```
 MSRA/Quick Assis securiy
-```
 
 - No ongoing Remoe Deskop service required
   - Avoids uninended access
@@ -5186,19 +4217,15 @@ Connue your journey on
 
 ProessorMesser.com:
 
-```
 Proessor Messer's Free
 CompTIA A+ Training Courses
-```
 
 Monhly A+ Sudy Group Live Sreams
 
 24 x 7 Live Discord Cha
 
-```
 Proessor Messer's
 CompTIA A+ Success Bundle
-```
 
 Voucher Discouns
 

@@ -3,4 +3,50 @@ title: "1.6 - Windows Network Technologies"
 description: "This is a description"
 ---
 
-Content goes here...
+### 1.6 - Windows Network Technologies
+
+#### Shared Resources
+
+- Shares folders or printers on the network.
+- Maps drive letters to shares.
+- Hidden shares end with a dollar sign ($).
+- Managed via Administrative Tools > Computer Management.
+
+#### Mapping Drives
+
+- Accesses shares from This PC / Map network drive.
+- Uses local drive letter and share name.
+- May require additional authentication.
+- Command line usage: `net use h: "\\Daedalus\Gate Room"`.
+
+#### Sharing Printers
+
+- Similar to folder sharing but for printers.
+- Accessed through Windows Explorer, the Settings app, or Printer Properties.
+
+#### Using a Shared Printer
+
+- Adds printers through Windows Explorer or the Settings app.
+
+#### Proxy Settings
+
+- Redirects internet traffic through a go-between.
+- Set via Settings > Network and Internet or Control Panel > Internet Options > Connections > LAN settings.
+- Configures address and exceptions.
+
+#### Network Locations
+
+- Private: For sharing and connecting devices on home or work networks.
+- Public: For environments like public Wi-Fi, with no sharing or connectivity.
+- Customizable security settings.
+
+#### Network Paths
+
+- Views network paths in File Explorer.
+- Maps network drives with assigned drive letters.
+- Disconnects drives through the toolbar or right-click.
+
+#### Metered Connections
+
+- Limits data usage, suitable for slow links, limited bandwidth, or usage-based billing.
+- Modifies application communication, affecting Windows Updates and OneDrive sync.

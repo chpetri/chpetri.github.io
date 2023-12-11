@@ -3,4 +3,41 @@ title: "1.6 - Configuring Windows Firewall"
 description: "This is a description"
 ---
 
-Content goes here...
+### 1.6 - Configuring Windows Firewall
+
+#### Windows Defender Firewall
+
+- The firewall should always be enabled, though it may be temporarily disabled for troubleshooting.
+- Can be turned on or off from the main screen, requiring elevated permissions.
+- Different settings are available for each network type (Public/Private).
+
+#### Windows Firewall Configuration
+
+- Option to block all incoming connections, which ignores any exception list.
+- Useful for maximum security needs.
+- Modify notifications for app blocking.
+
+#### Creating a Firewall Exception
+
+- Allows specific apps or features through Windows Firewall.
+- Configure port numbers to block or allow.
+- Predefined exceptions list common applications.
+- Create custom rules for detailed firewall control.
+
+#### How Windows Gets an IP Address
+
+- DHCP (Dynamic Host Configuration Protocol) for automatic IP addressing.
+- APIPA (Automatic Private IP Addressing) assigns a link-local address when no static address or DHCP server is available.
+- Static address configuration requires manual input of specific details.
+
+#### TCP/IP Host Addresses
+
+- IP Address: Unique identifier.
+- Subnet Mask: Identifies the subnet.
+- Gateway: Route off the subnet to the rest of the world.
+- DNS (Domain Name Services): Converts domain names to IP addresses.
+- DHCP (Dynamic Host Configuration Protocol): Automates the IP address configuration process.
+- Addresses can be dynamic or static.
+- Loopback address (127.0.0.1) is always available.
+- Multiple DHCP servers can be configured for redundancy.
+- If a DHCP server is not available, Windows uses an Alternative Configuration, defaulting to APIPA addressing, or a static IP address can be configured.

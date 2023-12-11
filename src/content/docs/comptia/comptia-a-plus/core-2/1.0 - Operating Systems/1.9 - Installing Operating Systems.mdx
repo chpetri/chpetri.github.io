@@ -3,4 +3,50 @@ title: "1.9 - Installing Operating Systems"
 description: "This is a description"
 ---
 
-Content goes here...
+### 1.9 - Installing Operating Systems
+
+#### Boot Methods
+
+- **USB Storage:** Requires a bootable USB and computer support for USB booting.
+- **Optical Media:** CD-ROM and DVD-ROM are options.
+- **PXE (Preboot Execution Environment):** Allows remote network installation if supported by the computer.
+- **Solid State Drives / Hard Drives:** Can store multiple OS installation files.
+- **Internet-Based:** Used for Linux distributions, macOS Recovery installation, Windows updates.
+- **External / Hot Swappable Drive:** Some external drives can mount an ISO image and boot from USB.
+- **Internal Hard Drive:** Install and boot from a separate drive or create and boot from a new partition.
+
+#### Types of Installations
+
+- **In-Place Upgrade:** Maintains existing applications and data.
+- **Recovery Partition:** Hidden partition with installation files.
+- **Clean Install:** Wipes the slate clean for reinstallation; migration tools can assist.
+- **Image Deployment:** Deploys a clone to every computer, quick and can be automated.
+- **Repair Installation:** Fixes issues with the Windows OS without modifying user files.
+- **Remote Network Installation:** Utilizes a local server or shared drive, installs across the internet.
+- **Load Alternative Third-Party Drivers:** Necessary for disk controller drivers, etc.
+- **Disk Partitioning:** Divides the physical drive into logical pieces, useful for separating operating systems.
+
+#### GPT Partition Style
+
+- **GPT (GUID Partition Table):** Latest partition format standard.
+- Requires UEFI BIOS.
+- Supports up to 128 partitions.
+- Maximum partition size significantly exceeds traditional limits.
+
+#### MBR Partition Style
+
+- **MBR (Master Boot Record):** Older standard with limitations.
+- Maximum of four primary partitions per hard disk.
+- Extended partitions contain additional logical partitions, which are not bootable.
+
+#### Disk Partitioning
+
+- First step in preparing disks.
+- An MBR-style hard disk supports up to four partitions.
+- GUID partition tables support up to 128 partitions with UEFI BIOS.
+- Caution advised due to potential for data loss.
+
+#### Quick Format vs. Full Format
+
+- **Quick Format:** Creates a new file table, appearing as if data is erased without additional checks.
+- **Full Format:** Writes zeros to the entire disk, making data unrecoverable and checks for bad sectors.
