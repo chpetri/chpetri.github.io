@@ -3,4 +3,75 @@ title: "2.2 - Wireless Encryption"
 description: "This is a description"
 ---
 
-Content goes here...
+### 2.2 - Wireless Encryption
+
+#### Securing a Wireless Network
+
+- Wireless networks can contain confidential information, necessitating controlled access through authentication (usernames, passwords, multi-factor authentication).
+- Communication must be confidential and maintain integrity, hence the need for encryption and message integrity checks (MIC).
+
+#### WPA (Wi-Fi Protected Access)
+
+- WPA, introduced in 2002, replaced WEP (Wired Equivalent Privacy) due to its cryptographic weaknesses.
+- It uses RC4 with TKIP (Temporal Key Integrity Protocol), featuring a larger Initialization Vector (IV) and an encrypted hash, providing each packet with a unique 128-bit encryption key.
+
+#### Wireless Encryption
+
+- Encryption is critical as wireless communications can be intercepted.
+- WPA2 and WPA3 are standards in wireless encryption.
+
+#### WPA2 and CCMP
+
+- WPA2, certified in 2004, uses the CCMP block cipher mode.
+- CCMP (Counter Mode with Cipher Block Chaining Message Authentication Code Protocol) offers data confidentiality with AES encryption and a Message Integrity Check (MIC) with CBC-MAC.
+
+#### WPA3 and GCMP
+
+- Introduced in 2018, WPA3 uses GCMP (Galois/Counter Mode Protocol), a stronger encryption than WPA2.
+- GCMP ensures data confidentiality with AES and includes a MIC with Galois Message Authentication Code (GMAC).
+
+#### The WPA2 PSK Problem
+
+- WPA2 has a vulnerability to brute-force attacks on the Pre-Shared Key (PSK), especially if a weak PSK is used.
+- Once the PSK is compromised, attackers gain access to the wireless network.
+
+#### SAE (Simultaneous Authentication of Equals)
+
+- WPA3's SAE process includes mutual authentication, creating a shared session key without transmitting it across the network.
+- It prevents brute-force attacks and adds perfect forward secrecy.
+
+#### Wireless Security Modes
+
+- Wireless routers offer various security modes, including Open System (no authentication), WPA/2/3-Personal (with a shared key), and WPA/2/3-Enterprise (individual authentication via an authentication server).
+
+### 2.2 - Authentication Methods
+
+#### RADIUS (Remote Authentication Dial-In User Service)
+
+- A common AAA protocol used for centralized authentication across various platforms and devices.
+- RADIUS servers manage authentication for routers, servers, VPN access, and 802.1X network access.
+
+#### TACACS (Terminal Access Controller Access-Control System)
+
+- A remote authentication protocol developed for ARPANET access control.
+- TACACS+ is the latest version, offering more authentication requests and response codes.
+
+#### Kerberos
+
+- A network authentication protocol allowing for mutual authentication and protection against on-path or replay attacks.
+- It has been a standard since the 1980s and is used in various operating systems, including Microsoft Windows.
+
+#### SSO with Kerberos
+
+- Single Sign-On (SSO) with Kerberos allows users to authenticate once and gain access to multiple resources.
+- It streamlines the login process but is limited to Kerberos-compatible systems.
+
+#### Which Method to Use?
+
+- The choice of authentication method depends on available resources and requirements.
+- RADIUS is common for VPN concentrators, TACACS+ for Cisco devices, and Kerberos for Microsoft networks.
+
+#### Multi-Factor Authentication
+
+- Multi-factor authentication involves multiple verification methods.
+- It can range from expensive (hardware tokens) to inexpensive (smartphone applications).
