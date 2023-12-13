@@ -3,4 +3,67 @@ title: "1.11 - Linux Commands"
 description: "This is a description"
 ---
 
-Content goes here...
+### 1.11 - Linux Commands
+
+#### Linux Command Overview
+
+- Commands are executed in terminals like Terminal or XTerm.
+- Commands in Linux and macOS are similar due to macOS's BSD Unix roots.
+- Users can explore Linux commands using a Live CD or a virtual machine setup.
+
+#### Common Linux Commands
+
+- `ls`: Lists directory contents. Color coding is supported for different file types.
+```bash
+$ ls -l
+total 4
+-rw-r--r--  1 user  staff  0 Aug  7 12:00 file1.txt
+-rw-r--r--  1 user  staff  0 Aug  7 12:00 file2.txt
+```
+- `cd`: Changes the current working directory.
+- `pwd`: Displays the current working directory path.
+
+```bash
+$ cd /Users/user/Desktop
+$ pwd
+/Users/user/Desktop
+```
+
+- `mv`: Moves or renames files.
+- `cp`: Copies files or directories.
+- `rm`: Removes files or directories, with `-r` option to remove directories.
+- `mkdir`: Creates directories.
+
+```bash
+$ mkdir new_dir
+$ ls
+new_dir
+$ mv new_dir new_dir2
+$ ls
+new_dir2
+$ cp new_dir2 new_dir3
+$ ls
+new_dir2 new_dir3
+$ rm new_dir3
+$ ls
+new_dir2
+```
+
+#### File Permissions and Management
+
+- `chmod`: Changes file system object modes (read, write, execute permissions).
+- `chown`: Changes file owner and group.
+- `yum`: Manages RPM packages, used for installing, deleting, and updating software.
+- `ip`: Manages network interfaces, including enabling, disabling, and configuring addresses.
+- `df`: Shows file systems and free space.
+- `grep`: Searches text in files.
+- `find`: Locates files by name or extension.
+- `dig`: Retrieves information from DNS servers.
+- `cat`: Concatenates files for display or copying.
+- `nano`: A full-screen text editor.
+
+#### System Administration
+
+- `su`: Switches to another user or superuser.
+- `sudo`: Executes a command with superuser privileges.
+- `apt-get`: Manages application packages in distributions using Advanced Packaging Tool.
