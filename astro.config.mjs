@@ -29,5 +29,9 @@ export default defineConfig({
         directory: 'comptia'
       }
     }]
-  }), partytown()]
+  }), partytown({
+    config: {
+      forward: ["dataLayer.push"],
+    },
+  )]
 });
