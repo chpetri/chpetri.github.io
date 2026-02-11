@@ -35,20 +35,12 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     const dom = {
-        // Start Screen
-        startScreen: document.getElementById('start-screen'), // Updated ID
+        // Start Inputs
         modeBtns: document.querySelectorAll('.setting-btn[data-mode]'),
         countBtns: document.querySelectorAll('.setting-btn[data-count]'),
-        catSelect: document.getElementById('category-select'), // Might be missing in new HTML, check if needed
+        catSelect: document.getElementById('category-select'),
         startBtn: document.getElementById('start-btn'),
-        retryBtn: document.getElementById('retry-mistakes-btn'), // Might be missing
-        mistakeCount: document.getElementById('mistake-count'),
-
-        // Quiz Container
-        quizControls: document.getElementById('quiz-controls'), // Might need update if merged
-        quizCanvas: document.getElementById('quiz-canvas'), // This is fine
-        quizContent: document.getElementById('quiz-content-wrapper'), // Added
-        progressBar: document.getElementById('progress-bar'), // Progress Bar
+        retryBtn: document.getElementById('retry-mistakes-btn'),
 
         // Quiz Display
         currentQ: document.getElementById('current-q-disp'),
@@ -101,49 +93,41 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // --- Configuration Logic ---
     function setupStartConfig() {
-        // Populate Categories (Defensive)
-        if (dom.catSelect) {
-            const categories = new Set();
-            STATE.allQuestions.forEach(q => {
-                const cat = q.category ? q.category.split('.')[0] + ".0" : "General";
-                categories.add(cat);
-            });
+        // Populate Categories
+        const categories = new Set();
+        STATE.allQuestions.forEach(q => {
+            const cat = q.category ? q.category.split('.')[0] + ".0" : "General";
+            categories.add(cat);
+        });
 
-            dom.catSelect.innerHTML = '<option value="all">FULL COMPLIANCE</option>';
-            Array.from(categories).sort().forEach(cat => {
-                const opt = document.createElement('option');
-                opt.value = cat;
-                opt.textContent = `DOMAIN ${cat}`;
-                dom.catSelect.appendChild(opt);
-            });
-        }
+        dom.catSelect.innerHTML = '<option value="all">FULL COMPLIANCE</option>';
+        Array.from(categories).sort().forEach(cat => {
+            const opt = document.createElement('option');
+            opt.value = cat;
+            opt.textContent = `DOMAIN ${cat}`;
+            dom.catSelect.appendChild(opt);
+        });
 
         // Config Listeners
-        if (dom.modeBtns) {
-            dom.modeBtns.forEach(btn => {
-                btn.addEventListener('click', () => {
-                    dom.modeBtns.forEach(b => b.classList.remove('active'));
-                    btn.classList.add('active');
-                    STATE.config.mode = btn.dataset.mode;
-                });
+        dom.modeBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                dom.modeBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                STATE.config.mode = btn.dataset.mode;
             });
-        }
+        });
 
-        if (dom.countBtns) {
-            dom.countBtns.forEach(btn => {
-                btn.addEventListener('click', () => {
-                    dom.countBtns.forEach(b => b.classList.remove('active'));
-                    btn.classList.add('active');
-                    STATE.config.count = btn.dataset.count;
-                });
+        dom.countBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                dom.countBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                STATE.config.count = btn.dataset.count;
             });
-        }
+        });
 
-        if (dom.startBtn) {
-            dom.startBtn.addEventListener('click', () => startSession(false));
-        }
+        dom.startBtn.addEventListener('click', () => startSession(false));
 
-        if (dom.retryBtn && STATE.stats.mistakes.length > 0) {
+        if (STATE.stats.mistakes.length > 0) {
             dom.retryBtn.classList.remove('hidden');
             dom.retryBtn.addEventListener('click', () => {
                 STATE.config.retryMistakes = true;
@@ -158,7 +142,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if (isRetry) {
             pool = pool.filter(q => STATE.stats.mistakes.includes(q.id));
-        } else if (dom.catSelect && dom.catSelect.value !== 'all') {
+        } else if (dom.catSelect.value !== 'all') {
             const cat = dom.catSelect.value;
             pool = pool.filter(q => (q.category && q.category.startsWith(cat.split('.')[0])));
         }
@@ -182,24 +166,7 @@ document.addEventListener('DOMContentLoaded', () => {
         STATE.isChecked = {};
         STATE.flagged = {};
 
-        startQuiz();
-    }
-
-    // --- Core Logic ---
-    function startQuiz() {
-        if (STATE.sessionQuestions.length === 0) {
-            alert("System failure: No questions loaded.");
-            return;
-        }
-
-        STATE.userAnswers = {};
-        STATE.isChecked = {};
-
-        // UI Transition (Modern Layout)
-        if (dom.startScreen) dom.startScreen.classList.add('hidden');
-        if (dom.quizControls) dom.quizControls.classList.remove('hidden');
-        if (dom.quizContent) dom.quizContent.classList.remove('hidden');
-
+        switchView('quiz');
         loadQuestion(0);
     }
 
@@ -210,11 +177,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // Update Header Counter
         const currentNum = (index + 1).toString().padStart(2, '0');
         const totalNum = STATE.sessionQuestions.length.toString().padStart(2, '0');
-        if (dom.headerCounter) dom.headerCounter.textContent = `Target ${currentNum} / ${totalNum}`;
-
-        // Update Progress Bar
-        const progressPct = ((index + 1) / STATE.sessionQuestions.length) * 100;
-        if (dom.progressBar) dom.progressBar.style.width = `${progressPct}%`;
+        if (dom.headerCounter) dom.headerCounter.textContent = `TARGET ${currentNum} / ${totalNum}`;
 
         // Update ID with leading zero
         dom.currentQ.textContent = currentNum;
@@ -222,7 +185,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         dom.optionsContainer.innerHTML = '';
         dom.explanationPanel.classList.add('hidden');
-        if (dom.flagBtn) dom.flagBtn.classList.toggle('flagged', !!STATE.flagged[q.id]);
+        dom.flagBtn.classList.toggle('flagged', !!STATE.flagged[q.id]);
 
         const savedAnswer = STATE.userAnswers[q.id];
         const isChecked = STATE.isChecked[q.id];
@@ -230,12 +193,11 @@ document.addEventListener('DOMContentLoaded', () => {
         // Button State Logic
         const hasSelection = !!savedAnswer;
         dom.nextBtn.disabled = !hasSelection;
-        dom.nextBtn.textContent = (index === STATE.sessionQuestions.length - 1) ? "Finish Assessment" : "Continue to Next →";
+        dom.nextBtn.textContent = (index === STATE.sessionQuestions.length - 1) ? "COMPLETE MISSION" : "NEXT PHASE ➝";
 
         // Check Button Logic
         if (STATE.config.mode === 'learn') {
             dom.checkBtn.classList.toggle('hidden', !!isChecked);
-            dom.checkBtn.disabled = !hasSelection;
         } else {
             dom.checkBtn.classList.add('hidden');
         }
@@ -247,10 +209,10 @@ document.addEventListener('DOMContentLoaded', () => {
             btn.className = 'option-btn';
             btn.dataset.key = key;
 
-            const idxStr = key; // Use A, B, C, D
+            const idxStr = (idx + 1).toString().padStart(2, '0');
             btn.innerHTML = `
-                <div class="option-index">${idxStr}</div>
-                <div class="option-text">${escapeHtml(q.options[key])}</div>
+                <span class="option-index">${idxStr}</span>
+                <span class="option-text">${escapeHtml(q.options[key])}</span>
             `;
 
             if (savedAnswer === key) btn.classList.add('selected');
@@ -258,31 +220,21 @@ document.addEventListener('DOMContentLoaded', () => {
             // Validation Styles
             if (isChecked && STATE.config.mode === 'learn') {
                 if (key === q.answer) {
-                    btn.classList.add('correct'); // Use new class
+                    btn.style.border = "4px solid var(--accent)"; // Update to new variable
                 }
                 else if (key === savedAnswer) {
-                    btn.classList.add('wrong'); // Use new class
-                } else {
-                    btn.style.opacity = "0.5";
+                    btn.classList.add('wrong'); // Explicit wrong style
                 }
             }
 
             if (!isChecked) {
                 btn.addEventListener('click', () => {
-                    const saved = STATE.userAnswers[q.id];
-                    if (saved === key) {
-                        delete STATE.userAnswers[q.id];
-                        btn.classList.remove('selected');
-                    } else {
-                        STATE.userAnswers[q.id] = key;
-                        const container = btn.parentElement;
-                        container.querySelectorAll('.option-btn').forEach(b => b.classList.remove('selected'));
-                        btn.classList.add('selected');
-                    }
+                    if (STATE.userAnswers[q.id] === key) return;
 
-                    const hasSelection = !!STATE.userAnswers[q.id];
-                    dom.nextBtn.disabled = !hasSelection;
-                    if (dom.checkBtn) dom.checkBtn.disabled = !hasSelection;
+                    dom.optionsContainer.querySelectorAll('.option-btn').forEach(b => b.classList.remove('selected'));
+                    btn.classList.add('selected');
+                    STATE.userAnswers[q.id] = key;
+                    dom.nextBtn.disabled = false;
                 });
             }
             dom.optionsContainer.appendChild(btn);
@@ -372,44 +324,15 @@ document.addEventListener('DOMContentLoaded', () => {
             dom.questionLog.appendChild(item);
         });
 
-        endQuiz();
-    }
-
-    function endQuiz() {
-        if (dom.quizContent) dom.quizContent.classList.add('hidden');
-        if (dom.quizControls) dom.quizControls.classList.add('hidden');
-
-        const resultScreen = document.getElementById('result-screen');
-        if (resultScreen) resultScreen.classList.remove('hidden');
-
-        const score = calculateScore();
-        const total = STATE.sessionQuestions.length;
-        const pct = Math.round((score / total) * 100);
-
+        const pct = Math.round((correct / STATE.sessionQuestions.length) * 100);
         dom.finalScore.textContent = `${pct}%`;
-
-        // Dynamic Ratings
-        let rating = "NOVICE";
-        if (pct >= 90) rating = "ELITE OPERATOR";
-        else if (pct >= 75) rating = "QUALIFIED OPERATOR";
-        else if (pct >= 50) rating = "FIELD TESTER";
-
-        dom.finalRating.textContent = rating;
-        dom.finalRating.style.color = pct >= 75 ? 'var(--emerald-success)' : 'var(--indigo-primary)';
+        dom.finalRating.textContent = pct > 85 ? "ELITE OPERATOR" : (pct > 65 ? "QUALIFIED" : "NOVICE TARGET");
     }
 
-    dom.restartBtn.addEventListener('click', () => {
-        dom.modal.classList.add('hidden');
-        if (dom.startScreen) dom.startScreen.classList.remove('hidden');
-        if (dom.quizControls) dom.quizControls.classList.add('hidden');
-        // Re-init? Just showing start screen allows reconfiguration
-    });
+    dom.homeBtn.addEventListener('click', () => switchView('start'));
+    dom.restartBtn.addEventListener('click', () => startSession(false));
 
-    dom.homeBtn.addEventListener('click', () => {
-        dom.modal.classList.add('hidden');
-        if (dom.startScreen) dom.startScreen.classList.remove('hidden');
-        if (dom.quizControls) dom.quizControls.classList.add('hidden');
-    }); function switchView(viewName) {
+    function switchView(viewName) {
         // Hide all
         Object.values(viewPairs).forEach(pair => {
             pair.content.classList.add('hidden');

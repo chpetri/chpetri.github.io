@@ -4,132 +4,110 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RATIONAL.FUTUR | PT0-003</title>
-    <link rel="stylesheet" href="style.css?v=3">
-    <link
-        href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@800;900&family=Inter:wght@400;500;600;700&display=swap"
-        rel="stylesheet">
+    <title>PENTEST+ DRILL | MODERN</title>
+    <!-- Modern Inter Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css?v=6">
 </head>
 
 <body>
-    <!-- Background Image -->
-    <div class="bg-image"></div>
-
     <div class="app-container">
-        <!-- Header: PENTEST.PLUS -->
+        <!-- HEADER -->
         <header class="main-header">
-            <h1 class="brand-title">PENTEST<span class="dot">.</span>PLUS</h1>
+            <h1 class="brand-title">PENTEST<span>+</span> DRILL</h1>
             <div class="header-meta">
-                <span id="header-q-counter">Q. 00 / 00</span>
+                <span id="header-q-counter">Target 00 / 00</span>
                 <span class="anno">PT0-003</span>
             </div>
         </header>
 
-        <!-- Main Grid Layout -->
-        <div class="main-grid">
+        <!-- PROGRESS BAR -->
+        <div class="prog-container">
+            <div id="progress-bar" class="prog-bar"></div>
+        </div>
 
-            <!-- Left Panel: Content / Question -->
-            <div class="panel-left">
-                <!-- Start Screen Content -->
-                <div id="start-content" class="content-block fade-in">
-                    <div class="obj-label">CERTIFICATION TARGET</div>
-                    <h2 class="hero-text">INITIATE<br>THE<br><span class="highlight">ENGAGEMENT</span></h2>
-                    <p class="hero-sub"
-                        style="margin-top:20px; border-left:4px solid var(--border-highlight); padding-left:15px; font-weight:500; max-width:500px">
-                        High-velocity knowledge assessment for the CompTIA PenTest+ (PT0-003) certification.
-                        Validate your methodology. Execute the standard.
-                    </p>
-                </div>
+        <!-- MAIN CARD -->
+        <div class="content-card">
+            <div class="main-grid">
+                <!-- CANVAS -->
+                <main class="panel-left" id="quiz-canvas">
 
-                <!-- Quiz Content -->
-                <div id="quiz-content-wrapper" class="content-block hidden">
-                    <div class="q-meta-box">
-                        <span class="q-id">Q.<span id="current-q-disp">01</span></span>
-                    </div>
-                    <h2 id="question-text" class="question-display">LOADING DATA...</h2>
+                    <!-- 1. START SCREEN -->
+                    <div id="start-screen" class="center-content">
+                        <div class="hero-icon">💎</div>
+                        <h2 class="hero-text">Initialize<br>Assessment</h2>
+                        <p class="hero-sub">Select your configuration to begin the high-velocity knowledge drill.</p>
 
-                    <div id="explanation-panel" class="rational-explanation hidden">
-                        <h3>ANALYSIS</h3>
-                        <p id="explanation-text"></p>
-                    </div>
-                </div>
+                        <div class="config-card">
+                            <div class="setting-group">
+                                <label>Drill Mode</label>
+                                <div class="btn-group">
+                                    <button class="setting-btn active" data-mode="learn">LEARNING</button>
+                                    <button class="setting-btn" data-mode="exam">LIVE FIRE</button>
+                                </div>
+                            </div>
 
-                <!-- Results Content -->
-                <div id="result-content" class="content-block hidden">
-                    <h2 class="hero-text">ENGAGEMENT<br><span class="highlight">CONCLUDED</span></h2>
-                    <div id="final-score-display" class="giant-score">0%</div>
-                    <div id="final-rating" class="rating-text">NOVICE</div>
-                </div>
-            </div>
+                            <div class="setting-group">
+                                <label>Packet Size</label>
+                                <div class="btn-group">
+                                    <button class="setting-btn" data-count="10">10</button>
+                                    <button class="setting-btn active" data-count="25">25</button>
+                                    <button class="setting-btn" data-count="50">50</button>
+                                    <button class="setting-btn" data-count="all">MAX</button>
+                                </div>
+                            </div>
 
-            <!-- Right Panel: Interface / Options -->
-            <div class="panel-right">
-                <!-- Start Controls -->
-                <div id="start-controls" class="control-stack fade-in">
-                    <div class="setting-group">
-                        <label>ENGAGEMENT MODE</label>
-                        <div class="btn-group">
-                            <button class="setting-btn active" data-mode="learn">TRAINING</button>
-                            <button class="setting-btn" data-mode="exam">LIVE FIRE</button>
+                            <button id="start-btn" class="action-btn">Start Drill Session</button>
+                            <button id="retry-mistakes-btn" class="action-btn hidden"
+                                style="background: var(--amber-warning); margin-top: 10px;">Retry Failures</button>
                         </div>
                     </div>
 
-                    <div class="setting-group">
-                        <label>DOMAIN SCOPE</label>
-                        <select id="category-select" class="rational-select">
-                            <option value="all">FULL COMPLIANCE</option>
-                        </select>
-                    </div>
+                    <!-- 2. QUIZ CONTENT -->
+                    <div id="quiz-content-wrapper" class="hidden">
+                        <div class="q-meta-box">
+                            <span class="q-id">Target Q.<span id="current-q-disp">01</span></span>
+                        </div>
+                        <h2 id="question-text" class="question-display">Loading system data...</h2>
 
-                    <div class="setting-group">
-                        <label>PACKET SIZE</label>
-                        <div class="btn-group">
-                            <button class="setting-btn" data-count="10">10</button>
-                            <button class="setting-btn active" data-count="25">25</button>
-                            <button class="setting-btn" data-count="50">50</button>
-                            <button class="setting-btn" data-count="all">MAX</button>
+                        <div id="options-container" class="options-stack">
+                            <!-- Options injected via JavaScript -->
+                        </div>
+
+                        <!-- Analysis Panel -->
+                        <div id="explanation-panel" class="rational-explanation hidden">
+                            <h3>ANALYSIS BREAKDOWN</h3>
+                            <p id="explanation-text"></p>
                         </div>
                     </div>
 
-                    <button id="start-btn" class="action-btn">INITIALIZE SYSTEM ⚡</button>
-                    <button id="retry-mistakes-btn" class="action-btn secondary hidden">RETRY FAILURES ↺</button>
-                </div>
+                    <!-- 3. RESULT SCREEN -->
+                    <div id="result-screen" class="center-content hidden">
+                        <div class="anno" style="margin-bottom: 20px;">Mission Conclusion</div>
+                        <h2 id="final-rating" class="hero-text">OPERATOR</h2>
+                        <div id="final-score-display"
+                            style="font-size: 5rem; font-weight: 900; color: var(--indigo-primary); letter-spacing: -2px;">
+                            0%</div>
 
-                <!-- Quiz Options -->
-                <div id="quiz-controls" class="control-stack hidden">
-                    <div id="options-container" class="options-stack">
-                        <!-- Options injected here -->
+                        <div style="margin-top: 40px; display: flex; gap: 16px; width: 100%; max-width: 400px;">
+                            <button id="restart-btn" class="action-btn">New Drill</button>
+                            <button id="home-btn" class="action-btn check-btn">Main Terminal</button>
+                        </div>
                     </div>
 
-                    <button id="check-btn" class="check-btn">VALIDATE ANSWER</button>
+                </main>
 
-                    <div class="nav-controls">
-                        <button id="next-btn" class="nav-btn" disabled>NEXT PHASE ➝</button>
-                    </div>
+                <!-- FOOTER NAVIGATION -->
+                <footer id="quiz-controls" class="nav-controls hidden">
+                    <button id="check-btn" class="action-btn check-btn" disabled>Submit Response</button>
+                    <button id="next-btn" class="action-btn" disabled>Continue to Next →</button>
+                </footer>
 
-                    <!-- Hidden Hint/Flag for this strict UI, or minimal -->
-                    <div style="display:flex; justify-content:space-between; padding:10px;">
-                        <button id="hint-btn"
-                            style="background:none; border:none; color:#999; font-size:10px; cursor:pointer">HINT</button>
-                        <button id="flag-btn"
-                            style="background:none; border:none; color:#999; font-size:10px; cursor:pointer">FLAG</button>
-                    </div>
-                </div>
-
-                <!-- Result Actions -->
-                <div id="result-controls" class="control-stack hidden">
-                    <div id="question-log" class="rational-log">
-                        <!-- Log items -->
-                    </div>
-                    <button id="home-btn" class="action-btn secondary">RETURN TO BASE</button>
-                    <button id="restart-btn" class="action-btn">NEW SEQUENCE</button>
-                </div>
             </div>
-
         </div>
     </div>
 
-    <!-- Modal -->
+    <!-- Review Modal -->
     <div id="review-modal" class="modal hidden">
         <div class="modal-content">
             <span class="close-modal">&times;</span>
@@ -137,7 +115,7 @@
         </div>
     </div>
 
-    <script src="script.js"></script>
+    <script src="script.js?v=6"></script>
 </body>
 
 </html>

@@ -1,0 +1,79 @@
+[
+  {
+    "id": "q103-3",
+    "number": 3,
+    "question": "SIMULATION Using the output, identify potential attack vectors that should be further investigated.",
+    "options": {},
+    "answer": "",
+    "explanation": "See explanation below.\n1: Null session enumeration\nWeak SMB file permissions\nFragmentation attack\n2: nmap\n-sV\n-p 1-1023\n192.168.2.2\n3: #!/usr/bin/python\nexport $PORTS = 21,22\nfor $PORT in $PORTS:\ntry:\ns.connect((ip, port))\nprint(\"%s:%s - OPEN\" % (ip, port))\nexcept socket.timeout\nprint(\"%:%s - TIMEOUT\" % (ip, port))\nexcept socket.error as e:\nprint(\"%:%s - CLOSED\" % (ip, port))\nfinally\ns.close()\nport_scan(sys.argv[1], ports)",
+    "category": "2.0"
+  },
+  {
+    "id": "q103-24",
+    "number": 24,
+    "question": "You are a penetration tester running port scans on a server. INSTRUCTIONS Part 1: Given the output, construct the command that was used to generate this output from the available options. Part 2: Once the command is appropriately constructed, use the given output to identify the potential attack vectors that should be investigated further. If at any time you would like to bring back the initial state of the simulation, please click the Reset All button.",
+    "options": {},
+    "answer": "",
+    "explanation": "See explanation below.\nPart 1 - 192.168.2.2 -O -sV --top-ports=100 and SMB vulns\nPart 2 - Weak SMB file permissions\nhttps://subscription.packtpub.com/book/networking-and-servers/9781786467454/1/ch01lvl1sec13\n/fingerprinting-os-and-services-running-on-a-target-host",
+    "category": "5.0"
+  },
+  {
+    "id": "q103-36",
+    "number": 36,
+    "question": "During a penetration test, you gain access to a system with a limited user interface. This machine appears to have access to an isolated network that you would like to port scan. INSTRUCTIONS Analyze the code segments to determine which sections are needed to complete a port scanning script. Drag the appropriate elements into the correct locations to complete the script. If at any time you would like to bring back the initial state of the simulation, please click the Reset All button.",
+    "options": {},
+    "answer": "",
+    "explanation": "A computer screen shot of a computer Description automatically generated\nA screen shot of a computer Description automatically generated\nA computer screen with white text Description automatically generated\nAn orange screen with white text Description automatically generated",
+    "category": "1.0"
+  },
+  {
+    "id": "q103-51",
+    "number": 51,
+    "question": "A penetration tester attempts to run an automated web application scanner against a target URL. The tester validates that the web page is accessible from a different device. The tester analyzes the following HTTP request header logging output: 200; GET /login.aspx HTTP/1.1 Host: foo.com; User-Agent: Mozilla/5.0 200; GET /login.aspx HTTP/1.1 Host: foo.com; User-Agent: Mozilla/5.0 No response; POST /login.aspx HTTP/1.1 Host: foo.com; User-Agent: curl 200; POST /login.aspx HTTP/1.1 Host: foo.com; User-Agent: Mozilla/5.0 No response; GET /login.aspx HTTP/1.1 Host: foo.com; User-Agent: python Which of the following actions should the tester take to get the scans to work properly?",
+    "options": {
+      "A": "Modify the scanner to slow down the scan.",
+      "B": "Change the source IP with a VPN.",
+      "C": "Modify the scanner to only use HTTP GET requests.",
+      "D": "Modify the scanner user agent."
+    },
+    "answer": "",
+    "explanation": "",
+    "category": "1.0"
+  },
+  {
+    "id": "q113-9",
+    "number": 9,
+    "question": "During a penetration test, you gain access to a system with a limited user interface. This machine appears to have access to an isolated network that you would like to port scan. INSTRUCTIONS Analyze the code segments to determine which sections are needed to complete a port scanning script. Drag the appropriate elements into the correct locations to complete the script. If at any time you would like to bring back the initial state of the simulation, please click the Reset All button.",
+    "options": {},
+    "answer": "",
+    "explanation": "A computer screen shot of a computer Description automatically generated\nA screen shot of a computer Description automatically generated\nA computer screen with white text Description automatically generated\nAn orange screen with white text Description automatically generated",
+    "category": "1.0"
+  },
+  {
+    "id": "q113-54",
+    "number": 54,
+    "question": "You are a security analyst tasked with hardening a web server. You have been given a list of HTTP payloads that were flagged as malicious. INSTRUCTIONS Given the following attack signatures, determine the attack type, and then identify the associated remediation to prevent the attack in the future. If at any time you would like to bring back the initial state of the simulation, please click the Reset All button.",
+    "options": {},
+    "answer": "",
+    "explanation": "1. Reflected XSS - Input sanitization (<> ...)\n2. Sql Injection Stacked - Parameterized Queries\n3. DOM XSS - Input Sanitization (<> ...)\n4. Local File Inclusion - sandbox req\n5. Command Injection - sandbox req\n6. SQLi union - paramtrized queries\n7. SQLi error - paramtrized queries\n8. Remote File Inclusion - sandbox\n9. Command Injection - input saniti $\n10. URL redirect - prevent external calls",
+    "category": "4.0"
+  },
+  {
+    "id": "q113-74",
+    "number": 74,
+    "question": "A previous penetration test report identified a host with vulnerabilities that was successfully exploited. Management has requested that an internal member of the security team reassess the host to determine if the vulnerability still exists. Part 1: . Analyze the output and select the command to exploit the vulnerable service. Part 2: . Analyze the output from each command. * Select the appropriate set of commands to escalate privileges. * Identify which remediation steps should be taken.",
+    "options": {},
+    "answer": "",
+    "explanation": "See the Explanation below for complete solution.\nThe command that would most likely exploit the services is:\nhydra -l lowpriv -P 500-worst-passwords.txt -t 4 ssh://192.168.10.2:22\nThe appropriate set of commands to escalate privileges is:\necho \"root2:5ZOYXRFHVZ7OY::0:0:root:/root:/bin/bash\" >> /etc/passwd\nThe remediations that should be taken after the successful privilege escalation are:\nRemove the SUID bit from cp.\nMake backup script not world-writable.\nComprehensive Step-by-Step Explanation of the Simulation\nPart 1: Exploiting Vulnerable Service\nNmap Scan Analysis\nCommand: nmap -sC -T4 192.168.10.2\nPurpose: This command runs a default script scan with timing template 4 (aggressive).\nOutput:\nbash\nCopy code\nPort State Service\n22/tcp open ssh\n23/tcp closed telnet\n80/tcp open http\n111/tcp closed rpcbind\n445/tcp open samba\n3389/tcp closed rdp\nPorts open are SSH (22), HTTP (80), and Samba (445).\nEnumerating Samba Shares\nCommand: enum4linux -S 192.168.10.2\nPurpose: To enumerate Samba shares and users.\nOutput:\nmakefile\nCopy code\nuser:[games] rid:[0x3f2]\nuser:[nobody] rid:[0x1f5]\nuser:[bind] rid:[0x4ba]\nuser:[proxy] rid:[0x42]\nuser:[syslog] rid:[0x4ba]\nuser:[www-data] rid:[0x42a]\nuser:[root] rid:[0x3e8]\nuser:[news] rid:[0x3fa]\nuser:[lowpriv] rid:[0x3fa]\nWe identify a user lowpriv.\nSelecting Exploit Command\nHydra Command: hydra -l lowpriv -P 500-worst-passwords.txt -t 4 ssh://192.168.10.2:22 Purpose:\nTo perform a brute force attack on SSH using the lowpriv user and a list of the 500 worst\npasswords.\n-l lowpriv: Specifies the username.\n-P 500-worst-passwords.txt: Specifies the password list.\n-t 4: Uses 4 tasks/threads for the attack.\nssh://192.168.10.2:22: Specifies the SSH service and port.\nExecuting the Hydra Command\nResult: Successful login as lowpriv user if a match is found.\nPart 2: Privilege Escalation and Remediation\nFinding SUID Binaries and Configuration Files\nCommand: find / -perm -2 -type f 2>/dev/null | xargs ls -l\nPurpose: To find world-writable files.\nCommand: find / -perm -u=s -type f 2>/dev/null | xargs ls -l\nPurpose: To find files with SUID permission.\nCommand: grep \"/bin/bash\" /etc/passwd | cut -d':' -f1-4,6,7\nPurpose: To identify users with bash shell access.\nSelecting Privilege Escalation Command\nCommand: echo \"root2:5ZOYXRFHVZ7OY::0:0:root:/root:/bin/bash\" >> /etc/passwd Purpose: To\ncreate a new root user entry in the passwd file.\nroot2: Username.\n5ZOYXRFHVZ7OY: Password hash.\n0:0: User and group ID (root).\n/root: Home directory.\n/bin/bash: Default shell.\nExecuting the Privilege Escalation Command\nResult: Creation of a new root user root2 with a specified password.\nRemediation Steps Post-Exploitation\nRemove SUID Bit from cp:\nCommand: chmod u-s /bin/cp\nPurpose: Removing the SUID bit from cp to prevent misuse.\nMake Backup Script Not World-Writable:\nCommand: chmod o-w /path/to/backup/script\nPurpose: Ensuring backup script is not writable by all users to prevent unauthorized\nmodifications.\nExecution and Verification\nVerifying Hydra Attack:\nRun the Hydra command and monitor for successful login attempts.\nVerifying Privilege Escalation:\nAfter appending the new root user to the passwd file, attempt to switch user to root2 and check\nroot privileges.\nImplementing Remediation:\nApply the remediation commands to secure the system and verify the changes have been\nimplemented.\nBy following these detailed steps, one can replicate the simulation and ensure a thorough\nunderstanding of both the exploitation and the necessary remediations.",
+    "category": "1.0"
+  },
+  {
+    "id": "q113-89",
+    "number": 89,
+    "question": "A penetration tester performs several Nmap scans against the web application for a client. INSTRUCTIONS Click on the WAF and servers to review the results of the Nmap scans. Then click on each tab to select the appropriate vulnerability and remediation options. If at any time you would like to bring back the initial state of the simulation, please click the Reset All button.",
+    "options": {},
+    "answer": "",
+    "explanation": "See the explanation part for detailed solution.\nA screenshot of a computer Description automatically generated\nA screenshot of a computer screen Description automatically generated\nMost likely vulnerability: Perform a SSRF attack against App01.example.com from\nCDN.example.com.\nThe scenario suggests that the CDN network (with a WAF) can be used to perform a Server-Side\nRequest Forgery (SSRF) attack. Since the penetration tester has the pentester workstation\ninteracting through the CDN\n/WAF and the production network is behind it, the most plausible attack vector is to exploit SSRF\nto interact with the internal services like App01.example.com.\nTwo best remediation options:\nRestrict direct communications to App01.example.com to only approved components.\nRequire an additional authentication header value between CDN.example.com and\nApp01.example.com.\nRestrict direct communications to App01.example.com to only approved components: This limits\nthe exposure of the application server by ensuring that only specified, trusted entities can\ncommunicate with it.\nRequire an additional authentication header value between CDN.example.com and\nApp01.example.com:\nAdding an authentication layer between the CDN and the app server helps ensure that requests\nare legitimate and originate from trusted sources, mitigating SSRF and other indirect attack\nvectors.\nNmap Scan Observations:\nCDN/WAF shows open ports for HTTP and HTTPS but filtered for MySQL, indicating it acts as a\nfiltering layer.\nApp Server has open ports for HTTP, HTTPS, and filtered for MySQL.\nDB Server has all ports filtered, typical for a database server that should not be directly\naccessible.\nThese findings align with the SSRF vulnerability and the appropriate remediation steps to\nenhance the security of internal communications.",
+    "category": "1.0"
+  }
+]
