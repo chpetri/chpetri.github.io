@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PenTest+ Prep | Premium Quiz</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="background-glow"></div>
+    
+    <div class="app-container">
+        <header class="quiz-header">
+            <div class="logo">
+                <span class="icon">🛡️</span>
+                <h1>PT0-003 <span class="accent">Quiz</span></h1>
+            </div>
+            <div class="progress-container">
+                <div class="progress-text">
+                    <span id="current-q">1</span> / <span id="total-q">--</span>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progress-fill"></div>
+                </div>
+            </div>
+        </header>
+
+        <main class="quiz-card glass-panel">
+            <div id="quiz-content">
+                <div class="question-header">
+                    <span class="category-badge" id="category-badge">Category</span>
+                    <span class="id-badge" id="id-badge">ID</span>
+                </div>
+                
+                <h2 class="question-text" id="question-text">Loading questions...</h2>
+                
+                <div class="options-grid" id="options-container">
+                    <!-- Options injected here -->
+                </div>
+            </div>
+
+            <div class="explanation-panel hidden" id="explanation-panel">
+                <h3><span class="icon">💡</span> Analysis</h3>
+                <div class="explanation-content" id="explanation-text"></div>
+            </div>
+        </main>
+
+        <footer class="quiz-controls">
+            <button id="prev-btn" class="btn secondary" disabled>Previous</button>
+            <div class="center-controls">
+                <button id="check-btn" class="btn primary">Check Answer</button>
+                <button id="show-expl-btn" class="btn ghost hidden">Why?</button>
+            </div>
+            <button id="next-btn" class="btn secondary">Next</button>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

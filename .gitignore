@@ -1,0 +1,4 @@
+*.pdf
+*.txt
+extract_questions.py
+__pycache__/
