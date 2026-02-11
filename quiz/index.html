@@ -7,7 +7,7 @@
     <title>RATIONAL.FUTUR | PT0-003</title>
     <link rel="stylesheet" href="style.css?v=3">
     <link
-        href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;700&family=Syncopate:wght@400;700&display=swap"
+        href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@800;900&family=Inter:wght@400;500;600;700&display=swap"
         rel="stylesheet">
 </head>
 
@@ -101,13 +101,19 @@
                         <!-- Options injected here -->
                     </div>
 
+                    <button id="check-btn" class="check-btn">VALIDATE ANSWER</button>
+
                     <div class="nav-controls">
-                        <button id="check-btn" class="nav-btn">VERIFY</button>
-                        <button id="next-btn" class="nav-btn">NEXT PHASE ➝</button>
-                        <button id="hint-btn" class="nav-btn ghost">HINT</button>
+                        <button id="next-btn" class="nav-btn" disabled>NEXT PHASE ➝</button>
                     </div>
 
-                    <button id="flag-btn" class="flag-toggle">FLAG DATA</button>
+                    <!-- Hidden Hint/Flag for this strict UI, or minimal -->
+                    <div style="display:flex; justify-content:space-between; padding:10px;">
+                        <button id="hint-btn"
+                            style="background:none; border:none; color:#999; font-size:10px; cursor:pointer">HINT</button>
+                        <button id="flag-btn"
+                            style="background:none; border:none; color:#999; font-size:10px; cursor:pointer">FLAG</button>
+                    </div>
                 </div>
 
                 <!-- Result Actions -->
