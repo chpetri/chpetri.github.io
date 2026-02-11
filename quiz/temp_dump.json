@@ -1,0 +1,30 @@
+[
+  {
+    "id": "q113-10",
+    "number": 10,
+    "question": "[Question text missing from source PDF extract]",
+    "options": {
+      "A": "Use steganography and send the file over FTP",
+      "B": "Compress the file and send it using TFTP",
+      "C": "Split the file in tiny pieces and send it over dnscat",
+      "D": "Encrypt and send the file over HTTPS"
+    },
+    "answer": "A",
+    "explanation": "When considering efficiency and security for exfiltrating sensitive data, the chosen method must\nensure data confidentiality and minimize the risk of detection. Here's an analysis of each option:\nUse steganography and send the file over FTP (Option A):\nSteganography hides data within other files, such as images. FTP is a protocol for transferring\nfiles.\nDrawbacks: FTP is not secure as it transmits data in clear text, making it susceptible to\ninterception.\nSteganography can add an extra layer of obfuscation, but the use of FTP makes this option\ninsecure.\nCompress the file and send it using TFTP (Option B):\nTFTP is a simple file transfer protocol that lacks encryption.\nDrawbacks: TFTP is inherently insecure because it does not support encryption, making it easy\nfor attackers to intercept the data during transfer.\nSplit the file in tiny pieces and send it over dnscat (Option C):\ndnscat is a tool for tunneling data over DNS.\nDrawbacks: While effective at evading detection by using DNS, splitting the file and managing the\nreassembly adds complexity. Additionally, large data transfers over DNS can raise suspicion.\nEncrypt and send the file over HTTPS (Answer: D):\nEncrypting the file ensures that its contents are protected during transfer. HTTPS provides a\nsecure, encrypted channel for communication over the internet.\nAdvantages: HTTPS is widely used and trusted, making it less likely to raise suspicion.\nEncryption ensures the data remains confidential during transit.\nReferences:\nThe use of HTTPS for secure data transfer is a standard practice in cybersecurity, providing both\nencryption and integrity of the data being transmitted.\nConclusion: Encrypting the file and sending it over HTTPS is the most efficient and secure\nmethod for exfiltrating sensitive data, ensuring both confidentiality and reducing the risk of\ndetection.",
+    "category": "1.0"
+  },
+  {
+    "id": "q113-37",
+    "number": 37,
+    "question": "A consultant starts a network penetration test. The consultant uses a laptop that is hardwired to the network to try to assess the network with the appropriate tools. Which of the following should the consultant engage first?",
+    "options": {
+      "A": "Service discovery",
+      "B": "OS fingerprinting",
+      "C": "Host discovery",
+      "D": "DNS enumeration"
+    },
+    "answer": "A",
+    "explanation": "In network penetration testing, the initial steps involve gathering information to build an\nunderstanding of the network's structure, devices, and potential entry points. The process\ngenerally follows a structured approach, starting from broad discovery methods to more specific\nidentification techniques. Here's a comprehensive breakdown of the steps:\n* Host Discovery (answer: C):\n* Objective: Identify live hosts on the network.\n* Tools & Techniques:\n* Ping Sweep: Using tools like nmap with the -sn option (ping scan) to check for live hosts by\nsending ICMP Echo requests.\n* ARP Scan: Useful in local networks, arp-scan can help identify all devices on the local subnet by\nbroadcasting ARP requests.\nnmap -sn 192.168.1.0/24\n* References:\n* The GoBox HTB write-up emphasizes the importance of identifying hosts before moving to\nservice enumeration.\n* The Forge HTB write-up also highlights using Nmap for initial host discovery in its enumeration\nphase.\nService Discovery (Option A):\n* Objective: After identifying live hosts, determine the services running on them.\n* Tools & Techniques:\n* Nmap: Often used with options like -sV for version detection to identify services.\nnmap -sV 192.168.1.100\n* References:\n* As seen in multiple write-ups (e.g., Anubis HTB and Bolt HTB), service discovery follows host\nidentification to understand the services available for potential exploitation.\nOS Fingerprinting (Option B):\n* Objective: Determine the operating system of the identified hosts.\n* Tools & Techniques:\n* Nmap: With the -O option for OS detection.\nnmap -O 192.168.1.100\n* References:\n* Accurate OS fingerprinting helps tailor subsequent attacks and is often performed after host and\nservice discovery, as highlighted in the write-ups.\nDNS Enumeration (Option D):\n* Objective: Identify DNS records and gather subdomains related to the target domain.\n* Tools & Techniques:\n* dnsenum, dnsrecon, and dig.\ndnsenum example.com\n* References:\n* DNS enumeration is crucial for identifying additional attack surfaces, such as subdomains and\nrelated services. This step is typically part of the reconnaissance phase but follows host discovery\nand sometimes service identification.\nConclusion: The initial engagement in a network penetration test is to identify the live hosts on the\nnetwork (Host Discovery). This foundational step allows the penetration tester to map out active\ndevices before delving into more specific enumeration tasks like service discovery, OS\nfingerprinting, and DNS enumeration.\nThis structured approach ensures that the tester maximizes their understanding of the network\nenvironment efficiently and systematically.",
+    "category": "1.0"
+  }
+]
