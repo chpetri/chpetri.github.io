@@ -94,9 +94,17 @@ document.addEventListener('DOMContentLoaded', () => {
     function loadStats() {
         try {
             const saved = localStorage.getItem('pt003_stats');
-            if (saved) STATE.stats = JSON.parse(saved);
+            if (saved) {
+                const parsed = JSON.parse(saved);
+                if (parsed && typeof parsed === 'object' && Array.isArray(parsed.mistakes)) {
+                    STATE.stats = parsed;
+                }
+            }
             if (!Array.isArray(STATE.stats.mistakes)) STATE.stats.mistakes = [];
-        } catch (e) { console.warn("Stats corrupt"); }
+        } catch (e) {
+            console.warn("Stats corrupt, resetting");
+            STATE.stats = { mistakes: [] };
+        }
     }
 
     // --- Configuration Logic ---
@@ -356,14 +364,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
             const item = document.createElement('div');
             item.className = 'log-item';
-            item.innerHTML = `<span style="color:${isCorrect ? 'var(--success)' : 'var(--danger)'}">${isCorrect ? '✔' : '✖'}</span> Q.${idx + 1}: ${escapeHtml(q.question.substring(0, 40))}...`;
+            item.innerHTML = `<span style="color:${isCorrect ? 'var(--emerald-success)' : 'var(--rose-error)'}">${isCorrect ? '✔' : '✖'}</span> Q.${idx + 1}: ${escapeHtml(q.question.substring(0, 40))}...`;
             item.addEventListener('click', () => {
                 dom.modalContent.innerHTML = `
                     <span class="close-modal">&times;</span>
-                    <h3 style="color:var(--primary); margin-bottom:10px;">${q.id}</h3>
+                    <h3 style="color:var(--indigo-primary); margin-bottom:10px;">${escapeHtml(q.id)}</h3>
                     <p><strong>Q:</strong> ${escapeHtml(q.question)}</p>
-                    <p><strong>A:</strong> ${q.answer}</p>
-                    <div style="margin-top:10px; padding:10px; border-left:3px solid var(--primary); background:rgba(255,255,255,0.05)">
+                    <p><strong>A:</strong> ${escapeHtml(q.answer)}</p>
+                    <div style="margin-top:10px; padding:10px; border-left:3px solid var(--indigo-primary); background:var(--bg-color)">
                         ${escapeHtml(q.explanation)}
                     </div>`;
                 dom.modal.classList.remove('hidden');
@@ -396,6 +404,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
         dom.finalRating.textContent = rating;
         dom.finalRating.style.color = pct >= 75 ? 'var(--emerald-success)' : 'var(--indigo-primary)';
+    }
+
+    function calculateScore() {
+        let count = 0;
+        STATE.sessionQuestions.forEach(q => {
+            if (STATE.userAnswers[q.id] === q.answer) count++;
+        });
+        return count;
     }
 
     dom.restartBtn.addEventListener('click', () => {
