@@ -352,37 +352,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // Render Options
-    const sortedKeys = Object.keys(q.options).sort();
-    sortedKeys.forEach(key => {
-        const btn = document.createElement('button');
-        btn.className = 'option-btn';
-        btn.dataset.key = key;
-        btn.innerHTML = `
-                <span class="option-letter">${key}</span>
-                <div class="option-content">${escapeHtml(q.options[key])}</div>
-            `;
-
-        if (savedAnswer === key) btn.classList.add('selected');
-
-        // Click Handler
-        if (!isChecked && (STATE.config.mode === 'learn' || STATE.config.mode === 'exam')) {
-            btn.addEventListener('click', () => selectOption(key));
-        }
-
-        // Applying Styles (Only in Learning Mode if Checked)
-        if (STATE.config.mode === 'learn' && isChecked) {
-            applyValidationStyles(btn, key, q.answer, savedAnswer);
-        }
-
-        dom.optionsContainer.appendChild(btn);
-    });
-
-    // Show Explanation if Learning Mode & Checked
-    if (STATE.config.mode === 'learn' && isChecked) {
-        showExplanation(q);
-    }
-}
 
     function selectOption(key) {
         // Prevent changing answer if already checked (in learn mode)
@@ -634,62 +603,62 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // --- Events ---
     dom.checkBtn.addEventListener('click', handleCheck);
-dom.nextBtn.addEventListener('click', handleNext);
+    dom.nextBtn.addEventListener('click', handleNext);
 
-dom.flagBtn.addEventListener('click', () => {
-    const qid = STATE.sessionQuestions[STATE.currentIndex].id;
-    STATE.flagged[qid] = !STATE.flagged[qid];
-    dom.flagBtn.classList.toggle('flagged');
-});
-
-dom.hintBtn.addEventListener('click', () => {
-    // 50/50 Logic
-    const q = STATE.sessionQuestions[STATE.currentIndex];
-    const correct = q.answer;
-    const keys = Object.keys(q.options).filter(k => k !== correct);
-    shuffleArray(keys);
-    keys.slice(0, 2).forEach(k => {
-        const btn = dom.optionsContainer.querySelector(`.option-btn[data-key="${k}"]`);
-        if (btn) btn.classList.add('disabled');
+    dom.flagBtn.addEventListener('click', () => {
+        const qid = STATE.sessionQuestions[STATE.currentIndex].id;
+        STATE.flagged[qid] = !STATE.flagged[qid];
+        dom.flagBtn.classList.toggle('flagged');
     });
-    dom.hintBtn.disabled = true;
-});
 
-// Navigation Buttons
-dom.homeBtn.addEventListener('click', () => {
-    showScreen('start');
-    setupStartScreen(); // Refresh stat counts
-});
+    dom.hintBtn.addEventListener('click', () => {
+        // 50/50 Logic
+        const q = STATE.sessionQuestions[STATE.currentIndex];
+        const correct = q.answer;
+        const keys = Object.keys(q.options).filter(k => k !== correct);
+        shuffleArray(keys);
+        keys.slice(0, 2).forEach(k => {
+            const btn = dom.optionsContainer.querySelector(`.option-btn[data-key="${k}"]`);
+            if (btn) btn.classList.add('disabled');
+        });
+        dom.hintBtn.disabled = true;
+    });
 
-dom.restartBtn.addEventListener('click', () => {
-    startSession(STATE.config.retryMistakes);
-});
+    // Navigation Buttons
+    dom.homeBtn.addEventListener('click', () => {
+        showScreen('start');
+        setupStartScreen(); // Refresh stat counts
+    });
 
-// Modal
-dom.modal.addEventListener('click', (e) => {
-    if (e.target === dom.modal) dom.modal.classList.add('hidden');
-});
+    dom.restartBtn.addEventListener('click', () => {
+        startSession(STATE.config.retryMistakes);
+    });
 
-// Keyboard Shortcuts
-document.addEventListener('keydown', (e) => {
-    if (dom.quiz.classList.contains('hidden')) return;
+    // Modal
+    dom.modal.addEventListener('click', (e) => {
+        if (e.target === dom.modal) dom.modal.classList.add('hidden');
+    });
 
-    const key = e.key.toUpperCase();
-    // Options 1-4 or A-D
-    const map = { '1': 'A', '2': 'B', '3': 'C', '4': 'D', 'A': 'A', 'B': 'B', 'C': 'C', 'D': 'D' };
+    // Keyboard Shortcuts
+    document.addEventListener('keydown', (e) => {
+        if (dom.quiz.classList.contains('hidden')) return;
 
-    if (map[key]) {
-        selectOption(map[key]);
-    }
+        const key = e.key.toUpperCase();
+        // Options 1-4 or A-D
+        const map = { '1': 'A', '2': 'B', '3': 'C', '4': 'D', 'A': 'A', 'B': 'B', 'C': 'C', 'D': 'D' };
 
-    if (e.key === 'Enter') {
-        // Logic: If check is visible, click check. Else click next.
-        if (!dom.checkBtn.classList.contains('hidden')) {
-            handleCheck();
-        } else {
-            handleNext();
+        if (map[key]) {
+            selectOption(map[key]);
         }
-    }
-});
+
+        if (e.key === 'Enter') {
+            // Logic: If check is visible, click check. Else click next.
+            if (!dom.checkBtn.classList.contains('hidden')) {
+                handleCheck();
+            } else {
+                handleNext();
+            }
+        }
+    });
 
 });
