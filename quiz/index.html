@@ -18,74 +18,163 @@
     </div>
 
     <div class="app-container">
+        <!-- Header -->
         <header class="quiz-header">
             <div class="logo">
                 <span class="icon">🛡️</span>
                 <h1>PT0-003 <span class="accent">Mastery</span></h1>
             </div>
-            <div class="session-info">
-                <span id="current-q">1</span> / <span id="total-q">25</span>
+            <div class="header-controls">
+                <div id="timer-display" class="timer-badge hidden">
+                    <span class="icon">⏱️</span> <span id="time-remaining">00:00</span>
+                </div>
+                <div class="session-info hidden" id="session-info">
+                    <span id="current-q">1</span> / <span id="total-q">25</span>
+                </div>
             </div>
         </header>
 
-        <div class="quiz-layout">
-            <!-- Main Quiz Card -->
-            <main class="quiz-card glass-panel">
-                <div id="quiz-content">
-                    <div class="question-meta">
-                        <span class="category-badge" id="category-badge">Category</span>
-                        <span class="id-badge" id="id-badge">ID</span>
-                    </div>
+        <!-- Screen: Start / Config -->
+        <div id="start-screen" class="screen glass-panel fade-in">
+            <h2><span class="accent">Configure</span> Your Session</h2>
 
-                    <h2 class="question-text" id="question-text">Loading questions...</h2>
-
-                    <div class="options-grid" id="options-container">
-                        <!-- Options injected here -->
-                    </div>
-                </div>
-
-                <div class="explanation-panel hidden" id="explanation-panel">
-                    <h3><span class="icon">💡</span> Analysis</h3>
-                    <div class="explanation-content" id="explanation-text"></div>
-                </div>
-
-                <div class="quiz-controls">
-                    <div class="control-group left">
-                        <button id="hint-btn" class="btn ghost icon-btn" title="Remove 2 wrong options">
-                            💡 Hint
+            <div class="config-grid">
+                <!-- Mode Selection -->
+                <div class="config-group">
+                    <label>Mode</label>
+                    <div class="mode-select">
+                        <button class="mode-btn active" data-mode="learn">
+                            <span class="icon">📚</span> Learning
+                            <small>Immediate feedback</small>
+                        </button>
+                        <button class="mode-btn" data-mode="exam">
+                            <span class="icon">⚡</span> Exam
+                            <small>Timer, feedback at end</small>
                         </button>
                     </div>
-                    <div class="control-group right">
-                        <button id="check-btn" class="btn primary">Check Answer</button>
-                        <button id="next-btn" class="btn secondary">Next Question ➝</button>
-                    </div>
                 </div>
-            </main>
 
-            <!-- Sidebar / Skill Matrix -->
-            <aside class="sidebar glass-panel">
-                <h3>Skill Matrix</h3>
-                <div class="score-summary">
-                    <div class="total-score">
-                        <span class="score-value" id="score-percentage">0%</span>
-                        <span class="score-label">Accuracy</span>
+                <!-- Category Filter -->
+                <div class="config-group">
+                    <label>Category</label>
+                    <select id="category-select" class="cyber-select">
+                        <option value="all">All Categories</option>
+                        <!-- Injected by JS -->
+                    </select>
+                </div>
+
+                <!-- Question Count -->
+                <div class="config-group">
+                    <label>Question Count</label>
+                    <div class="count-select">
+                        <button class="count-btn" data-count="10">10</button>
+                        <button class="count-btn active" data-count="25">25</button>
+                        <button class="count-btn" data-count="50">50</button>
+                        <button class="count-btn" data-count="all">Max</button>
                     </div>
                 </div>
-                <div class="category-list" id="category-list">
-                    <!-- Categories injected here -->
-                    <!-- Example structure:
-                    <div class="category-item">
-                        <div class="cat-header">
-                            <span>1.0 Planning</span>
-                            <span>2/5</span>
+            </div>
+
+            <div class="start-actions">
+                <button id="start-btn" class="btn primary large">Initialize Session 🚀</button>
+                <button id="retry-mistakes-btn" class="btn danger large hidden">
+                    Retry Mistakes (<span id="mistake-count">0</span>) ↺
+                </button>
+            </div>
+        </div>
+
+        <!-- Screen: Quiz -->
+        <div id="quiz-screen" class="screen hidden">
+            <div class="quiz-layout">
+                <!-- Main Quiz Card -->
+                <main class="quiz-card glass-panel">
+                    <div id="quiz-content">
+                        <div class="question-meta">
+                            <span class="category-badge" id="category-badge">Category</span>
+                            <span class="id-badge" id="id-badge">ID</span>
+                            <button id="flag-btn" class="flag-btn" title="Flag for Review">
+                                <span class="icon">🚩</span>
+                            </button>
                         </div>
-                        <div class="cat-progress">
-                            <div class="cat-fill" style="width: 40%"></div>
+
+                        <h2 class="question-text" id="question-text">Loading...</h2>
+
+                        <div class="options-grid" id="options-container">
+                            <!-- Options injected here -->
                         </div>
+                    </div>
+
+                    <div class="explanation-panel hidden" id="explanation-panel">
+                        <h3><span class="icon">💡</span> Analysis</h3>
+                        <div class="explanation-content" id="explanation-text"></div>
+                    </div>
+
+                    <div class="quiz-controls">
+                        <div class="control-group left">
+                            <button id="hint-btn" class="btn ghost icon-btn" title="Remove 2 wrong options">
+                                💡 Hint
+                            </button>
+                        </div>
+                        <div class="control-group right">
+                            <button id="check-btn" class="btn primary">Check Answer</button>
+                            <button id="next-btn" class="btn secondary">Next Question ➝</button>
+                        </div>
+                    </div>
+                </main>
+
+                <!-- Sidebar / Skill Matrix -->
+                <aside class="sidebar glass-panel">
+                    <h3>Session Stats</h3>
+                    <div class="score-summary">
+                        <div class="total-score">
+                            <span class="score-value" id="score-percentage">0%</span>
+                            <span class="score-label">Accuracy</span>
+                        </div>
+                    </div>
+                    <div class="category-list" id="category-list">
+                        <!-- Categories injected here -->
+                    </div>
+                </aside>
+            </div>
+        </div>
+
+        <!-- Screen: Results -->
+        <div id="result-screen" class="screen glass-panel hidden fade-in">
+            <div class="result-header">
+                <h2>Mission Debrief</h2>
+                <div class="final-score-container">
+                    <div class="score-circle">
+                        <span id="final-score">0%</span>
+                        <span id="final-rating" class="rating-badge">NOVICE</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="result-details">
+                <h3>Question Log</h3>
+                <div class="question-log" id="question-log">
+                    <!-- Injected by JS:
+                    <div class="log-item correct" onclick="viewReview(...)">
+                        <span class="status-icon">✅</span>
+                        <span class="q-snippet">Question text...</span>
                     </div>
                     -->
                 </div>
-            </aside>
+            </div>
+
+            <div class="result-actions">
+                <button id="home-btn" class="btn secondary">Return to Base</button>
+                <button id="restart-btn" class="btn primary">New Session</button>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Modal for Question Review -->
+    <div id="review-modal" class="modal hidden">
+        <div class="modal-content glass-panel">
+            <span class="close-modal">&times;</span>
+            <div id="review-content"></div>
         </div>
     </div>
 

@@ -292,9 +292,7 @@
         "answer": "D",
         "explanation": "Sending an encrypted file via HTTPS is the most efficient, secure, and least suspicious method for data exfiltration.\n* Option D (HTTPS): HTTPS encrypts the content, ensuring confidentiality, and is a standard protocol that typically generates fewer alerts in monitoring systems compared to other methods.\n* Option A/B (FTP/TFTP): These are often unencrypted and monitored, making them risky and noisy.\n* Option C (dnscat): While stealthy, it is slower and less efficient for transferring files compared to HTTPS.\nReference: PT0-003 Objective 4.3 - Explain post-exploitation techniques, including data exfiltration methods.",
         "category": "3.0"
-    }
-]
-[
+    },
     {
         "id": "q103-26",
         "number": 26,
@@ -616,10 +614,7 @@
         "answer": "B",
         "explanation": "A false positive occurs when a vulnerability scan incorrectly flags a security issue that does not\nexist or is not exploitable in the context of the application. Here's the reasoning:\n* Definition of Command Injection:Command injection vulnerabilities occur when user-controllable\ndata is passed to an interpreter or command execution context without proper sanitization,\nallowing an attacker to execute arbitrary commands.\n* Code Analysis:\n* The response variable is defined as a constant (const), which implies its value is immutable\nduring runtime.\n* The response is not sourced from user input nor used elsewhere, meaning there is no attack\nsurface or exploitation pathway for an attacker to influence the content of response.\n* Scanner Misclassification:Static Application Security Testing (SAST) tools may flag\nvulnerabilities based on patterns (e.g., .innerHTML usage) without assessing the source and flow\nof data, resulting in false positives.\n* Final Classification:Since the response variable is static and unchangeable, the flagged issue is\nnot exploitable. This makes it a false positive.\nCompTIA Pentest+ References:\n* Domain 3.0 (Attacks and Exploits)\n* Domain 4.0 (Penetration Testing Tools)\n* OWASP Static Code Analysis Guide",
         "category": "2.0"
-    }
-]
-
-[
+    },
     {
         "id": "q103-54",
         "number": 54,
@@ -970,10 +965,7 @@
         "answer": "D",
         "explanation": "When testing the security of a web application, specific tools are designed to uncover web-centric vulnerabilities.\n* Nikto: Nikto is a dedicated web server scanner that performs tests against web servers for potentially dangerous files/programs, outdated versions, and other web security issues.\n* OpenVAS and Nessus are general network vulnerability scanners. sqlmap is highly specialized only for SQL injection.",
         "category": "2.0"
-    }
-]
-
-[
+    },
     {
         "id": "q103-82",
         "number": 82,
@@ -1365,10 +1357,7 @@
         "answer": "D",
         "explanation": "The 'while' loop in Bash needs an input source. The syntax 'done < filename' feeds the content of the file into the loop line by line. Without this redirection, the loop waits for standard input (keyboard) and never processes the file.",
         "category": "1.0"
-    }
-]
-
-[
+    },
     {
         "id": "q113-16",
         "number": 16,
@@ -1408,7 +1397,7 @@
             "D": "Privilege escalation"
         },
         "answer": "B",
-        "explanation": "This attack attempts to manipulate the API by fuzzing the authorization token (Authorization: Bearer (FUZZ)). This suggests an attempt to bypass authentication or escalate privileges by using an invalid, stolen, or guessed token—a form of API abuse.\n* Directory traversal involves path manipulation (../), which is not present here.",
+        "explanation": "This attack attempts to manipulate the API by fuzzing the authorization token (Authorization: Bearer (FUZZ)). This suggests an attempt to bypass authentication or escalate privileges by using an invalid, stolen, or guessed token\u2014a form of API abuse.\n* Directory traversal involves path manipulation (../), which is not present here.",
         "category": "1.0"
     },
     {
@@ -1788,9 +1777,7 @@
         "answer": "A",
         "explanation": "Standard SSH runs on port 22. The scan shows SSH running on port 2222. If the tester was trying to connect to the default port (22), the connection would fail.",
         "category": "2.0"
-    }
-]
-[
+    },
     {
         "id": "q113-16",
         "number": 16,
