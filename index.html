@@ -4,92 +4,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PenTest+ Prep | Premium Quiz</title>
-    <link rel="stylesheet" href="style.css">
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;700&display=swap"
-        rel="stylesheet">
+    <title>chpetri.github.io</title>
+    <style>
+        body {
+            background-color: #0f172a;
+            color: #e2e8f0;
+            font-family: 'Inter', system-ui, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        a {
+            color: #38bdf8;
+            text-decoration: none;
+            font-size: 1.25rem;
+            border: 1px solid #38bdf8;
+            padding: 10px 20px;
+            border-radius: 8px;
+            transition: all 0.2s;
+        }
+
+        a:hover {
+            background: #38bdf8;
+            color: #0f172a;
+        }
+    </style>
 </head>
 
 <body>
-    <div class="background-orbs">
-        <div class="orb orb-1"></div>
-        <div class="orb orb-2"></div>
-    </div>
-
-    <div class="app-container">
-        <header class="quiz-header">
-            <div class="logo">
-                <span class="icon">🛡️</span>
-                <h1>PT0-003 <span class="accent">Mastery</span></h1>
-            </div>
-            <div class="session-info">
-                <span id="current-q">1</span> / <span id="total-q">25</span>
-            </div>
-        </header>
-
-        <div class="quiz-layout">
-            <!-- Main Quiz Card -->
-            <main class="quiz-card glass-panel">
-                <div id="quiz-content">
-                    <div class="question-meta">
-                        <span class="category-badge" id="category-badge">Category</span>
-                        <span class="id-badge" id="id-badge">ID</span>
-                    </div>
-
-                    <h2 class="question-text" id="question-text">Loading questions...</h2>
-
-                    <div class="options-grid" id="options-container">
-                        <!-- Options injected here -->
-                    </div>
-                </div>
-
-                <div class="explanation-panel hidden" id="explanation-panel">
-                    <h3><span class="icon">💡</span> Analysis</h3>
-                    <div class="explanation-content" id="explanation-text"></div>
-                </div>
-
-                <div class="quiz-controls">
-                    <div class="control-group left">
-                        <button id="hint-btn" class="btn ghost icon-btn" title="Remove 2 wrong options">
-                            💡 Hint
-                        </button>
-                    </div>
-                    <div class="control-group right">
-                        <button id="check-btn" class="btn primary">Check Answer</button>
-                        <button id="next-btn" class="btn secondary">Next Question ➝</button>
-                    </div>
-                </div>
-            </main>
-
-            <!-- Sidebar / Skill Matrix -->
-            <aside class="sidebar glass-panel">
-                <h3>Skill Matrix</h3>
-                <div class="score-summary">
-                    <div class="total-score">
-                        <span class="score-value" id="score-percentage">0%</span>
-                        <span class="score-label">Accuracy</span>
-                    </div>
-                </div>
-                <div class="category-list" id="category-list">
-                    <!-- Categories injected here -->
-                    <!-- Example structure:
-                    <div class="category-item">
-                        <div class="cat-header">
-                            <span>1.0 Planning</span>
-                            <span>2/5</span>
-                        </div>
-                        <div class="cat-progress">
-                            <div class="cat-fill" style="width: 40%"></div>
-                        </div>
-                    </div>
-                    -->
-                </div>
-            </aside>
-        </div>
-    </div>
-
-    <script src="script.js"></script>
+    <h1>Welcome to chpetri.github.io</h1>
+    <p>Projects:</p>
+    <a href="/quiz/">🛡️ PenTest+ Quiz App</a>
 </body>
 
 </html>
