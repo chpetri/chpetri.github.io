@@ -77,14 +77,22 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     // --- Initialization ---
-    init();
+    try {
+        init();
+    } catch (e) {
+        alert("Critical Init Error: " + e.message);
+    }
 
     function init() {
         loadStats();
 
+        // Debug check
+        if (dom.modeBtns.length === 0) alert("Error: Mode buttons not found in DOM");
+        if (!dom.startBtn) alert("Error: Start button not found in DOM");
+
         fetch('questions.json')
             .then(res => {
-                if (!res.ok) throw new Error("Failed to load JSON");
+                if (!res.ok) throw new Error("Failed to load JSON: " + res.statusText);
                 return res.json();
             })
             .then(data => {
@@ -92,10 +100,15 @@ document.addEventListener('DOMContentLoaded', () => {
                     throw new Error("Invalid or empty questions data");
                 }
                 STATE.allQuestions = data;
-                setupStartScreen();
+                try {
+                    setupStartScreen();
+                } catch (e) {
+                    alert("Error in setupStartScreen: " + e.message);
+                    console.error(e);
+                }
             })
             .catch(err => {
-                document.body.innerHTML = `<h1 style="color:red; text-align:center;">Error: ${err.message}</h1>`;
+                alert("Fetch Error: " + err.message);
                 console.error(err);
             });
     }
