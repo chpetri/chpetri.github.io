@@ -44,6 +44,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Quiz Display
         currentQ: document.getElementById('current-q-disp'),
+        headerCounter: document.getElementById('header-q-counter'), // NEW
         questionText: document.getElementById('question-text'),
         optionsContainer: document.getElementById('options-container'),
         explanationPanel: document.getElementById('explanation-panel'),
@@ -173,8 +174,13 @@ document.addEventListener('DOMContentLoaded', () => {
         STATE.currentIndex = index;
         const q = STATE.sessionQuestions[index];
 
+        // Update Header Counter
+        const currentNum = (index + 1).toString().padStart(2, '0');
+        const totalNum = STATE.sessionQuestions.length.toString().padStart(2, '0');
+        if (dom.headerCounter) dom.headerCounter.textContent = `TARGET ${currentNum} / ${totalNum}`;
+
         // Update ID with leading zero
-        dom.currentQ.textContent = (index + 1).toString().padStart(2, '0');
+        dom.currentQ.textContent = currentNum;
         dom.questionText.textContent = q.question;
 
         dom.optionsContainer.innerHTML = '';
@@ -185,15 +191,13 @@ document.addEventListener('DOMContentLoaded', () => {
         const isChecked = STATE.isChecked[q.id];
 
         // Button State Logic
-        // "Next Phase" disabled until option selected (unless already answered/checked)
         const hasSelection = !!savedAnswer;
         dom.nextBtn.disabled = !hasSelection;
         dom.nextBtn.textContent = (index === STATE.sessionQuestions.length - 1) ? "COMPLETE MISSION" : "NEXT PHASE ➝";
 
-        // Check Button Visibility (Learning Mode Only)
+        // Check Button Logic
         if (STATE.config.mode === 'learn') {
             dom.checkBtn.classList.toggle('hidden', !!isChecked);
-            // If we have an answer but haven't checked, show check button
         } else {
             dom.checkBtn.classList.add('hidden');
         }
@@ -205,9 +209,7 @@ document.addEventListener('DOMContentLoaded', () => {
             btn.className = 'option-btn';
             btn.dataset.key = key;
 
-            // Index 01, 02, 03, 04
             const idxStr = (idx + 1).toString().padStart(2, '0');
-
             btn.innerHTML = `
                 <span class="option-index">${idxStr}</span>
                 <span class="option-text">${escapeHtml(q.options[key])}</span>
@@ -218,16 +220,10 @@ document.addEventListener('DOMContentLoaded', () => {
             // Validation Styles
             if (isChecked && STATE.config.mode === 'learn') {
                 if (key === q.answer) {
-                    btn.style.border = "2px solid var(--red)"; // Custom override for success (green in palette? User said red only...)
-                    // User said "Palette locked... Red". Green wasn't mentioned. 
-                    // Typically right answer is Green, but if palette is strict Red/Ink...
-                    // Reference: "Selected option state: background --red, text white"
-                    // I will stick to Red for selection. For correctness... maybe keep it subtle or use text.
-                    // Let's assume standard behavior for now but respect the "Red" constraint.
-                    // I'll add a checkmark or similar if needed, but for now just highlight.
+                    btn.style.border = "4px solid var(--accent)"; // Update to new variable
                 }
                 else if (key === savedAnswer) {
-                    btn.style.opacity = "0.5";
+                    btn.classList.add('wrong'); // Explicit wrong style
                 }
             }
 
@@ -238,8 +234,6 @@ document.addEventListener('DOMContentLoaded', () => {
                     dom.optionsContainer.querySelectorAll('.option-btn').forEach(b => b.classList.remove('selected'));
                     btn.classList.add('selected');
                     STATE.userAnswers[q.id] = key;
-
-                    // Enable Next Button on selection
                     dom.nextBtn.disabled = false;
                 });
             }
@@ -249,7 +243,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (isChecked && STATE.config.mode === 'learn') {
             dom.explanationText.textContent = q.explanation;
             dom.explanationPanel.classList.remove('hidden');
-            dom.nextBtn.disabled = false; // Always enable if checked
+            dom.nextBtn.disabled = false;
         }
     }
 
