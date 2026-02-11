@@ -31,8 +31,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const dom = {
         // Start Screen
-        modeBtns: document.querySelectorAll('.mode-btn'),
-        countBtns: document.querySelectorAll('.count-btn'),
+        modeBtns: document.querySelectorAll('.setting-btn[data-mode]'),
+        countBtns: document.querySelectorAll('.setting-btn[data-count]'),
         catSelect: document.getElementById('category-select'),
         startBtn: document.getElementById('start-btn'),
         retryBtn: document.getElementById('retry-mistakes-btn'),
