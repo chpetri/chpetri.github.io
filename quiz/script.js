@@ -257,7 +257,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             const idxStr = key; // Use A, B, C, D
             btn.innerHTML = `
-                <div class="option-index">${idxStr}</div>
+                <div class="option-index">${escapeHtml(idxStr)}</div>
                 <div class="option-text">${escapeHtml(q.options[key])}</div>
             `;
 

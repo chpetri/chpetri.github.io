@@ -7,7 +7,7 @@
     <title>PENTEST+ DRILL | MODERN</title>
     <!-- Content Security Policy -->
     <meta http-equiv="Content-Security-Policy"
-        content="default-src 'self'; font-src https://fonts.gstatic.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; script-src 'self' 'unsafe-inline';">
+        content="default-src 'self'; font-src https://fonts.gstatic.com; style-src 'self' https://fonts.googleapis.com; script-src 'self';">
     <!-- Modern Inter Font -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css?v=6">
@@ -61,8 +61,7 @@
                             </div>
 
                             <button id="start-btn" class="action-btn">Start Drill Session</button>
-                            <button id="retry-mistakes-btn" class="action-btn hidden"
-                                style="background: var(--amber-warning); margin-top: 10px;">Retry Failures</button>
+                            <button id="retry-mistakes-btn" class="action-btn hidden retry-warn">Retry Failures</button>
                         </div>
                     </div>
 
@@ -86,13 +85,11 @@
 
                     <!-- 3. RESULT SCREEN -->
                     <div id="result-screen" class="center-content hidden">
-                        <div class="anno" style="margin-bottom: 20px;">Mission Conclusion</div>
+                        <div class="anno result-anno">Mission Conclusion</div>
                         <h2 id="final-rating" class="hero-text">OPERATOR</h2>
-                        <div id="final-score-display"
-                            style="font-size: 5rem; font-weight: 900; color: var(--indigo-primary); letter-spacing: -2px;">
-                            0%</div>
+                        <div id="final-score-display" class="result-score">0%</div>
 
-                        <div style="margin-top: 40px; display: flex; gap: 16px; width: 100%; max-width: 400px;">
+                        <div class="result-actions">
                             <button id="restart-btn" class="action-btn">New Drill</button>
                             <button id="home-btn" class="action-btn check-btn">Main Terminal</button>
                         </div>
