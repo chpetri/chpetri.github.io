@@ -196,18 +196,22 @@ body {
 
 /* Start Screen */
 #start-screen {
-    align-items: center;
+    align-items: stretch;
+    /* Change from center to stretch so children fill width */
     justify-content: center;
     gap: 30px;
     max-width: 800px;
     margin: 0 auto;
+    text-align: center;
+    /* Center text by default */
 }
 
 .config-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 20px;
     width: 100%;
+    text-align: left;
 }
 
 .config-group {
@@ -215,11 +219,13 @@ body {
     padding: 20px;
     border-radius: 16px;
     border: 1px solid rgba(255, 255, 255, 0.05);
+    display: flex;
+    flex-direction: column;
 }
 
 .config-group label {
     display: block;
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     color: var(--text-muted);
     margin-bottom: 15px;
     text-transform: uppercase;
@@ -232,71 +238,89 @@ body {
 .count-select {
     display: flex;
     gap: 10px;
+    width: 100%;
 }
 
 .mode-btn,
 .count-btn {
+    appearance: none;
+    -webkit-appearance: none;
     flex: 1;
-    padding: 12px;
+    padding: 15px;
     border: 1px solid rgba(255, 255, 255, 0.1);
-    background: rgba(0, 0, 0, 0.2);
+    background: rgba(20, 20, 25, 0.6);
     color: var(--text-muted);
-    border-radius: 8px;
+    border-radius: 12px;
     cursor: pointer;
-    transition: all 0.2s;
+    transition: all 0.2s ease;
     font-family: 'Inter', sans-serif;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 5px;
+    gap: 8px;
+    min-height: 80px;
+    /* Ensure height */
+    text-align: center;
 }
 
 .mode-btn:hover,
 .count-btn:hover {
-    background: rgba(255, 255, 255, 0.08);
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateY(-2px);
 }
 
 .mode-btn.active,
 .count-btn.active {
-    background: var(--primary-dim);
+    background: rgba(0, 242, 255, 0.15);
+    /* Stronger active state */
     border-color: var(--primary);
     color: var(--primary);
-    box-shadow: 0 0 15px var(--primary-dim);
+    box-shadow: 0 0 20px rgba(0, 242, 255, 0.15);
+}
+
+.mode-btn .icon {
+    font-size: 1.5rem;
+    margin-bottom: 4px;
 }
 
 .mode-btn small {
-    font-size: 0.7rem;
-    opacity: 0.7;
+    font-size: 0.75rem;
+    opacity: 0.8;
+    font-weight: 400;
 }
 
 .cyber-select {
     width: 100%;
-    padding: 12px;
-    background: #0f172a;
+    padding: 15px;
+    background: rgba(0, 0, 0, 0.4);
     border: 1px solid rgba(255, 255, 255, 0.1);
     color: var(--text-main);
-    border-radius: 8px;
+    border-radius: 12px;
     font-family: 'Inter', sans-serif;
     font-size: 1rem;
     outline: none;
+    cursor: pointer;
 }
 
 .cyber-select:focus {
     border-color: var(--primary);
-    box-shadow: 0 0 10px var(--primary-dim);
+    box-shadow: 0 0 15px rgba(0, 242, 255, 0.1);
 }
 
 .start-actions {
     display: flex;
-    gap: 15px;
+    gap: 20px;
     width: 100%;
+    margin-top: 10px;
 }
 
 .btn.large {
     flex: 1;
-    padding: 18px;
+    padding: 20px;
     font-size: 1.1rem;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
 }
 
 /* Layout */
