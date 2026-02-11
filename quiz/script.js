@@ -280,73 +280,109 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function loadQuestion(index) {
-        STATE.currentIndex = index;
-        const q = STATE.sessionQuestions[index];
+        try {
+            STATE.currentIndex = index;
+            const q = STATE.sessionQuestions[index];
 
-        // Update Header & Meta
-        dom.currentQ.textContent = index + 1;
-        dom.totalQ.textContent = STATE.sessionQuestions.length;
-        dom.categoryBadge.textContent = getCategoryLabel(normalizeCategory(q.category));
-        dom.idBadge.textContent = q.id;
-        dom.questionText.textContent = q.question;
+            if (!q) throw new Error(`Question at index ${index} is undefined. Session Length: ${STATE.sessionQuestions.length}`);
 
-        // Reset Panels for new question
-        dom.explanationPanel.classList.add('hidden');
-        dom.optionsContainer.innerHTML = '';
-        dom.flagBtn.classList.toggle('flagged', !!STATE.flagged[q.id]);
+            // Update Header & Meta
+            if (dom.currentQ) dom.currentQ.textContent = index + 1;
+            if (dom.totalQ) dom.totalQ.textContent = STATE.sessionQuestions.length;
 
-        // Determine State (Answered? Checked?)
-        const savedAnswer = STATE.userAnswers[q.id];
-        const isChecked = STATE.isChecked[q.id];
+            if (dom.categoryBadge) dom.categoryBadge.textContent = getCategoryLabel(normalizeCategory(q.category));
+            if (dom.idBadge) dom.idBadge.textContent = q.id;
 
-        // --- Mode Logic ---
-        // Learning: Show Check button if not checked. Show Next if checked.
-        // Exam: Show Next button. No Check button.
+            if (dom.questionText) dom.questionText.textContent = q.question;
 
-        if (STATE.config.mode === 'learn') {
-            dom.checkBtn.classList.toggle('hidden', !!isChecked);
-            // Allow Next mostly anytime? Or force check? Let's allow Next only if checked for flow?
-            // Actually user might want to skip.
-            dom.nextBtn.textContent = (index === STATE.sessionQuestions.length - 1) ? "Finish" : "Next ➝";
-            dom.hintBtn.disabled = !!isChecked;
-        } else {
-            // Exam
-            dom.checkBtn.classList.add('hidden');
-            dom.hintBtn.disabled = true; // No hints in exam
-            dom.nextBtn.textContent = (index === STATE.sessionQuestions.length - 1) ? "Submit Exam" : "Next ➝";
+            // Reset Panels for new question
+            if (dom.explanationPanel) dom.explanationPanel.classList.add('hidden');
+            if (dom.optionsContainer) dom.optionsContainer.innerHTML = '';
+            if (dom.flagBtn) dom.flagBtn.classList.toggle('flagged', !!STATE.flagged[q.id]);
+
+            // Determine State (Answered? Checked?)
+            const savedAnswer = STATE.userAnswers[q.id];
+            const isChecked = STATE.isChecked[q.id];
+
+            // --- Mode Logic ---
+            if (STATE.config.mode === 'learn') {
+                if (dom.checkBtn) dom.checkBtn.classList.toggle('hidden', !!isChecked);
+                if (dom.nextBtn) dom.nextBtn.textContent = (index === STATE.sessionQuestions.length - 1) ? "Finish" : "Next ➝";
+                if (dom.hintBtn) dom.hintBtn.disabled = !!isChecked;
+            } else {
+                // Exam
+                if (dom.checkBtn) dom.checkBtn.classList.add('hidden');
+                if (dom.hintBtn) dom.hintBtn.disabled = true;
+                if (dom.nextBtn) dom.nextBtn.textContent = (index === STATE.sessionQuestions.length - 1) ? "Submit Exam" : "Next ➝";
+            }
+
+            // Render Options
+            const sortedKeys = Object.keys(q.options).sort();
+            sortedKeys.forEach(key => {
+                const btn = document.createElement('button');
+                btn.className = 'option-btn';
+                btn.dataset.key = key;
+                btn.innerHTML = `
+                    <span class="option-letter">${key}</span>
+                    <div class="option-content">${escapeHtml(q.options[key])}</div>
+                `;
+
+                if (savedAnswer === key) btn.classList.add('selected');
+
+                // Click Handler
+                if (!isChecked && (STATE.config.mode === 'learn' || STATE.config.mode === 'exam')) {
+                    btn.addEventListener('click', () => selectOption(key));
+                }
+
+                // Applying Styles (Only in Learning Mode if Checked)
+                if (STATE.config.mode === 'learn' && isChecked) {
+                    applyValidationStyles(btn, key, q.answer, savedAnswer);
+                }
+
+                if (dom.optionsContainer) dom.optionsContainer.appendChild(btn);
+            });
+
+            // Show Explanation if Learning Mode & Checked
+            if (STATE.config.mode === 'learn' && isChecked) {
+                showExplanation(q);
+            }
+        } catch (e) {
+            alert("Error in loadQuestion: " + e.message + "\nStack: " + e.stack);
+            console.error(e);
         }
+    }
 
-        // Render Options
-        const sortedKeys = Object.keys(q.options).sort();
-        sortedKeys.forEach(key => {
-            const btn = document.createElement('button');
-            btn.className = 'option-btn';
-            btn.dataset.key = key;
-            btn.innerHTML = `
+    // Render Options
+    const sortedKeys = Object.keys(q.options).sort();
+    sortedKeys.forEach(key => {
+        const btn = document.createElement('button');
+        btn.className = 'option-btn';
+        btn.dataset.key = key;
+        btn.innerHTML = `
                 <span class="option-letter">${key}</span>
                 <div class="option-content">${escapeHtml(q.options[key])}</div>
             `;
 
-            if (savedAnswer === key) btn.classList.add('selected');
+        if (savedAnswer === key) btn.classList.add('selected');
 
-            // Click Handler
-            if (!isChecked && (STATE.config.mode === 'learn' || STATE.config.mode === 'exam')) {
-                btn.addEventListener('click', () => selectOption(key));
-            }
-
-            // Applying Styles (Only in Learning Mode if Checked)
-            if (STATE.config.mode === 'learn' && isChecked) {
-                applyValidationStyles(btn, key, q.answer, savedAnswer);
-            }
-
-            dom.optionsContainer.appendChild(btn);
-        });
-
-        // Show Explanation if Learning Mode & Checked
-        if (STATE.config.mode === 'learn' && isChecked) {
-            showExplanation(q);
+        // Click Handler
+        if (!isChecked && (STATE.config.mode === 'learn' || STATE.config.mode === 'exam')) {
+            btn.addEventListener('click', () => selectOption(key));
         }
+
+        // Applying Styles (Only in Learning Mode if Checked)
+        if (STATE.config.mode === 'learn' && isChecked) {
+            applyValidationStyles(btn, key, q.answer, savedAnswer);
+        }
+
+        dom.optionsContainer.appendChild(btn);
+    });
+
+    // Show Explanation if Learning Mode & Checked
+    if (STATE.config.mode === 'learn' && isChecked) {
+        showExplanation(q);
     }
+}
 
     function selectOption(key) {
         // Prevent changing answer if already checked (in learn mode)
@@ -598,62 +634,62 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // --- Events ---
     dom.checkBtn.addEventListener('click', handleCheck);
-    dom.nextBtn.addEventListener('click', handleNext);
+dom.nextBtn.addEventListener('click', handleNext);
 
-    dom.flagBtn.addEventListener('click', () => {
-        const qid = STATE.sessionQuestions[STATE.currentIndex].id;
-        STATE.flagged[qid] = !STATE.flagged[qid];
-        dom.flagBtn.classList.toggle('flagged');
+dom.flagBtn.addEventListener('click', () => {
+    const qid = STATE.sessionQuestions[STATE.currentIndex].id;
+    STATE.flagged[qid] = !STATE.flagged[qid];
+    dom.flagBtn.classList.toggle('flagged');
+});
+
+dom.hintBtn.addEventListener('click', () => {
+    // 50/50 Logic
+    const q = STATE.sessionQuestions[STATE.currentIndex];
+    const correct = q.answer;
+    const keys = Object.keys(q.options).filter(k => k !== correct);
+    shuffleArray(keys);
+    keys.slice(0, 2).forEach(k => {
+        const btn = dom.optionsContainer.querySelector(`.option-btn[data-key="${k}"]`);
+        if (btn) btn.classList.add('disabled');
     });
+    dom.hintBtn.disabled = true;
+});
 
-    dom.hintBtn.addEventListener('click', () => {
-        // 50/50 Logic
-        const q = STATE.sessionQuestions[STATE.currentIndex];
-        const correct = q.answer;
-        const keys = Object.keys(q.options).filter(k => k !== correct);
-        shuffleArray(keys);
-        keys.slice(0, 2).forEach(k => {
-            const btn = dom.optionsContainer.querySelector(`.option-btn[data-key="${k}"]`);
-            if (btn) btn.classList.add('disabled');
-        });
-        dom.hintBtn.disabled = true;
-    });
+// Navigation Buttons
+dom.homeBtn.addEventListener('click', () => {
+    showScreen('start');
+    setupStartScreen(); // Refresh stat counts
+});
 
-    // Navigation Buttons
-    dom.homeBtn.addEventListener('click', () => {
-        showScreen('start');
-        setupStartScreen(); // Refresh stat counts
-    });
+dom.restartBtn.addEventListener('click', () => {
+    startSession(STATE.config.retryMistakes);
+});
 
-    dom.restartBtn.addEventListener('click', () => {
-        startSession(STATE.config.retryMistakes);
-    });
+// Modal
+dom.modal.addEventListener('click', (e) => {
+    if (e.target === dom.modal) dom.modal.classList.add('hidden');
+});
 
-    // Modal
-    dom.modal.addEventListener('click', (e) => {
-        if (e.target === dom.modal) dom.modal.classList.add('hidden');
-    });
+// Keyboard Shortcuts
+document.addEventListener('keydown', (e) => {
+    if (dom.quiz.classList.contains('hidden')) return;
 
-    // Keyboard Shortcuts
-    document.addEventListener('keydown', (e) => {
-        if (dom.quiz.classList.contains('hidden')) return;
+    const key = e.key.toUpperCase();
+    // Options 1-4 or A-D
+    const map = { '1': 'A', '2': 'B', '3': 'C', '4': 'D', 'A': 'A', 'B': 'B', 'C': 'C', 'D': 'D' };
 
-        const key = e.key.toUpperCase();
-        // Options 1-4 or A-D
-        const map = { '1': 'A', '2': 'B', '3': 'C', '4': 'D', 'A': 'A', 'B': 'B', 'C': 'C', 'D': 'D' };
+    if (map[key]) {
+        selectOption(map[key]);
+    }
 
-        if (map[key]) {
-            selectOption(map[key]);
+    if (e.key === 'Enter') {
+        // Logic: If check is visible, click check. Else click next.
+        if (!dom.checkBtn.classList.contains('hidden')) {
+            handleCheck();
+        } else {
+            handleNext();
         }
-
-        if (e.key === 'Enter') {
-            // Logic: If check is visible, click check. Else click next.
-            if (!dom.checkBtn.classList.contains('hidden')) {
-                handleCheck();
-            } else {
-                handleNext();
-            }
-        }
-    });
+    }
+});
 
 });
