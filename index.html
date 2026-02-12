@@ -4,46 +4,250 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>chpetri.github.io</title>
+    <title>PENTEST+ PORTAL | chpetri</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
     <style>
+        :root {
+            --futur-red: #d94332;
+            --futur-navy: #1a1e2c;
+            --futur-cream: #f4f1de;
+            --futur-ink: #111;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         body {
-            background-color: #0f172a;
-            color: #e2e8f0;
-            font-family: 'Inter', system-ui, sans-serif;
+            background-color: var(--futur-cream);
+            color: var(--futur-ink);
+            font-family: 'Inter', sans-serif;
+            height: 100vh;
+            overflow: hidden;
             display: flex;
-            flex-direction: column;
             align-items: center;
             justify-content: center;
-            height: 100vh;
-            margin: 0;
         }
 
-        h1 {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
+        /* FUTURST GRID BG */
+        .portal-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            pointer-events: none;
+            overflow: hidden;
         }
 
-        a {
-            color: #38bdf8;
-            text-decoration: none;
+        .portal-bg::before {
+            content: "";
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background-image:
+                linear-gradient(45deg, var(--futur-navy) 25%, transparent 25%),
+                linear-gradient(-45deg, var(--futur-navy) 25%, transparent 25%),
+                linear-gradient(45deg, transparent 75%, var(--futur-navy) 75%),
+                linear-gradient(-45deg, transparent 75%, var(--futur-navy) 75%);
+            background-size: 100px 100px;
+            opacity: 0.03;
+            transform: rotate(15deg);
+        }
+
+        .diagonal-strip {
+            position: absolute;
+            background: var(--futur-red);
+            height: 200vh;
+            width: 80px;
+            top: -50vh;
+            left: 20%;
+            transform: rotate(35deg);
+            z-index: 2;
+            opacity: 0.15;
+            box-shadow: 20px 0 50px rgba(0, 0, 0, 0.1);
+        }
+
+        .diagonal-strip.alt {
+            left: auto;
+            right: 15%;
+            width: 120px;
+            background: var(--futur-navy);
+            opacity: 0.05;
+        }
+
+        /* PORTAL CARD */
+        .portal-container {
+            position: relative;
+            z-index: 10;
+            width: 100%;
+            max-width: 1000px;
+            padding: 40px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2px;
+            background: var(--futur-ink);
+            border: 4px solid var(--futur-ink);
+            box-shadow: 40px 40px 0 var(--futur-red);
+        }
+
+        .portal-header {
+            grid-column: span 2;
+            background: var(--futur-red);
+            padding: 40px;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .portal-header h1 {
+            font-size: 5rem;
+            font-weight: 900;
+            letter-spacing: -4px;
+            text-transform: uppercase;
+            line-height: 0.8;
+            position: relative;
+            z-index: 2;
+        }
+
+        .portal-header p {
             font-size: 1.25rem;
-            border: 1px solid #38bdf8;
-            padding: 10px 20px;
-            border-radius: 8px;
-            transition: all 0.2s;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-top: 10px;
+            opacity: 0.9;
         }
 
-        a:hover {
-            background: #38bdf8;
-            color: #0f172a;
+        .portal-header::after {
+            content: "PENTEST+";
+            position: absolute;
+            bottom: -20px;
+            right: -10px;
+            font-size: 10rem;
+            font-weight: 900;
+            opacity: 0.1;
+            pointer-events: none;
+        }
+
+        /* ACTION BLOCKS */
+        .action-block {
+            background: var(--futur-cream);
+            padding: 60px 40px;
+            text-decoration: none;
+            color: var(--futur-ink);
+            transition: all 0.3s cubic-bezier(0.19, 1, 0.22, 1);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            position: relative;
+        }
+
+        .action-block:hover {
+            background: var(--futur-navy);
+            color: var(--futur-cream);
+            transform: scale(1.02);
+            z-index: 5;
+        }
+
+        .action-block h2 {
+            font-size: 2.5rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            line-height: 1;
+            margin-bottom: 20px;
+            letter-spacing: -1px;
+        }
+
+        .action-block .meta {
+            font-size: 0.875rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--futur-red);
+        }
+
+        .action-block:hover .meta {
+            color: var(--futur-cream);
+        }
+
+        .action-block .desc {
+            margin-top: auto;
+            font-weight: 500;
+            opacity: 0.7;
+            max-width: 80%;
+        }
+
+        /* DECOR */
+        .corner-marker {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            width: 40px;
+            height: 40px;
+            border-top: 4px solid var(--futur-red);
+            border-right: 4px solid var(--futur-red);
+        }
+
+        @media (max-width: 768px) {
+            body {
+                overflow-y: auto;
+                height: auto;
+                padding: 40px 20px;
+            }
+
+            .portal-container {
+                grid-template-columns: 1fr;
+                box-shadow: 20px 20px 0 var(--futur-red);
+            }
+
+            .portal-header {
+                grid-column: span 1;
+                padding: 30px;
+            }
+
+            .portal-header h1 {
+                font-size: 3rem;
+            }
+
+            .action-block {
+                padding: 40px 30px;
+            }
         }
     </style>
 </head>
 
 <body>
-    <h1>Welcome to chpetri.github.io</h1>
-    <p>Projects:</p>
-    <a href="/quiz/">🛡️ PenTest+ Quiz App</a>
+    <div class="portal-bg">
+        <div class="diagonal-strip"></div>
+        <div class="diagonal-strip alt"></div>
+    </div>
+
+    <div class="portal-container">
+        <header class="portal-header">
+            <p>Deployment Portal</p>
+            <h1>CENTRAL<br>TERMINAL</h1>
+        </header>
+
+        <a href="quiz/" class="action-block">
+            <div class="corner-marker"></div>
+            <div class="meta">Sequence 01</div>
+            <h2>MISSION:<br>DRILL</h2>
+            <p class="desc">High-velocity assessment module. Optimized for speed and retention. Modern UI.</p>
+        </a>
+
+        <a href="quiz2/" class="action-block">
+            <div class="corner-marker"></div>
+            <div class="meta">Sequence 02</div>
+            <h2>THEORY:<br>DESIGN</h2>
+            <p class="desc">Brutalist pedagogical structure. Italian Rationalist aesthetic. Editorial depth.</p>
+        </a>
+    </div>
 </body>
 
 </html>
